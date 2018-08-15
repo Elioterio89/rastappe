@@ -34,12 +34,17 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
+  primary:    #1161eb,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  prime:      #CF8E2C
 );
+
+$background-ios-color: #CF8E2C;
+$background-md-color: #CF8E2C;
+$background-wp-color: #CF8E2C;
 
 
 // App iOS Variables
@@ -86,3 +91,9 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+
+.menu_header{
+  color: #fff;
+  font-weight: inherit;
+}

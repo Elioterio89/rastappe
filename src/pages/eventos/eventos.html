@@ -1,0 +1,111 @@
+<ion-content class="bgView2 no-scroll">
+
+
+    <ion-header>
+        <ion-navbar color="prime">
+            <button ion-button icon-only menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+            <ion-title class="menu_header"> RastaAppé</ion-title>
+        </ion-navbar>
+    </ion-header>
+    <ion-content>
+        <ion-content>
+            <ion-card>
+                <ion-slides pager>
+
+                    <ion-slide>
+                        <ion-card class="card-carrosel">
+                            <img src="../../assets/imgs/1.jpg" />
+                        </ion-card>
+                    </ion-slide>
+
+                    <ion-slide>
+                        <ion-card class="card-carrosel">
+                            <img src="../../assets/imgs/2.jpg" />
+                        </ion-card>
+                    </ion-slide>
+
+                    <ion-slide>
+                        <ion-card class="card-carrosel">
+                            <img src="../../assets/imgs/3.jpg" />
+                        </ion-card>
+                    </ion-slide>
+                    <ion-slide>
+                        <ion-card class="card-carrosel">
+                            <img src="../../assets/imgs/4.jpg" />
+                        </ion-card>
+                    </ion-slide>
+
+                </ion-slides>
+            </ion-card>
+            <ion-searchbar>
+            </ion-searchbar>
+        </ion-content>
+
+        <ion-menu [content]="content">
+            <ion-header class="card-background-page ">
+                <ion-card>
+                    <div class="photo-menu">
+                        <div class="ft-perfil">
+                            <img class="avatar" src="../../assets/imgs/perfil.jpg">
+                        </div>
+                    </div>
+                    <div class="card-title">Igão</div>
+                    <div class="card-subtitle">ursovaca@f4mail.com</div>
+
+                </ion-card>
+            </ion-header>
+            <ion-content class="card-background-page">
+                <ion-list>
+                    <button ion-item>
+                        <ion-icon name="md-contact" class="icon-menu">
+                            <span class="fonte-menu">Perfil</span>
+                        </ion-icon>
+                    </button>
+                    <button ion-item>
+                        <ion-icon name="md-calendar" class="icon-menu">
+                            <span class="fonte-menu">Eventos</span>
+                        </ion-icon>
+                    </button>
+                    <button ion-item>
+                        <ion-icon name="md-paw" class="icon-menu">
+                            <span class="fonte-menu">Aulas</span>
+                        </ion-icon>
+                    </button>
+                    <button ion-item>
+                        <ion-icon name="md-chatbubbles" class="icon-menu">
+                            <span class="fonte-menu">Blog</span>
+                        </ion-icon>
+                    </button>
+                    <button ion-item>
+                        <ion-icon name="md-shirt" class="icon-menu">
+                            <span class="fonte-menu">Loja</span>
+                        </ion-icon>
+                    </button>
+                    <button ion-item>
+                        <ion-icon name="md-information-circle" class="icon-menu">
+                            <span class="fonte-menu">Sobre</span>
+                        </ion-icon>
+                    </button>
+
+                </ion-list>
+            </ion-content>
+            <ion-footer>
+                <ion-toolbar color="primary">
+
+                    <ion-title>
+                        <span class="title_rodape " text-right> Seja um Produtor</span>
+                        <ion-icon name="ribbon" class="icon-menu-premium">
+                        </ion-icon>
+                    </ion-title>
+                </ion-toolbar>
+            </ion-footer>
+        </ion-menu>
+
+
+    </ion-content>
+
+</ion-content>
+
+<ion-nav id="nav" #content [root]=""></ion-nav>
