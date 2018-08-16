@@ -10,45 +10,45 @@
         </ion-navbar>
     </ion-header>
     <ion-content>
-        <ion-content>
-            <ion-card>
-                <ion-slides pager>
+        <ion-content class="bg no-scroll">
+            <ion-card class="card_slide">
+                <ion-slides pager="true" autoplay="3000" loop="true" speed="500">
 
-                    <ion-slide>
-                        <ion-card class="card-carrosel">
-                            <img src="../../assets/imgs/1.jpg" />
-                        </ion-card>
+                    <ion-slide >
+
+                        <img src="../../assets/imgs/1.jpg" alt="" />
+
                     </ion-slide>
 
-                    <ion-slide>
-                        <ion-card class="card-carrosel">
-                            <img src="../../assets/imgs/2.jpg" />
-                        </ion-card>
+                    <ion-slide >
+
+                        <img src="../../assets/imgs/2.jpg" />
+
                     </ion-slide>
 
-                    <ion-slide>
-                        <ion-card class="card-carrosel">
-                            <img src="../../assets/imgs/3.jpg" />
-                        </ion-card>
+                    <ion-slide >
+
+                        <img src="../../assets/imgs/3.jpg" />
+
                     </ion-slide>
-                    <ion-slide>
-                        <ion-card class="card-carrosel">
-                            <img src="../../assets/imgs/4.jpg" />
-                        </ion-card>
+                    <ion-slide >
+                        <img src="../../assets/imgs/4.jpg" />
+
                     </ion-slide>
 
                 </ion-slides>
             </ion-card>
-            <ion-searchbar>
+            <ion-searchbar placeholder="Procurar">
             </ion-searchbar>
         </ion-content>
 
         <ion-menu [content]="content">
             <ion-header class="card-background-page ">
-                <ion-card>
+                <ion-card class="card-perfil">
                     <div class="photo-menu">
                         <div class="ft-perfil">
-                            <img class="avatar" src="../../assets/imgs/perfil.jpg">
+                            <img class="avatar" style="position:relative;  z-index: 1;" src="../../assets/imgs/perfil.jpg">
+                            <img class="avatar-grupo" style="position:absolute; z-index: 2;" src="../../assets/imgs/perfil_grupo.jpg">
                         </div>
                     </div>
                     <div class="card-title">Igão</div>
@@ -94,8 +94,8 @@
             <ion-footer>
                 <ion-toolbar color="primary">
 
-                    <ion-title>
-                        <span class="title_rodape " text-right> Seja um Produtor</span>
+                    <ion-title class="title_rodape ">
+                        <span> Seja um Produtor</span>
                         <ion-icon name="ribbon" class="icon-menu-premium">
                         </ion-icon>
                     </ion-title>
