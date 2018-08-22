@@ -1,0 +1,16 @@
+expandable {
+
+    .expand-wrapper {
+        transition: 0.5s linear;
+        height:auto;
+        max-height: 500px
+    }   
+
+    .collapsed {
+        height: 0 !important;         
+        position: absolute !important;        
+        max-height:0;
+    }
+
+    
+}
