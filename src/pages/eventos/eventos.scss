@@ -64,9 +64,25 @@ page-eventos{
   height: 35px;
   width:  35px;
   border-style: solid;
-  border: 2px solid #7d551a;
-  
-  
+  border: 2px solid #7d551a;  
+}
+
+.badge-conteudo{
+  right:1px;
+  color: #7d551a;
+  margin-left: 90px;
+  background-color: #CF8E2C !important;;
+}
+.rodape-conteudo{
+  height:35px;
+  width:  auto;
+  background-color:transparentize($color: #7d551a, $amount: 0.4);
+
+}
+
+.btn-fab-conteudo{
+  border-style: solid;
+  border: 2px solid #7d551a;  
 }
 .div-check{ 
   position:relative;
@@ -139,11 +155,18 @@ ion-checkbox{
 
 }
 
+
+
 .rstp-icone{
   font-size: 36px;
   color: #7d551a;
 
 }
+.rstp-icone-conteudo{
+  font-size: 26px;
+  color: #7d551a;
+}
+
 .titulo{
         width:80px;
         height: auto;
@@ -204,8 +227,12 @@ ion-checkbox{
         font-size: 4vw;
         text-align: center;        
         color: #fff; 
-      
 }
+
+
+
+
+
 .list-evetos-btn{
   background-color:transparentize($color: #CF8E2C, $amount: 1);
   //padding-left: 10px;
@@ -214,13 +241,40 @@ ion-checkbox{
 
 }
 
+.card-infor{
+  background-color:transparentize($color: #CF8E2C, $amount: 1);
+  margin:1px;
+}
+.header-infor{
+  padding:0px; 
+  
+  .titulo-header{ 
+    text-align: left;
+    font-size: 0.9rem; 
+    color:#f7f7f7;   
+//font-weight: bold;
+  }
+}
+.content-header{
+  padding:0px; 
+    .texto-infor{
+      text-align: left;
+      font-size: 1.2rem;  
+    }
+}
+
 ////////////////////////////////////////////////////////
 
+
+
+.fab-md-prime {
+  color: #7d551a;
+}
 
 .label-md {
  margin: 0px 0px 0px 0px;
 }
-.card-md h1 {
+  .card-md h1 {
   margin: 0 0 0px;
   font-size: 2.4rem;
   font-weight: normal;
@@ -249,6 +303,7 @@ ion-badge {
   text-align: center;
   display: inline-block;
   min-width: 10px;
+  height:10px;
   font-weight: bold;
   line-height: 1;
   white-space: nowrap;
@@ -257,8 +312,8 @@ ion-badge {
 
 .badge-md {
   border-radius: 50px;
-  color: #fff;
-  margin-left: 0;
+  color: #CF8E2C;
+  margin-left: 90px;
   background-color:transparentize($color: #CF8E2C, $amount: 1);
 
 }
@@ -366,7 +421,8 @@ left:1px;
   margin-left: 0%;
   margin-top: 0%;
   margin-bottom: 0%;
-  background: linear-gradient(90deg,rgba(126, 84, 26, 0.925) 5%,transparentize($color: #fff, $amount: 0.8) 95%);
+  background-color:transparentize($color: #7d551a, $amount: 0.1);
+  //background: linear-gradient(90deg,rgba(126, 84, 26, 0.925) 5%,transparentize($color: #fff, $amount: 0.8) 95%);
 }
 
 
@@ -389,6 +445,9 @@ left:1px;
     .data-evento{   
       color: #fff;
    }
+   .hora-evento{   
+    color: #fff;
+ }
     .card-title {
       font-size: 1.8em;
       width: 100%;
