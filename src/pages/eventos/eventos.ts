@@ -1,6 +1,7 @@
 import { Component, AUTO_STYLE } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { DomSanitizer } from '@angular/platform-browser';
 
 /**
  * Generated class for the EventosPage page.
@@ -16,8 +17,13 @@ import { AlertController } from 'ionic-angular';
 })
 export class EventosPage {
   items: any = [];
+  private iconOk: string = "<ion-icon name=\"checkmark\"></ion-icon>";
+
  //itemExpandHeight: string = 'auto';
-  constructor(public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              public alertCtrl: AlertController,
+              public sanitizer :DomSanitizer) {
 
     this.items = [
       { expanded: false },
@@ -31,30 +37,28 @@ export class EventosPage {
       { expanded: false }
     ];
   }
+  public htmlProperty(html) {
+    return this.sanitizer.bypassSecurityTrustHtml(html);
+  }
   AlertNomelista() {
     let prompt = this.alertCtrl.create({
-      title: 'Login',
-      message: "Enter a name for this new album you're so keen on adding",
+      title: "Lista Amiga",
+      message: "Envie o nome aqui!",
       inputs: [
         {
-          name: 'title',
-          placeholder: 'Title'
+          name: 'mome',
+          placeholder: 'Nome'
         },
       ],
       buttons: [
         {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Save',
+          text: 'OK',
           handler: data => {
             console.log('Saved clicked');
           }
         }
-      ]
+      ],
+      cssClass:'alertLista'
     });
     prompt.present();
   }

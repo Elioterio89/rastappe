@@ -3,6 +3,10 @@ page-eventos{
   ion-slides{
     height: auto;
 }
+
+
+
+
 ///////////////////////////////////////////////////
 
 
@@ -66,12 +70,18 @@ page-eventos{
   border-style: solid;
   border: 2px solid #7d551a;  
 }
-
 .badge-conteudo{
   right:1px;
   color: #7d551a;
   margin-left: 90px;
-  background-color: #CF8E2C !important;;
+  background-color: #CF8E2C !important;
+  text-align:initial;
+
+.cont-badge{ 
+  margin-bottom: 0px !important;
+  color: #7d551a;
+}
+
 }
 .rodape-conteudo{
   height:35px;
@@ -264,7 +274,6 @@ ion-checkbox{
 }
 
 ////////////////////////////////////////////////////////
-
 
 
 .fab-md-prime {
