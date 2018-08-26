@@ -5,6 +5,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { timer } from 'rxjs/observable/timer';
 import { HomePage } from '../pages/home/home';
+import { ModalMapPage } from '../pages/modal-map/modal-map';
 import { EventosPage } from '../pages/eventos/eventos';
 
 @Component({

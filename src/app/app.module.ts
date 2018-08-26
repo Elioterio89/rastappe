@@ -6,13 +6,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { EventosPage } from '../pages/eventos/eventos';
+import { ModalMapPage } from '../pages/modal-map/modal-map';
 import { ComponentsModule } from '../components/components.module';
+
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    EventosPage
+    EventosPage,
+    ModalMapPage
   ],
   imports: [
     ComponentsModule,
@@ -23,7 +27,8 @@ import { ComponentsModule } from '../components/components.module';
   entryComponents: [
     MyApp,
     HomePage,
-    EventosPage
+    EventosPage,
+    ModalMapPage
   ],
   providers: [
     StatusBar,

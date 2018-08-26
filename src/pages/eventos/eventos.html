@@ -11,18 +11,15 @@
     </ion-header>
     <ion-content>
         <ion-content class="bg no-scroll" style="overflow-y: hidden;">
-            <ion-fab bottom right>
-                <button ion-fab>
+            <ion-fab bottom right >
+                <button ion-fab clas="btn-fab-externo" color="prime">
                     <ion-icon name="add"> </ion-icon>
                 </button>
-                <ion-fab-list side="top">
-                    <button ion-fab>Facebook</button>
-                    <button ion-fab>Twitter</button>
-                    <button ion-fab>Youtube</button>
-                </ion-fab-list>
-                <ion-fab-list side="left">
-                    <button ion-fab>Vimeo</button>
-                </ion-fab-list>
+            </ion-fab>
+            <ion-fab bottom left>
+                <button ion-fab clas="btn-fab-externo" color="prime">
+                    <ion-icon name="md-calendar"></ion-icon>
+                </button>
             </ion-fab>
             <ion-card class="card_slide">
                 <ion-slides pager="true" autoplay="3000" loop="true" speed="500">
@@ -73,7 +70,7 @@
                                 <div class="div-check">
                                     <ion-item color="prime">
                                         <ion-checkbox checked="true"></ion-checkbox>
-                                    </ion-item> 
+                                    </ion-item>
                                 </div>
                             </button>
                             <button ion-fab class="btn-fab-evento" color="prime" (click)="AlertNomelista()">
@@ -101,19 +98,19 @@
                                             <button ion-fab mini class="btn-fab-conteudo" color="prime">
                                                 <ion-icon name="md-share" class="rstp-icone-conteudo"> </ion-icon>
                                             </button>
-                                            <button ion-fab mini class="btn-fab-conteudo" color="prime" >
-                                                <ion-icon name="md-map"  class="rstp-icone-conteudo"> </ion-icon>
+                                            <button ion-fab mini class="btn-fab-conteudo" color="prime"  (click)="abrirMapa()">
+                                                <ion-icon name="md-map" class="rstp-icone-conteudo"> </ion-icon>
                                             </button>
                                             <ion-fab-list side="right">
                                                 <button ion-fab class="btn-fab-conteudo" color="prime">
-                                                    <ion-icon name="logo-whatsapp"  class="rstp-icone-conteudo"> </ion-icon>
+                                                    <ion-icon name="logo-whatsapp" class="rstp-icone-conteudo"> </ion-icon>
                                                 </button>
                                                 <button ion-fab class="btn-fab-conteudo" color="prime">
-                                                    <ion-icon name="logo-facebook"  class="rstp-icone-conteudo"> </ion-icon>
+                                                    <ion-icon name="logo-facebook" class="rstp-icone-conteudo"> </ion-icon>
                                                 </button>
                                                 <button ion-fab class="btn-fab-conteudo" color="prime">
-                                                        <ion-icon name="logo-google"  class="rstp-icone-conteudo"> </ion-icon>
-                                                    </button>
+                                                    <ion-icon name="logo-google" class="rstp-icone-conteudo"> </ion-icon>
+                                                </button>
                                             </ion-fab-list>
                                         </ion-fab>
                                         <div class="conteudo-mapa">
@@ -121,72 +118,86 @@
                                                 <ion-card-content>
                                                     <ion-card class="card-infor">
                                                         <ion-card-header class="header-infor">
-                                                          <p class="titulo-header">Atrações<p>
+                                                            <p class="titulo-header">Atrações
+                                                                <p>
                                                         </ion-card-header>
-                                                        <ion-card-content class="content-header" >
+                                                        <ion-card-content class="content-header">
                                                             <p class="texto-infor">Forro da Gota e Carua(SP)</p>
                                                         </ion-card-content>
-                                                      </ion-card>
-                                                      <ion-card class="card-infor">
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
                                                         <ion-card-header class="header-infor">
-                                                          <p class="titulo-header">Local<p>
+                                                            <p class="titulo-header">Local
+                                                                <p>
                                                         </ion-card-header>
-                                                        <ion-card-content class="content-header" >
+                                                        <ion-card-content class="content-header">
                                                             <p class="texto-infor">Amsterdam-Salvador(BA)</p>
                                                         </ion-card-content>
-                                                      </ion-card>
-                                                      <ion-card class="card-infor">
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
                                                         <ion-card-header class="header-infor">
-                                                          <p class="titulo-header">Produção<p>
+                                                            <p class="titulo-header">Produção
+                                                                <p>
                                                         </ion-card-header>
-                                                        <ion-card-content class="content-header" >
+                                                        <ion-card-content class="content-header">
                                                             <p class="texto-infor">Forró da Gota</p>
                                                         </ion-card-content>
-                                                      </ion-card>
-                                                      <ion-card class="card-infor">
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
                                                         <ion-card-header class="header-infor">
-                                                          <p class="titulo-header">Valores<p>
+                                                            <p class="titulo-header">Valores
+                                                                <p>
                                                         </ion-card-header>
-                                                        <ion-card-content class="content-header" >
-                                                            <p class="texto-infor">20R$(Sympla)/30R$(Até as 23hrs)/40R$(Após 23hrs)</p>
+                                                        <ion-card-content class="content-header">
+                                                            <p class="texto-infor">20R$(Sympla)/30R$(Até as 23hrs)/40R$(Após
+                                                                23hrs)</p>
                                                         </ion-card-content>
-                                                      </ion-card>
-                                                      <ion-card class="card-infor">
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
                                                         <ion-card-header class="header-infor">
-                                                          <p class="titulo-header">Venda<p>
+                                                            <p class="titulo-header">Venda
+                                                                <p>
                                                         </ion-card-header>
-                                                        <ion-card-content class="content-header" >
-                                                            <p class="texto-infor"><a href="https://www.sympla.com.br/forro-da-gota__300222" style="color: #CF8E2C">Sympla</a>/Local do evento</p>
+                                                        <ion-card-content class="content-header">
+                                                            <p class="texto-infor"><a href="https://www.sympla.com.br/forro-da-gota__300222"
+                                                                    style="color: #CF8E2C">Sympla</a>/Local do evento</p>
                                                         </ion-card-content>
-                                                      </ion-card>
-                                                      <ion-card class="card-infor">
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
                                                         <ion-card-header class="header-infor">
-                                                          <p class="titulo-header">Contatos<p>
+                                                            <p class="titulo-header">Contatos
+                                                                <p>
                                                         </ion-card-header>
-                                                        <ion-card-content class="content-header" >
+                                                        <ion-card-content class="content-header">
                                                             <p class="texto-infor">forrodagota@gmail.com/(71)3333-3333</p>
                                                         </ion-card-content>
-                                                      </ion-card>
-                                                        <ion-card class="card-infor">
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
                                                         <ion-card-header class="header-infor">
-                                                          <p class="titulo-header">Informaçoes Extras<p>
+                                                            <p class="titulo-header">Informaçoes Extras
+                                                                <p>
                                                         </ion-card-header>
-                                                        <ion-card-content class="content-header" >
-                                                            <p class="texto-infor">Open Bar de Catuaba pra quem estiver com a camisa do f4a</p>
+                                                        <ion-card-content class="content-header">
+                                                            <p class="texto-infor">Open Bar de Catuaba pra quem estiver com
+                                                                a camisa do f4a</p>
                                                         </ion-card-content>
-                                                      </ion-card>
-                                                      <ion-card class="card-infor">
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
                                                         <ion-card-header class="header-infor">
-                                                          <p class="titulo-header">Descrição<p>
+                                                            <p class="titulo-header">Descrição
+                                                                <p>
                                                         </ion-card-header>
-                                                        <ion-card-content class="content-header" >
-                                                            <p class="texto-infor">Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia  @hedernovaes</p>
+                                                        <ion-card-content class="content-header">
+                                                            <p class="texto-infor">Peeense num salão chameguento! Se achegue
+                                                                sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte
+                                                                #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador
+                                                                #forróbaiano #forródabahia @hedernovaes</p>
                                                         </ion-card-content>
-                                                      </ion-card>
-                                            </ion-card-content>
+                                                    </ion-card>
+                                                </ion-card-content>
                                             </ion-card>
-                                        </div>                                    
-                                                <!--<ion-badge class="badge-conteudo"> 500  <ion-icon name="checkmark-circle"></ion-icon> </ion-badge>                                     -->
+                                        </div>
+                                        <!--<ion-badge class="badge-conteudo"> 500  <ion-icon name="checkmark-circle"></ion-icon> </ion-badge>                                     -->
 
                                     </ion-card-content>
 
@@ -271,5 +282,3 @@
 </ion-content>
 
 <ion-nav id="nav" #content [root]=""></ion-nav>
-
-

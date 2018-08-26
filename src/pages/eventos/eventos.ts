@@ -1,7 +1,9 @@
+import { HomePage } from '../home/home';
 import { Component, AUTO_STYLE } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ModalMapPage } from '../modal-map/modal-map';
 
 /**
  * Generated class for the EventosPage page.
@@ -17,13 +19,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class EventosPage {
   items: any = [];
-  private iconOk: string = "<ion-icon name=\"checkmark\"></ion-icon>";
+  
 
  //itemExpandHeight: string = 'auto';
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public alertCtrl: AlertController,
-              public sanitizer :DomSanitizer) {
+              public sanitizer :DomSanitizer,
+              public modalCtrl : ModalController) {
 
     this.items = [
       { expanded: false },
@@ -37,9 +40,11 @@ export class EventosPage {
       { expanded: false }
     ];
   }
-  public htmlProperty(html) {
-    return this.sanitizer.bypassSecurityTrustHtml(html);
+  
+   abrirMapa(){
+    this.modalCtrl.create(ModalMapPage).present();
   }
+
   AlertNomelista() {
     let prompt = this.alertCtrl.create({
       title: "Lista Amiga",
