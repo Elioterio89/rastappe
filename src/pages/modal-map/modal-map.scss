@@ -1,0 +1,79 @@
+page-modal-map {
+
+/////////////////////////
+.scroll-content {
+  padding: 0px !important;
+}
+
+.card-md {
+  margin: 0px; 
+  border-radius: 2px;
+  width: calc(100% - 0px);
+  height: calc(100% - 0px);
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius:30px;
+  
+}
+.ion-page {
+background-color:rgba(0, 0, 0, 0.6)!important;
+}
+
+.button-md.activated {
+  background-color: #7d551a !important;
+};
+////////////////////////
+
+.btn-modal{
+      border-style: solid !important;
+      border: 2px solid #7d551a !important;
+      height: 55px;
+      width:  55px;
+      background-color:#CF8E2C;
+      margin-left:21%;
+}
+
+.footermodal{
+    height :65px;
+    width:  298px;
+    //background-image: url("../../assets/imgs/bg_marca_dagua.png") !important;
+    //background-color:#CF8E2C;
+    -webkit-border-bottom-right-radius: 30px;
+    -moz-border-bottom-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    -webkit-border-bottom-left-radius: 30px;
+    -moz-border-bottom-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.cardmodalmapa{
+      background-color: #f4f4f4 !important;
+      border-style: solid !important;
+      border: 2px solid #7d551a !important;
+}
+
+.headermodalmapa{
+    color: #f4f4f4 !important;
+    font-size: 6vw;
+    background-color: #CF8E2C !important; 
+    background-image: url("../../assets/imgs/bg_marca_dagua.png") !important;
+}
+
+.modalmapa{   
+    
+    height: 400px;
+    width :300px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius:30px;
+    margin-left:30px;
+    margin-top :120px
+}
+
+}
+
+                
+   
+                
+
+                
