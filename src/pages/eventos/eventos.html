@@ -9,9 +9,73 @@
             <ion-title class="menu_header"> RastaAppé</ion-title>
         </ion-navbar>
     </ion-header>
+
+    <ion-menu [content]="content">
+        <ion-header class="card-background-page ">
+            <ion-navbar color="prime">
+                <ion-title class="menu_header"> RastaAppé</ion-title>
+            </ion-navbar>
+            <ion-card class="card-perfil">
+                <div class="photo-menu">
+                    <div class="ft-perfil">
+                        <img class="avatar" style="position:relative;  z-index: 1;" src="../../assets/imgs/perfil.jpg">
+                        <img class="avatar-grupo" style="position:absolute; z-index: 2;" src="../../assets/imgs/perfil_grupo.jpg">
+                    </div>
+                </div>
+                <div class="card-title">Igão</div>
+                <div class="card-subtitle">ursovaca@f4mail.com</div>
+
+            </ion-card>
+        </ion-header>
+        <ion-content class="card-background-page">
+            <ion-list class="list-menu">
+                <button ion-item>
+                    <ion-icon name="md-contact" class="icon-menu">
+                        <span class="fonte-menu">Perfil</span>
+                    </ion-icon>
+                </button>
+                <button ion-item>
+                    <ion-icon name="md-calendar" class="icon-menu">
+                        <span class="fonte-menu">Eventos</span>
+                    </ion-icon>
+                </button>
+                <button ion-item>
+                    <ion-icon name="md-paw" class="icon-menu">
+                        <span class="fonte-menu">Aulas</span>
+                    </ion-icon>
+                </button>
+                <button ion-item>
+                    <ion-icon name="md-chatbubbles" class="icon-menu">
+                        <span class="fonte-menu">Blog</span>
+                    </ion-icon>
+                </button>
+                <button ion-item>
+                    <ion-icon name="md-shirt" class="icon-menu">
+                        <span class="fonte-menu">Loja</span>
+                    </ion-icon>
+                </button>
+                <button ion-item>
+                    <ion-icon name="md-information-circle" class="icon-menu">
+                        <span class="fonte-menu">Sobre</span>
+                    </ion-icon>
+                </button>
+
+            </ion-list>
+        </ion-content>
+        <ion-footer>
+            <ion-toolbar color="primary">
+
+                <ion-title class="title_rodape ">
+                    <span> Seja um Produtor</span>
+                    <ion-icon name="ribbon" class="icon-menu-premium">
+                    </ion-icon>
+                </ion-title>
+            </ion-toolbar>
+        </ion-footer>
+    </ion-menu>
     <ion-content>
         <ion-content class="bg no-scroll" style="overflow-y: hidden;">
-            <ion-fab bottom right >
+            <ion-fab bottom right>
                 <button ion-fab clas="btn-fab-externo" color="prime">
                     <ion-icon name="add"> </ion-icon>
                 </button>
@@ -22,12 +86,12 @@
                 </button>
             </ion-fab>
             <ion-card class="card_slide">
-                <ion-slides pager="true" autoplay="3000" loop="true" speed="500" >
+                <ion-slides pager="true" autoplay="3000" loop="true" speed="500">
                     <ion-slide *ngFor="let item of itensSlide">
 
                         <img src="{{item.banner}}" alt="" />
 
-                    </ion-slide>                   
+                    </ion-slide>
 
                 </ion-slides>
             </ion-card>
@@ -81,7 +145,7 @@
                                             <button ion-fab mini class="btn-fab-conteudo" color="prime">
                                                 <ion-icon name="md-share" class="rstp-icone-conteudo"> </ion-icon>
                                             </button>
-                                            <button ion-fab mini class="btn-fab-conteudo" color="prime"  (click)="abrirMapa()">
+                                            <button ion-fab mini class="btn-fab-conteudo" color="prime" (click)="abrirMapa()">
                                                 <ion-icon name="md-map" class="rstp-icone-conteudo"> </ion-icon>
                                             </button>
                                             <ion-fab-list side="right">
@@ -132,8 +196,8 @@
                                                                 <p>
                                                         </ion-card-header>
                                                         <ion-card-content class="content-header">
-                                                            <p class="texto-infor">20R$(Sympla)/30R$(Até as 23hrs)/40R$(Após
-                                                                23hrs)</p>
+                                                            <p class="texto-infor">20R$(Sympla)/30R$(Até as 23hrs)/40R$(Após 23hrs)
+                                                            </p>
                                                         </ion-card-content>
                                                     </ion-card>
                                                     <ion-card class="card-infor">
@@ -142,8 +206,8 @@
                                                                 <p>
                                                         </ion-card-header>
                                                         <ion-card-content class="content-header">
-                                                            <p class="texto-infor"><a href="https://www.sympla.com.br/forro-da-gota__300222"
-                                                                    style="color: #CF8E2C">Sympla</a>/Local do evento</p>
+                                                            <p class="texto-infor">
+                                                                <a href="https://www.sympla.com.br/forro-da-gota__300222" style="color: #CF8E2C">Sympla</a>/Local do evento</p>
                                                         </ion-card-content>
                                                     </ion-card>
                                                     <ion-card class="card-infor">
@@ -161,8 +225,7 @@
                                                                 <p>
                                                         </ion-card-header>
                                                         <ion-card-content class="content-header">
-                                                            <p class="texto-infor">Open Bar de Catuaba pra quem estiver com
-                                                                a camisa do f4a</p>
+                                                            <p class="texto-infor">Open Bar de Catuaba pra quem estiver com a camisa do f4a</p>
                                                         </ion-card-content>
                                                     </ion-card>
                                                     <ion-card class="card-infor">
@@ -171,10 +234,10 @@
                                                                 <p>
                                                         </ion-card-header>
                                                         <ion-card-content class="content-header">
-                                                            <p class="texto-infor">Peeense num salão chameguento! Se achegue
-                                                                sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte
-                                                                #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador
-                                                                #forróbaiano #forródabahia @hedernovaes</p>
+                                                            <p class="texto-infor">Peeense num salão chameguento! Se achegue sexta, às 23h, lá no
+                                                                @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos
+                                                                #pensenumralabuchobom #forró #forróemsalvador #forróbaiano
+                                                                #forródabahia @hedernovaes</p>
                                                         </ion-card-content>
                                                     </ion-card>
                                                 </ion-card-content>
@@ -198,66 +261,7 @@
 
             </ion-scroll>
         </ion-content>
-        <ion-menu [content]="content">
-            <ion-header class="card-background-page ">
-                <ion-card class="card-perfil">
-                    <div class="photo-menu">
-                        <div class="ft-perfil">
-                            <img class="avatar" style="position:relative;  z-index: 1;" src="../../assets/imgs/perfil.jpg">
-                            <img class="avatar-grupo" style="position:absolute; z-index: 2;" src="../../assets/imgs/perfil_grupo.jpg">
-                        </div>
-                    </div>
-                    <div class="card-title">Igão</div>
-                    <div class="card-subtitle">ursovaca@f4mail.com</div>
 
-                </ion-card>
-            </ion-header>
-            <ion-content class="card-background-page">
-                <ion-list class="list-menu">
-                    <button ion-item>
-                        <ion-icon name="md-contact" class="icon-menu">
-                            <span class="fonte-menu">Perfil</span>
-                        </ion-icon>
-                    </button>
-                    <button ion-item>
-                        <ion-icon name="md-calendar" class="icon-menu">
-                            <span class="fonte-menu">Eventos</span>
-                        </ion-icon>
-                    </button>
-                    <button ion-item>
-                        <ion-icon name="md-paw" class="icon-menu">
-                            <span class="fonte-menu">Aulas</span>
-                        </ion-icon>
-                    </button>
-                    <button ion-item>
-                        <ion-icon name="md-chatbubbles" class="icon-menu">
-                            <span class="fonte-menu">Blog</span>
-                        </ion-icon>
-                    </button>
-                    <button ion-item>
-                        <ion-icon name="md-shirt" class="icon-menu">
-                            <span class="fonte-menu">Loja</span>
-                        </ion-icon>
-                    </button>
-                    <button ion-item>
-                        <ion-icon name="md-information-circle" class="icon-menu">
-                            <span class="fonte-menu">Sobre</span>
-                        </ion-icon>
-                    </button>
-
-                </ion-list>
-            </ion-content>
-            <ion-footer>
-                <ion-toolbar color="primary">
-
-                    <ion-title class="title_rodape ">
-                        <span> Seja um Produtor</span>
-                        <ion-icon name="ribbon" class="icon-menu-premium">
-                        </ion-icon>
-                    </ion-title>
-                </ion-toolbar>
-            </ion-footer>
-        </ion-menu>
 
 
     </ion-content>
