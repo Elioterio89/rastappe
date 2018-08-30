@@ -13,7 +13,7 @@ import { EventosPage } from '../eventos/eventos';
   templateUrl: 'home.html',
 })
 export class HomePage {
-  rootPage:any =HomePage;//EventosPage;// HomePage;
+ rootPage:any ='';//HomePage;//EventosPage;// HomePage;
 
   pages: Array<{ title: string, icon: string, component: any }>;
   constructor(public navCtrl: NavController, public navParams: NavParams) {

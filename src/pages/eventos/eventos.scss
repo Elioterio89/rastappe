@@ -53,30 +53,8 @@ page-eventos{
     border: #fff;
     text-align: left;
   }
-
-
-  .img_slide{
-
-    height: auto;
-    width: 1024px;
-    max-width: 1024px;
-
-  }
-
-  .card_slide_geral{
-    height: 200px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; 
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px; 
-    background: #7d551a;
-    border: 1px solid #7d551a;
-  }
 .card_slide{ 
-    height: 200px;
+    height: 30%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -530,6 +508,7 @@ left:1px;
 
     }
   }
+  .accoredeon
   
     .card-subtitle {
       font-size: 1.0em;
