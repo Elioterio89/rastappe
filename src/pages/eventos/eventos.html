@@ -24,28 +24,9 @@
             <ion-card class="card_slide_geral">
                 <ion-slides pager="true" autoplay="3000" loop="true" speed="500">
 
-                    <ion-slide>
-                        <ion-card class="card_slide">
-                            <img src="../../assets/imgs/1.jpg" alt="" class="img_slide" />
-                        </ion-card>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <ion-card class="card_slide">
-                            <img src="../../assets/imgs/2.jpg" class="img_slide" />
-                        </ion-card>
-                    </ion-slide>
-
-                    <ion-slide>
-                        <ion-card class="card_slide">
-                            <img src="../../assets/imgs/3.jpg" class="img_slide" />
-                        </ion-card>
-                    </ion-slide>
-                    <ion-slide>
-                        <ion-card class="card_slide">
-                            <img src="../../assets/imgs/4.jpg" class="img_slide" />
-                        </ion-card>
-                    </ion-slide>
+                    <ion-slide *ngFor="let item of itensSlide">
+                        <img src="{{item.banner}}" alt="" />
+                    </ion-slide>  
 
                 </ion-slides>
             </ion-card>
