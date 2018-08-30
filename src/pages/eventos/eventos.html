@@ -11,7 +11,7 @@
     </ion-header>
     <ion-content>
         <ion-content class="bg no-scroll" style="overflow-y: hidden;">
-            <ion-fab bottom right >
+            <ion-fab bottom right>
                 <button ion-fab clas="btn-fab-externo" color="prime">
                     <ion-icon name="add"> </ion-icon>
                 </button>
@@ -21,29 +21,30 @@
                     <ion-icon name="md-calendar"></ion-icon>
                 </button>
             </ion-fab>
-            <ion-card class="card_slide">
+            <ion-card class="card_slide_geral">
                 <ion-slides pager="true" autoplay="3000" loop="true" speed="500">
 
                     <ion-slide>
-
-                        <img src="../../assets/imgs/1.jpg" alt="" />
-
+                        <ion-card class="card_slide">
+                            <img src="../../assets/imgs/1.jpg" alt="" class="img_slide" />
+                        </ion-card>
                     </ion-slide>
 
                     <ion-slide>
-
-                        <img src="../../assets/imgs/2.jpg" />
-
+                        <ion-card class="card_slide">
+                            <img src="../../assets/imgs/2.jpg" class="img_slide" />
+                        </ion-card>
                     </ion-slide>
 
                     <ion-slide>
-
-                        <img src="../../assets/imgs/3.jpg" />
-
+                        <ion-card class="card_slide">
+                            <img src="../../assets/imgs/3.jpg" class="img_slide" />
+                        </ion-card>
                     </ion-slide>
                     <ion-slide>
-                        <img src="../../assets/imgs/4.jpg" />
-
+                        <ion-card class="card_slide">
+                            <img src="../../assets/imgs/4.jpg" class="img_slide" />
+                        </ion-card>
                     </ion-slide>
 
                 </ion-slides>
@@ -98,7 +99,7 @@
                                             <button ion-fab mini class="btn-fab-conteudo" color="prime">
                                                 <ion-icon name="md-share" class="rstp-icone-conteudo"> </ion-icon>
                                             </button>
-                                            <button ion-fab mini class="btn-fab-conteudo" color="prime"  (click)="abrirMapa()">
+                                            <button ion-fab mini class="btn-fab-conteudo" color="prime" (click)="abrirMapa()">
                                                 <ion-icon name="md-map" class="rstp-icone-conteudo"> </ion-icon>
                                             </button>
                                             <ion-fab-list side="right">
@@ -150,7 +151,8 @@
                                                         </ion-card-header>
                                                         <ion-card-content class="content-header">
                                                             <p class="texto-infor">20R$(Sympla)/30R$(Até as 23hrs)/40R$(Após
-                                                                23hrs)</p>
+                                                                23hrs)
+                                                            </p>
                                                         </ion-card-content>
                                                     </ion-card>
                                                     <ion-card class="card-infor">
