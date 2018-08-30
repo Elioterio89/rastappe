@@ -12,7 +12,7 @@ import { EventosPage } from '../pages/eventos/eventos';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any =EventosPage;// HomePage;
+  rootPage:any =HomePage;//EventosPage;// HomePage;
 
   public splash :boolean = true;
 
