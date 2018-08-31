@@ -1,88 +1,16 @@
-<ion-content no-bounce class="bgView2  ">
-        <ion-header class="card-background-page ">
-                <ion-navbar color="prime">
-                  <button ion-button icon-only menuToggle>
-                        <ion-icon name="menu"></ion-icon>
-                  </button>
-                  <ion-title class="menu_header">Eventos</ion-title>
-                </ion-navbar>
-            </ion-header>
-              
 
 
-<!--
-    <ion-header>
-        <ion-navbar color="prime">
+<ion-header>
+    <ion-navbar color="prime">
+        <ion-buttons left>
             <button ion-button icon-only menuToggle>
                 <ion-icon name="menu"></ion-icon>
             </button>
-            <ion-title class="menu_header"> RastaAppé</ion-title>
-        </ion-navbar>
-    </ion-header>
-
-    <ion-menu [content]="content">
-        <ion-header class="card-background-page ">
-            <ion-navbar color="prime">
-                <ion-title class="menu_header"> RastaAppé</ion-title>
-            </ion-navbar>
-            <ion-card class="card-perfil">
-                <div class="photo-menu">
-                    <div class="ft-perfil">
-                        <img class="avatar" style="position:relative;  z-index: 1;" src="../../assets/imgs/perfil.jpg">
-                        <img class="avatar-grupo" style="position:absolute; z-index: 2;" src="../../assets/imgs/perfil_grupo.jpg">
-                    </div>
-                </div>
-                <div class="card-title">Igão</div>
-                <div class="card-subtitle">ursovaca@f4mail.com</div>
-
-            </ion-card>
-        </ion-header>
-        <ion-content class="card-background-page">
-            <ion-list class="list-menu">
-                <button ion-item>
-                    <ion-icon name="md-contact" class="icon-menu">
-                        <span class="fonte-menu">Perfil</span>
-                    </ion-icon>
-                </button>
-                <button ion-item>
-                    <ion-icon name="md-calendar" class="icon-menu">
-                        <span class="fonte-menu">Eventos</span>
-                    </ion-icon>
-                </button>
-                <button ion-item>
-                    <ion-icon name="md-paw" class="icon-menu">
-                        <span class="fonte-menu">Aulas</span>
-                    </ion-icon>
-                </button>
-                <button ion-item>
-                    <ion-icon name="md-chatbubbles" class="icon-menu">
-                        <span class="fonte-menu">Blog</span>
-                    </ion-icon>
-                </button>
-                <button ion-item>
-                    <ion-icon name="md-shirt" class="icon-menu">
-                        <span class="fonte-menu">Loja</span>
-                    </ion-icon>
-                </button>
-                <button ion-item>
-                    <ion-icon name="md-information-circle" class="icon-menu">
-                        <span class="fonte-menu">Sobre</span>
-                    </ion-icon>
-                </button>
-
-            </ion-list>
-        </ion-content>
-        <ion-footer>
-            <ion-toolbar color="primary">
-
-                <ion-title class="title_rodape ">
-                    <span> Seja um Produtor</span>
-                    <ion-icon name="ribbon" class="icon-menu-premium">
-                    </ion-icon>
-                </ion-title>
-            </ion-toolbar>
-        </ion-footer>
-    </ion-menu>-->
+        </ion-buttons>
+        <ion-title class="menu_header"> Eventos</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content no-bounce class="bgView2  ">
     <ion-content>
         <ion-content class="bg no-scroll" style="overflow-y: hidden;">
             <ion-fab bottom right>
@@ -95,15 +23,16 @@
                     <ion-icon name="md-calendar"></ion-icon>
                 </button>
             </ion-fab>
-            <ion-card class="card_slide">
+
+            <ion-card class="card_slide_geral">
                 <ion-slides pager="true" autoplay="3000" loop="true" speed="500">
                     <ion-slide *ngFor="let item of itensSlide">
-
-                        <img src="{{item.banner}}" alt="" />
-
+                        <button  class="card_slide" (click)="detalharEvento(item)">
+                            <img src="{{item.banner}}" class="img_slide" />
+                        </button>
                     </ion-slide>
-
                 </ion-slides>
+
             </ion-card>
             <ion-card class="card-itens">
                 <ion-grid no-padding>
@@ -206,7 +135,8 @@
                                                                 <p>
                                                         </ion-card-header>
                                                         <ion-card-content class="content-header">
-                                                            <p class="texto-infor">20R$(Sympla)/30R$(Até as 23hrs)/40R$(Após 23hrs)
+                                                            <p class="texto-infor">20R$(Sympla)/30R$(Até as 23hrs)/40R$(Após
+                                                                23hrs)
                                                             </p>
                                                         </ion-card-content>
                                                     </ion-card>
@@ -216,8 +146,8 @@
                                                                 <p>
                                                         </ion-card-header>
                                                         <ion-card-content class="content-header">
-                                                            <p class="texto-infor">
-                                                                <a href="https://www.sympla.com.br/forro-da-gota__300222" style="color: #CF8E2C">Sympla</a>/Local do evento</p>
+                                                            <p class="texto-infor"><a href="https://www.sympla.com.br/forro-da-gota__300222"
+                                                                    style="color: #CF8E2C">Sympla</a>/Local do evento</p>
                                                         </ion-card-content>
                                                     </ion-card>
                                                     <ion-card class="card-infor">
@@ -235,7 +165,8 @@
                                                                 <p>
                                                         </ion-card-header>
                                                         <ion-card-content class="content-header">
-                                                            <p class="texto-infor">Open Bar de Catuaba pra quem estiver com a camisa do f4a</p>
+                                                            <p class="texto-infor">Open Bar de Catuaba pra quem estiver com
+                                                                a camisa do f4a</p>
                                                         </ion-card-content>
                                                     </ion-card>
                                                     <ion-card class="card-infor">
@@ -244,10 +175,10 @@
                                                                 <p>
                                                         </ion-card-header>
                                                         <ion-card-content class="content-header">
-                                                            <p class="texto-infor">Peeense num salão chameguento! Se achegue sexta, às 23h, lá no
-                                                                @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos
-                                                                #pensenumralabuchobom #forró #forróemsalvador #forróbaiano
-                                                                #forródabahia @hedernovaes</p>
+                                                            <p class="texto-infor">Peeense num salão chameguento! Se achegue
+                                                                sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte
+                                                                #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador
+                                                                #forróbaiano #forródabahia @hedernovaes</p>
                                                         </ion-card-content>
                                                     </ion-card>
                                                 </ion-card-content>
@@ -278,4 +209,3 @@
 
 </ion-content>
 
-<ion-nav id="nav" #content [root]=""></ion-nav>

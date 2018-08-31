@@ -1,17 +1,13 @@
-import { HomePage } from '../home/home';
 import { Component, AUTO_STYLE } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModalMapPage } from '../modal-map/modal-map';
-import { CardSlide } from '../../app/classes/CardSlide';
+import { CardSlide } from '../../app/classes/CardSlide ';
+import { MenuController } from 'ionic-angular';
+import { EventoDescricaoPage } from '../evento-descricao/evento-descricao';
 
-/**
- * Generated class for the EventosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -20,14 +16,17 @@ import { CardSlide } from '../../app/classes/CardSlide';
 })
 export class EventosPage {
   items: any = [];
-  itensSlide:CardSlide[]=[];
+  itensSlide: CardSlide[] = [];
+  rootPage=EventosPage;
 
- //itemExpandHeight: string = 'auto';
-  constructor(public navCtrl: NavController, 
-              public navParams: NavParams,
-              public alertCtrl: AlertController,
-              public sanitizer :DomSanitizer,
-              public modalCtrl : ModalController) {
+
+  //itemExpandHeight: string = 'auto';
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public alertCtrl: AlertController,
+    public sanitizer: DomSanitizer,
+    public modalCtrl: ModalController,
+    public menuCtrl:MenuController) {
 
     this.items = [
       { expanded: false },
@@ -40,19 +39,24 @@ export class EventosPage {
       { expanded: false },
       { expanded: false }
     ];
-    this.itensSlide=new Array(
-      
-        new CardSlide('../../assets/imgs/1.jpg',1),
-        new CardSlide('../../assets/imgs/2.jpg',2),
-        new CardSlide('../../assets/imgs/3.jpg',3),
-        new CardSlide('../../assets/imgs/4.jpg',4),
-        new CardSlide('../../assets/imgs/5.jpg',5)
-        
+    this.itensSlide = new Array(
+
+      new CardSlide('../../assets/imgs/1.jpg', 1,'Arraiá F4a','2ªTrv Domningos Rabelo,100-Ribeira,Salvador(BA)'),
+      new CardSlide('../../assets/imgs/2.jpg', 2,'B-Day G.E./F4a','Rua da casa de Danilo,704-Pernambues,Salvador(BA)'),
+      new CardSlide('../../assets/imgs/3.jpg', 3,'WorkShop de Forro','Na casa da porra,69-ALI,Salvador(BA)'),
+      new CardSlide('../../assets/imgs/4.jpg', 4,'Aniversario A4a','Rua da casa de Danilo,704-Pernambues,Salvador(BA)'),
+      new CardSlide('../../assets/imgs/5.jpg', 5,'#2 Uma Tonelada de Forró','Eco Resort,Santo Estevão(BA)'),
+
     );
 
   }
-  
-   abrirMapa(){
+
+  detalharEvento(item){    
+    this.navCtrl.push(EventoDescricaoPage,{evento:item});
+  }
+
+
+  abrirMapa() {
     this.modalCtrl.create(ModalMapPage).present();
   }
 
@@ -74,7 +78,7 @@ export class EventosPage {
           }
         }
       ],
-      cssClass:'alertLista'
+      cssClass: 'alertLista'
     });
     prompt.present();
   }
