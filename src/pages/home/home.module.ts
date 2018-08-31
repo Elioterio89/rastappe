@@ -14,7 +14,7 @@ import { EventosPage } from '../eventos/eventos';
   ],
   imports: [
     IonicModule.forRoot(HomePage),
-    IonicPageModule.forChild(HomePage),
+    //IonicPageModule.forChild(HomePage),
   ],
 })
 export class HomePageModule {}
