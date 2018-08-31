@@ -15,6 +15,7 @@ import { AulasPage } from '../pages/aulas/aulas';
 import { BlogPage } from '../pages/blog/blog';
 import { LojaPage } from '../pages/loja/loja';
 import { PerfilPage } from '../pages/perfil/perfil';
+import { EventoDescricaoPage } from '../pages/evento-descricao/evento-descricao';
 
 
 
@@ -29,7 +30,8 @@ import { PerfilPage } from '../pages/perfil/perfil';
     AulasPage,
     BlogPage,    
     LojaPage,
-    PerfilPage
+    PerfilPage,
+    EventoDescricaoPage
 
     
   ],
@@ -49,7 +51,8 @@ import { PerfilPage } from '../pages/perfil/perfil';
     AulasPage,
     BlogPage,
     LojaPage,    
-    PerfilPage
+    PerfilPage,
+    EventoDescricaoPage
   ],
   providers: [
     StatusBar,

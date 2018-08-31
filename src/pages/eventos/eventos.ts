@@ -5,6 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ModalMapPage } from '../modal-map/modal-map';
 import { CardSlide } from '../../app/classes/CardSlide ';
 import { MenuController } from 'ionic-angular';
+import { EventoDescricaoPage } from '../evento-descricao/evento-descricao';
 
 
 /**
@@ -55,6 +56,11 @@ export class EventosPage {
     );
 
   }
+
+  detalharEvento(id){
+    this.navCtrl.push(EventoDescricaoPage,id);
+  }
+
 
   abrirMapa() {
     this.modalCtrl.create(ModalMapPage).present();

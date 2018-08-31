@@ -24,9 +24,9 @@
             <ion-card class="card_slide_geral">
                 <ion-slides pager="true" autoplay="3000" loop="true" speed="500">
                     <ion-slide *ngFor="let item of itensSlide">
-                        <ion-card class="card_slide">
+                        <button  class="card_slide" (click)="detalharEvento(item.id)">
                             <img src="{{item.banner}}" class="img_slide" />
-                        </ion-card>
+                        </button>
                     </ion-slide>
                 </ion-slides>
 

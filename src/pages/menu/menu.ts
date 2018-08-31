@@ -16,12 +16,17 @@ import { LojaPage } from '../loja/loja';
 })
 export class MenuPage {
   pages: Array<{title: string, icon:string, component: any,id:number}>;
+  fotoPerfil:string;
+  fotoGrupo:string;
   
   rootPage=EventosPage;
 
   @ViewChild(Nav) nav :Nav;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.fotoPerfil='../../assets/imgs/perfil.jpg';
+    this.fotoGrupo='../../assets/imgs/perfil_grupo.jpg';
+    
     this.pages = [
       { title: 'Perfil',icon:'md-contact', component: PerfilPage,id:1 },
       { title: 'Eventos',icon:'md-calendar', component: EventosPage,id:2 },
