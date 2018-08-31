@@ -1,14 +1,14 @@
-<ion-content no-bounce class="bgView2  ">
-
-
-    <ion-header>
-        <ion-navbar color="prime">
+<ion-header>
+    <ion-navbar color="prime">
+        <ion-buttons left>
             <button ion-button icon-only menuToggle>
                 <ion-icon name="menu"></ion-icon>
             </button>
-            <ion-title class="menu_header"> RastaAppé</ion-title>
-        </ion-navbar>
-    </ion-header>
+        </ion-buttons>
+        <ion-title class="menu_header"> Eventos</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content no-bounce class="bgView2  ">
     <ion-content>
         <ion-content class="bg no-scroll" style="overflow-y: hidden;">
             <ion-fab bottom right>
@@ -199,70 +199,10 @@
 
             </ion-scroll>
         </ion-content>
-        <ion-menu [content]="content">
-            <ion-header class="card-background-page ">
-                <ion-card class="card-perfil">
-                    <div class="photo-menu">
-                        <div class="ft-perfil">
-                            <img class="avatar" style="position:relative;  z-index: 1;" src="../../assets/imgs/perfil.jpg">
-                            <img class="avatar-grupo" style="position:absolute; z-index: 2;" src="../../assets/imgs/perfil_grupo.jpg">
-                        </div>
-                    </div>
-                    <div class="card-title">Igão</div>
-                    <div class="card-subtitle">ursovaca@f4mail.com</div>
 
-                </ion-card>
-            </ion-header>
-            <ion-content class="card-background-page">
-                <ion-list class="list-menu">
-                    <button ion-item>
-                        <ion-icon name="md-contact" class="icon-menu">
-                            <span class="fonte-menu">Perfil</span>
-                        </ion-icon>
-                    </button>
-                    <button ion-item>
-                        <ion-icon name="md-calendar" class="icon-menu">
-                            <span class="fonte-menu">Eventos</span>
-                        </ion-icon>
-                    </button>
-                    <button ion-item>
-                        <ion-icon name="md-paw" class="icon-menu">
-                            <span class="fonte-menu">Aulas</span>
-                        </ion-icon>
-                    </button>
-                    <button ion-item>
-                        <ion-icon name="md-chatbubbles" class="icon-menu">
-                            <span class="fonte-menu">Blog</span>
-                        </ion-icon>
-                    </button>
-                    <button ion-item>
-                        <ion-icon name="md-shirt" class="icon-menu">
-                            <span class="fonte-menu">Loja</span>
-                        </ion-icon>
-                    </button>
-                    <button ion-item>
-                        <ion-icon name="md-information-circle" class="icon-menu">
-                            <span class="fonte-menu">Sobre</span>
-                        </ion-icon>
-                    </button>
-
-                </ion-list>
-            </ion-content>
-            <ion-footer>
-                <ion-toolbar color="primary">
-
-                    <ion-title class="title_rodape ">
-                        <span> Seja um Produtor</span>
-                        <ion-icon name="ribbon" class="icon-menu-premium">
-                        </ion-icon>
-                    </ion-title>
-                </ion-toolbar>
-            </ion-footer>
-        </ion-menu>
 
 
     </ion-content>
 
 </ion-content>
 
-<ion-nav id="nav" #content [root]=""></ion-nav>

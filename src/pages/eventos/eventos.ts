@@ -1,10 +1,10 @@
-import { HomePage } from '../home/home';
 import { Component, AUTO_STYLE } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModalMapPage } from '../modal-map/modal-map';
 import { CardSlide } from '../../app/classes/CardSlide ';
+import { MenuController } from 'ionic-angular';
 
 
 /**
@@ -22,6 +22,7 @@ import { CardSlide } from '../../app/classes/CardSlide ';
 export class EventosPage {
   items: any = [];
   itensSlide: CardSlide[] = [];
+  rootPage=EventosPage;
 
 
   //itemExpandHeight: string = 'auto';
@@ -29,7 +30,8 @@ export class EventosPage {
     public navParams: NavParams,
     public alertCtrl: AlertController,
     public sanitizer: DomSanitizer,
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController,
+    public menuCtrl:MenuController) {
 
     this.items = [
       { expanded: false },
