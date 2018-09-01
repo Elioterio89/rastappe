@@ -3,6 +3,27 @@
   <ion-navbar color="prime" class="nav_evento">
     <ion-title class="nav_evento">Evento</ion-title>
   </ion-navbar>
+  <ion-fab right top class="fab_map">
+    <button ion-fab mini class="btn-fab-conteudo" color="prime" (click)="abrirMapa()">
+      <ion-icon name="md-map" class="rstp-icone-conteudo"> </ion-icon>
+    </button>
+  </ion-fab>
+  <ion-fab right top class="fab_compartilha">
+    <button ion-fab mini class="btn-fab-conteudo" color="prime">
+      <ion-icon name="md-share" class="rstp-icone-conteudo"> </ion-icon>
+    </button>
+    <ion-fab-list side="bottom">
+      <button ion-fab class="btn-fab-conteudo" color="prime">
+        <ion-icon name="logo-whatsapp" class="rstp-icone-conteudo"> </ion-icon>
+      </button>
+      <button ion-fab class="btn-fab-conteudo" color="prime">
+        <ion-icon name="logo-facebook" class="rstp-icone-conteudo"> </ion-icon>
+      </button>
+      <button ion-fab class="btn-fab-conteudo" color="prime">
+        <ion-icon name="logo-google" class="rstp-icone-conteudo"> </ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
   <img src=" {{evento.banner}}" class="img-evento">
   <ion-fab right top class="data_evento">
     <ion-badge class="bd-data_evento">
@@ -20,69 +41,83 @@
 </ion-header>
 
 
-<ion-content  class="background-page " scroll="true" >    
-  <ion-card class="card-informaçoes-conteudo">
-      <ion-grid nowrap>
-        <ion-row >
-          <ion-col col-3>
-            <p class="titulo-header">Atrações
-              <p>
-          </ion-col>
-          <ion-col col-9>
-            <p class="texto-infor">Forro da Gota e Carua(SP)</p>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-3>
-            <p class="titulo-header">Produção
-              <p>
-          </ion-col>
-          <ion-col col-9>
-            <p class="texto-infor">Forró da Gota</p>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-3>
-            <p class="titulo-header">Valores<p>
-          </ion-col>
-          <ion-col col-9>
-            <p class="texto-infor">20R$(Sympla)/30R$(Até as 23hrs)/40R$(Após 23hrs)</p>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-3>
-            <p class="titulo-header">Venda<p>
-          </ion-col>
-          <ion-col col-9>
-            <p class="texto-infor"><a href="https://www.sympla.com.br/forro-da-gota__300222" style="color: #CF8E2C">Sympla</a>/Local
-              do evento</p>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-3>
-            <p class="titulo-header">Contatos<p>
-          </ion-col>
-          <ion-col col-9>
-            <p class="texto-infor">forrodagota@gmail.com/(71)3333-3333</p>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-3>
-            <p class="titulo-header">Info. Extra<p>
-          </ion-col>
-          <ion-col col-9>
-            <p class="texto-infor">Open Bar de Catuaba pra quem estiver com a camisa do f4a</p>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-3>
-            <p class="titulo-header">Descrição<p>
-          </ion-col>
-          <ion-col col-9>
-            <p class="texto-infor">Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota
-              #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes</p>
-          </ion-col>
-        </ion-row>
-     </ion-grid>
-    </ion-card>
+<ion-content class="background-page " scroll="true">
+  <ion-fab right bottom class="fab-nome-lista">
+    <button ion-fab class="btn-fab-evento" color="prime"  (click)="AlertNomelista()">
+      <ion-icon name="ios-list" class="rstp-icone"> </ion-icon>
+    </button>
+  </ion-fab>
+  <ion-grid class="grid-info">
+    <ion-row class="linha">
+      <ion-col col-3 class="colum ">
+        <p class="titulo-header">Atrações
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">Forro da Gota e Carua(SP)</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Produção
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">Forró da Gota</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Valores
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">20R$(Sympla)/30R$(Até as 23hrs)/40R$(Após 23hrs)</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Venda
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor"><a href="https://www.sympla.com.br/forro-da-gota__300222" style="color: #CF8E2C">Sympla</a>/Local
+          do evento</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Contatos
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">forrodagota@gmail.com/(71)3333-3333</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Info. Extra
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">Open Bar de Catuaba pra quem estiver com a camisa do f4a</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Descrição
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota
+          #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ultima_linha">
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
 </ion-content>

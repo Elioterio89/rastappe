@@ -1,6 +1,10 @@
 
 page-evento-descricao {
 ///////////////////////
+
+.fab-md-prime {
+    color: #7d551a;
+}
 .header-md::after{
     bottom: -10px;  
     
@@ -62,9 +66,78 @@ max-height: 200px;
   margin-bottom:0px;
   padding:  0px;  
 }
+
+.titulo-header{
+    color: #fff;
+    margin: 1px;
+    padding: 3px;
+}
+
+.texto-infor{
+    color: #fff;
+    margin: 1px;
+    padding: 3px;
+}
+.linha{
+height: auto;
+}
+
+.grid-info{
+    background-color:transparentize($color: #7d551a, $amount: 1);
+}
+.colum{
+background-color: #7d551a;
+}
+
+.rstp-icone-conteudo{
+    font-size: 26px;
+    color: #7d551a;
+  }
+
+  .rstp-icone{
+    font-size: 50px;
+    color: #7d551a;
+  
+  }
+
+
+.btn-fab-conteudo{
+    border-style: solid;
+    border: 2px solid #7d551a;  
+  }
+
+
+  .btn-fab-evento{
+
+    border-style: solid;
+    border: 2px solid #7d551a;  
+  }
+.ultima_linha{
+    height: 50px;
+}
+
+.card-end-list{
+    background-color:transparentize($color: #CF8E2C, $amount: 1);
+    height: 30px;
+  }
+
+.fab_compartilha{
+    top: 28px; 
+    right: 65px;   
+}
+
+.fab_map{
+    top: 28px; 
+}
+
 .background-page {
 
     background-image: url("../../assets/imgs/bg_marca_dagua.png"); 
+    height:100%;
+    width:100%;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
