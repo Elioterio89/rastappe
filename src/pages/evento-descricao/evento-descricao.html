@@ -1,43 +1,32 @@
 <ion-header class="header_evento">
 
   <ion-navbar color="prime" class="nav_evento">
-    <ion-title class="nav_evento">Evento</ion-title>
+    <ion-title class="nav_evento">{{evento.nome}}</ion-title>
   </ion-navbar>
-  <ion-fab right top class="fab_map">
+  <ion-fab right bottom class="fab_map">
     <button ion-fab mini class="btn-fab-conteudo" color="prime" (click)="abrirMapa()">
       <ion-icon name="md-map" class="rstp-icone-conteudo"> </ion-icon>
     </button>
   </ion-fab>
-  <ion-fab right top class="fab_compartilha">
+  <ion-fab right bottom class="fab_compartilha">
     <button ion-fab mini class="btn-fab-conteudo" color="prime">
       <ion-icon name="md-share" class="rstp-icone-conteudo"> </ion-icon>
-    </button>
-    <ion-fab-list side="bottom">
-      <button ion-fab class="btn-fab-conteudo" color="prime">
-        <ion-icon name="logo-whatsapp" class="rstp-icone-conteudo"> </ion-icon>
-      </button>
-      <button ion-fab class="btn-fab-conteudo" color="prime">
-        <ion-icon name="logo-facebook" class="rstp-icone-conteudo"> </ion-icon>
-      </button>
-      <button ion-fab class="btn-fab-conteudo" color="prime">
-        <ion-icon name="logo-google" class="rstp-icone-conteudo"> </ion-icon>
-      </button>
-    </ion-fab-list>
+    </button> 
   </ion-fab>
   <img src=" {{evento.banner}}" class="img-evento">
-  <ion-fab right top class="data_evento">
+  <ion-fab right top  class="data_evento">
     <ion-badge class="bd-data_evento">
       <h1 color="sub" class="boton_data">16
         <p class="mes-evento">Jul/2018</p>
       </h1>
     </ion-badge>
   </ion-fab>
-  <ion-card class="card_descricao_evento">
+ <!-- <ion-card class="card_descricao_evento">
 
-    <p class="titulo_evento"> {{evento.nome}}</p>
+    <p class="titulo_evento"> </p>
     <p class="endereco_evento"> {{evento.endereco}}</p>
 
-  </ion-card>
+  </ion-card>-->
 </ion-header>
 
 
@@ -57,6 +46,15 @@
         <p class="texto-infor">Forro da Gota e Carua(SP)</p>
       </ion-col>
     </ion-row>
+    <ion-row class="linha">
+        <ion-col col-3 class="colum ">
+          <p class="titulo-header">Local
+            <p>
+        </ion-col>
+        <ion-col col-9 class="colum">
+          <p class="texto-infor">Arraiá F4a','2ªTrv Domningos Rabelo,100-Ribeira,Salvador(BA)</p>
+        </ion-col>
+      </ion-row>
     <ion-row class="linha">
       <ion-col col-3 class="colum">
         <p class="titulo-header">Produção
@@ -81,7 +79,7 @@
           <p>
       </ion-col>
       <ion-col col-9 class="colum">
-        <p class="texto-infor"><a href="https://www.sympla.com.br/forro-da-gota__300222" style="color: #CF8E2C">Sympla</a>/Local
+        <p class="texto-infor"><a href="https://www.sympla.com.br/forro-da-gota__300222" style="color: #fd9900">Sympla</a>/Local
           do evento</p>
       </ion-col>
     </ion-row>
