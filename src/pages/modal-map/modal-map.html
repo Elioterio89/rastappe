@@ -1,22 +1,27 @@
 
 <ion-content padding class="modalmapa">
-
+  <div class="overlay" (click)="fecharMapa()">
 <ion-card class="cardmodalmapa">
   <ion-card-header class="headermodalmapa">
     Localização
   </ion-card-header>
   <ion-card-content>
     <img src="../../assets/imgs/local.png" >
-  </ion-card-content>
-  <ion-footer class="footermodal">   
-    <button ion-button class="btn-modal " round (click)="fecharMapa()" >
-      <ion-icon name="md-close" color="terci" ></ion-icon>      
-    </button>
-    <button ion-button round class="btn-modal "  > 
-      <ion-icon name="md-pin" color="terci" ></ion-icon>      
-    </button>
-  </ion-footer>
-  
-</ion-card>
+ 
+   </ion-card-content>
+   <ion-row class="footermoodal">
+     <ion-col>
+      <button ion-button class="btn-modal " round (click)="fecharMapa()" >
+        <ion-icon name="md-close" color="terci" ></ion-icon>      
+      </button>
+     </ion-col>
+     <ion-col>
+      <button ion-button round class="btn-modal "  > 
+        <ion-icon name="md-pin" color="terci" ></ion-icon>      
+      </button>
+     </ion-col>
+   </ion-row>
 
+</ion-card>
+</div>
 </ion-content>
