@@ -18,8 +18,11 @@ export class ModalMapPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
   }
 
-
   fecharMapa(){
+    this.viewCtrl.dismiss();
+  }
+
+  fecharMapa2(){
     this.viewCtrl.dismiss();
   }
 

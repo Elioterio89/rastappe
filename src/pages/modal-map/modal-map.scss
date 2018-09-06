@@ -1,62 +1,85 @@
 page-modal-map {
 
-/////////////////////////
-.card-content-md {
-  padding: 0px;
-}
-
-.md .modal-wrapper {
-  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.4) !important;
-  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.4) !important;
-}
-
-.modalmapa{
-  background-color:transparentize($color: #000, $amount: 0.9 ) !important;
-}
-
-.headermodalmapa{
-  color: #f4f4f4 !important;
-  font-size: 6vw;
-  background-color: #CF8E2C !important; 
-  background-image: url("../../assets/imgs/bg_marca_dagua.png") !important;
-
-}
-.footermoodal{
-position: absolute;
-}
-
-.cardmodalmapa{
-  border: 3px solid #7d551a !important;
-  border-radius: 2px !important;
-  width: calc(100% ) !important;
-  max-width: 250px !important;
-  max-height:350px !important;
-  height: calc(100% - 0px) !important;
-  -webkit-border-radius: 30px !important;
-  -moz-border-radius: 30px !important;
-  border-radius:30px !important;
-  margin: auto !important;
-  margin-top:20% !important;
-
-}
+    /////////////////////////
+    .card-content-md {
+      padding: 0px;
+    }
 
 
-.ion-page {
-background-color:rgba(0, 0, 0, 0.6)!important;
-}
+    [col-6] {
+      padding: 0px; 
+    }
 
-.button-md.activated {
-  background-color: #7d551a !important;
-};
-////////////////////////
+    .overlay{
+      height: 100%;
+      width: 100%;      
+    }
 
-.btn-modal{
-      border-style: solid !important;
-      border: 2px solid #7d551a !important;
-      height: 55px;
-      width:  55px;
-      background-color:#CF8E2C;
-}
+    .md .modal-wrapper {
+      -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.4) !important;
+      box-shadow: 0 0px 0px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    .modalmapa{
+        background-color:transparentize($color: #000, $amount: 0.9 ) !important;
+      }
+
+    .headermodalmapa{
+      padding: 10PX !important;
+      background-color: #CF8E2C !important; 
+      background-image: url("../../assets/imgs/bg_marca_dagua.png") !important;
+
+    }
+    .footermoodal{
+    position: absolute;
+    width: 250px;
+
+    }
+
+    .imgmap{
+      position: relative;
+      width: 248px;
+      height: 300PX;
+    }
+
+    .cardmodalmapa{
+      border: 3px solid #7d551a !important;
+      border-radius: 2px !important;
+      width: calc(100% ) !important;
+      max-width: 250px !important;
+      max-height:350px !important;
+      height: calc(100% - 0px) !important;
+      -webkit-border-radius: 30px !important;
+      -moz-border-radius: 30px !important;
+      border-radius:30px !important;
+      margin: auto !important;
+      margin-top:20% !important;
+
+    }
+
+    .ion-page {
+    background-color:rgba(0, 0, 0, 0.6)!important;
+    }
+
+    .button-md.activated {
+      background-color: #7d551a !important;
+    };
+    ////////////////////////
+
+      .btn-modal{
+            border-style: solid !important;
+            border: 2px solid #7d551a !important;
+            height: 55px;
+            width:  55px;
+            background-color:#CF8E2C;
+            position: absolute;
+            margin-top: 225px;
+            margin-left: 34px;
+      }
+      .titulomodal{
+        color: #f4f4f4 !important;
+        font-size: 25px;
+      }
 
 
 }
