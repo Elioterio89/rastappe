@@ -88,7 +88,7 @@ page-eventos{
   height: 35px;
   width:  35px;
   border-style: solid;
-  border: 2px solid #7d551a;  
+  border: 2px solid #442d0b;  
 }
 
 .btn-fab-externo{
@@ -151,7 +151,7 @@ ion-checkbox{
 
 .fab-evento-data{
   position: absolute ;
-  background: rgba(126, 85, 26,0.7);
+  background-color:transparentize($color: #f7f7f7, $amount: 0.9);
   height: 100%;
   line-height: 16px;
   padding-left: 0px;
@@ -247,7 +247,7 @@ ion-checkbox{
 .card-informaçoes-conteudo{
         width: auto;
         height: auto;
-        background-color:transparentize($color: #7d551a, $amount: 0.4);       
+        background-color:transparentize($color: #f7f7f7, $amount: 0.9);       
         text-align: center;
         padding-left:0px;
         padding-right:0px;
@@ -285,16 +285,16 @@ ion-checkbox{
   
   .titulo-header{ 
     text-align: left;
-    font-size: 0.9rem; 
-    color:#f7f7f7;   
-//font-weight: bold;
+    font-size: 1.1rem; 
+    color:#7d551a;   
+  font-weight: bold;
   }
 }
 .content-header{
   padding:0px; 
     .texto-infor{
       text-align: left;
-      font-size: 1.2rem;  
+      font-size: 1.5rem;  
     }
 }
 
@@ -458,7 +458,7 @@ left:1px;
   margin-left: 0%;
   margin-top: 0%;
   margin-bottom: 0%;
-  background-color:transparentize($color: #7d551a, $amount: 0.1);
+  background-color:transparentize($color: #f7f7f7, $amount: 0.5);
   //background: linear-gradient(90deg,rgba(126, 84, 26, 0.925) 5%,transparentize($color: #fff, $amount: 0.8) 95%);
 }
 
