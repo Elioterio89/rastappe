@@ -11,6 +11,7 @@ page-menu {
     .card-background-page {
 
         background-image: url("../../assets/imgs/bg_marca_dagua.png"); 
+        background-color: #CF8E2C;
         ion-card {
           position: relative;
           text-align: center;
@@ -58,6 +59,9 @@ page-menu {
         width: 100%;
     
       }
+      .card-background{
+        background-color: #fff;
+      }
 
       .avatar-grupo {
         border-radius: 50%;
@@ -80,17 +84,6 @@ page-menu {
         width: 100%;
         color: #fff !important;
       }
-
-      .card-background-page {
-
-        background-image: url("../../assets/imgs/bg_marca_dagua.png"); 
-        ion-card {
-          position: relative;
-          text-align: center;
-          background-color:transparentize($color: #CF8E2C, $amount: 0.2)
-          
-        }
-    }
 
     .icon-menu {
         color :  #CF8E2C;    

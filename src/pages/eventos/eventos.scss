@@ -265,7 +265,7 @@ ion-checkbox{
 }
 
 
-
+// #f7f7f7e0
 
 
 .list-evetos-btn{
@@ -432,9 +432,36 @@ left:1px;
   margin-left: 0%;
   margin-top: 0%;
   margin-bottom: 0%;
+  border: 0.5px solid #7d551a;
   background-color:transparentize($color: #fff, $amount: 1);
   //background: linear-gradient(90deg,rgba(0, 0, 0, 0.9) 5%,transparentize($color: #fff, $amount: 1) 95%);
   //background: linear-gradient(90deg, #000 40%, transparentize($color: #fff, $amount: 1) 60%);
+}
+
+.colum{
+  //background-color: #f7f7f7e0;
+  //border-bottom: 1px solid #7d551a4a;
+  //background-color: #7d551a;
+  text-align: left;
+  padding-left: 2px;
+  .colum-texto-infor{  
+    text-align: left;
+    color:#7d551a;   
+    font-size: 1.5rem;  
+  }
+}
+
+
+.colum-titulo{   
+  padding: 0px;
+  padding-left: 2px;
+  text-align: left;
+  
+  .colum-titulo-header{
+    font-size: 1.2rem; 
+    color:#7d551a;   
+    font-weight: bold;
+  }
 }
 
 .card-conteudo{
@@ -444,6 +471,8 @@ left:1px;
   position:relative;
   background-color:transparentize($color: #fff, $amount: 1);
   }
+
+
 .item_evento{ 
   height: 30%;
   width: 100%;
@@ -458,7 +487,7 @@ left:1px;
   margin-left: 0%;
   margin-top: 0%;
   margin-bottom: 0%;
-  background-color:transparentize($color: #f7f7f7, $amount: 0.5);
+  background-color:transparentize($color: #f7f7f7, $amount: 0.3);
   //background: linear-gradient(90deg,rgba(126, 84, 26, 0.925) 5%,transparentize($color: #fff, $amount: 0.8) 95%);
 }
 
@@ -466,7 +495,7 @@ left:1px;
 
   .card-background-page {
 
-    background-image: url("../../assets/imgs/bg_marca_dagua.png"); 
+    //background-image: url("../../assets/imgs/bg_marca_dagua.png"); 
     ion-card {
       position: relative;
       text-align: center;
@@ -574,7 +603,10 @@ left:1px;
   }
 
   .bg{
-    background-image: url("../../assets/imgs/bg_marca_dagua.png");        
+    background: 
+    {
+      image: url("../../assets/imgs/bg_marca_dagua.png");     
+    };    
     background-color: #CF8E2C;
     height:100%;
     width:100%;   
@@ -582,10 +614,10 @@ left:1px;
     align-items: center;
     justify-content: center;
   }
- 
+
   .bgView2 {
 
-    background-image: url("../../assets/imgs/bg_marca_dagua.png");
+    
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -600,9 +632,13 @@ left:1px;
 
   .scroll .scroll-content{
     overflow:auto;
+    width: auto;
+
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius:30px;
+    background-color:transparentize($color: #CF8E2C, $amount: 0.3);
+    //border: 1.5px solid #fff;
 
   }
 
