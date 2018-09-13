@@ -22,7 +22,7 @@ page-eventos{
 }
 .card-end-list{
   background-color:transparentize($color: #CF8E2C, $amount: 1);
-  height: 30px;
+  margin-bottom: 100px;
 }
 .bg-evento-list{
   background-color:transparentize($color: #CF8E2C, $amount: 0.4);
@@ -180,6 +180,7 @@ ion-checkbox{
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
+  width: auto !important;
 }
 .list-evetos{
   background-color:transparentize($color: #CF8E2C, $amount: 1);
@@ -273,6 +274,7 @@ ion-checkbox{
   //padding-left: 10px;
   //padding-right: 2px;
   width: 100%;
+  padding: 0px !important;
 
 }
 
@@ -432,8 +434,10 @@ left:1px;
   margin-left: 0%;
   margin-top: 0%;
   margin-bottom: 0%;
-  border: 0.5px solid #7d551a;
+  border: 1.0px solid #7d551a;
   background-color:transparentize($color: #fff, $amount: 1);
+
+  
   //background: linear-gradient(90deg,rgba(0, 0, 0, 0.9) 5%,transparentize($color: #fff, $amount: 1) 95%);
   //background: linear-gradient(90deg, #000 40%, transparentize($color: #fff, $amount: 1) 60%);
 }
@@ -480,9 +484,6 @@ left:1px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; 
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px; 
   margin-right: 0%;
   margin-left: 0%;
   margin-top: 0%;
