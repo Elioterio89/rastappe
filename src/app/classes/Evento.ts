@@ -14,7 +14,7 @@ export class Evento {
     public descricao : string;
 
 
-    constructor(pBanner: string, pId: number,pAtracoes:string, pDia:DateTime,pLocal:string,
+    constructor(pBanner: string, pId: number,pAtracoes:string, pDia:string,pLocal:string,
             pProducoes:string,pValores:string,pVenda:string,pContatos:string,
             pInfoExtra:string,pDescricao:string) 
     {
