@@ -21,7 +21,7 @@ export class Evento {
         
         this.banner = pBanner;
         this.id = pId;
-        this.dia =pDia;
+        this.formatedata(pDia);
         this.atracoes=pAtracoes;
         this.local =pLocal;
         this.producao=pProducoes;
@@ -30,5 +30,9 @@ export class Evento {
         this.contatos =pContatos;
         this.infoExtra=pInfoExtra;
         this.descricao =pDescricao;
+    }
+
+    private formatedata( pDia:string){
+
     }
 }
