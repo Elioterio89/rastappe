@@ -78,13 +78,13 @@ box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5)!important;
 }
 
 .titulo-header{
-    color: #fff;
+    color: #7d551a;
     margin: 1px;
     padding: 3px;
 }
 
 .texto-infor{
-    color: #fff;
+    color: #7d551a;
     margin: 1px;
     padding: 3px;
 }
@@ -97,7 +97,8 @@ height: auto;
     background-color:transparentize($color: #7d551a, $amount: 1);
 }
 .colum{
-    background-color: #7d551a6e;
+    background-color: #f7f7f7e0;
+    border: 1px solid #7d551a4a;
 //background-color: #7d551a;
 }
 
