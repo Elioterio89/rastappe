@@ -58,8 +58,18 @@ page-eventos{
     max-width: 1024px;
     height: 100%;
     max-height: 200px;
-
+    
   }
+
+  .img_evento{
+    width: 100%;
+    max-width: 1024px;
+    height: 100%;
+    max-height: 200px; 
+    min-height:100px ;   
+    min-width: 300px;
+  }
+
 
   .card_slide{ 
     height: 100%;
@@ -176,11 +186,17 @@ ion-checkbox{
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
 }
 .img-evento{
+  width: 100%;
+  max-width: 1024px;
+  height:  121px;
+  max-height: 200px;
+  min-height: 121px;
+  min-width: 300px;
 
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  width: auto !important;
+ // width: auto !important;
 }
 .list-evetos{
   background-color:transparentize($color: #CF8E2C, $amount: 1);

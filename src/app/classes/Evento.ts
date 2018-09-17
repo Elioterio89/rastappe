@@ -3,7 +3,7 @@ import { DateTime } from "ionic-angular/umd";
 export class Evento {
     public banner: string;
     public id: number
-    public dia:DateTime;
+    public dia:Date;
     public atracoes :string;
     public local : string;
     public producao: string;
@@ -14,14 +14,15 @@ export class Evento {
     public descricao : string;
 
 
-    constructor(pBanner: string, pId: number,pAtracoes:string, pDia:string,pLocal:string,
+    constructor(pBanner: string, pId: number,pAtracoes:string, pDia:Date,pLocal:string,
             pProducoes:string,pValores:string,pVenda:string,pContatos:string,
             pInfoExtra:string,pDescricao:string) 
     {
         
+        
         this.banner = pBanner;
         this.id = pId;
-        this.formatedata(pDia);
+        this.dia=pDia;
         this.atracoes=pAtracoes;
         this.local =pLocal;
         this.producao=pProducoes;
@@ -30,9 +31,11 @@ export class Evento {
         this.contatos =pContatos;
         this.infoExtra=pInfoExtra;
         this.descricao =pDescricao;
+
+        
+        //pDia.getFullYear().valueOf()
+
+        
     }
 
-    private formatedata( pDia:string){
-
-    }
 }
