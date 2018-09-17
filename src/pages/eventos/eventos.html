@@ -67,9 +67,9 @@
                                     <ion-thumbnail item-start class="fab-evento-data">
                                         <ion-fab left top class="fab-data">
                                             <ion-badge class="data-evento" item-end>
-                                                <h1 color="sub">16</h1>
+                                                <h1 color="sub">{{item.itemEvento.dia.getDate().toString()}}</h1>
                                                 <br>
-                                                <p class="data-evento">{{nomeMes}}/{{item.itemEvento.dia.getFullYear()}}</p>
+                                                <p class="data-evento">{{mes[(item.itemEvento.dia.getMonth())]}}/{{item.itemEvento.dia.getUTCFullYear() }}</p>
                                                 <p class="hora-evento">{{item.itemEvento.dia.getHours().toString()}}:{{((item.itemEvento.dia.getMinutes()<10?"0":"") + item.itemEvento.dia.getMinutes())}}</p>
                                             </ion-badge>
                                         </ion-fab>
@@ -97,7 +97,7 @@
                                                     </ion-row>
                                                     <ion-row class="linha">
                                                         <ion-col class="colum">
-                                                            <p class="colum-texto-infor">Forro da Gota e Carua(SP)</p>
+                                                            <p class="colum-texto-infor">{{item.itemEvento.atracoes}}</p>
                                                         </ion-col>
                                                     </ion-row>
                                                 </ion-card-content>
@@ -112,7 +112,7 @@
                                                     </ion-row>
                                                     <ion-row class="linha">
                                                         <ion-col class="colum">
-                                                            <p class="colum-texto-infor">Amsterdam-Salvador(BA)</p>
+                                                            <p class="colum-texto-infor">{{item.itemEvento.local}}</p>
                                                         </ion-col>
                                                     </ion-row>
                                                 </ion-card-content>
@@ -127,7 +127,7 @@
                                                     </ion-row>
                                                     <ion-row class="linha">
                                                         <ion-col class="colum">
-                                                            <p class="colum-texto-infor">Forró da Gota</p>
+                                                            <p class="colum-texto-infor">{{item.itemEvento.producao}}</p>
                                                         </ion-col>
                                                     </ion-row>
                                                 </ion-card-content>
@@ -142,7 +142,7 @@
                                                     </ion-row>
                                                     <ion-row class="linha">
                                                         <ion-col class="colum">
-                                                            <p class="colum-texto-infor">20R$(Sympla)/30R$(Até as 23hrs)/40R$(Após 23hrs)</p>
+                                                            <p class="colum-texto-infor">{{item.itemEvento.valores}}</p>
                                                         </ion-col>
                                                     </ion-row>
                                                 </ion-card-content>
@@ -158,7 +158,7 @@
                                                     <ion-row class="linha">
                                                         <ion-col class="colum">
                                                             <p class="colum-texto-infor">
-                                                                <a href="https://www.sympla.com.br/forro-da-gota__300222" style="color: #CF8E2C">Sympla</a>/Local do evento</p>
+                                                                {{item.itemEvento.venda}}</p>
                                                         </ion-col>
                                                     </ion-row>
                                                 </ion-card-content>
@@ -173,7 +173,7 @@
                                                     </ion-row>
                                                     <ion-row class="linha">
                                                         <ion-col class="colum">
-                                                            <p class="colum-texto-infor">forrodagota@gmail.com/(71)3333-3333</p>
+                                                            <p class="colum-texto-infor">{{item.itemEvento.contatos}}</p>
                                                         </ion-col>
                                                     </ion-row>
                                                 </ion-card-content>
@@ -188,7 +188,7 @@
                                                     </ion-row>
                                                     <ion-row class="linha">
                                                         <ion-col class="colum">
-                                                            <p class="colum-texto-infor">pen Bar de Catuaba pra quem estiver com a camisa do f4a</p>
+                                                            <p class="colum-texto-infor">{{item.itemEvento.infoExtra}}</p>
                                                         </ion-col>
                                                     </ion-row>
                                                 </ion-card-content>
@@ -203,10 +203,7 @@
                                                     </ion-row>
                                                     <ion-row class="linha">
                                                         <ion-col class="colum">
-                                                            <p class="colum-texto-infor">Peeense num salão chameguento! Se achegue sexta, às 23h, lá no
-                                                                @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos
-                                                                #pensenumralabuchobom #forró #forróemsalvador #forróbaiano
-                                                                #forródabahia @hedernovaes</p>
+                                                            <p class="colum-texto-infor">{{item.itemEvento.descricao}}</p>
                                                         </ion-col>
                                                     </ion-row>
                                                 </ion-card-content>
