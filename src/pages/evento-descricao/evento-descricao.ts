@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, AlertController, MenuController } from 'ionic-angular';
 import { CardSlide } from '../../app/classes/CardSlide ';
 import { ModalMapPage } from '../modal-map/modal-map';
+import { Evento } from '../../app/classes/Evento';
 
 @IonicPage()
 @Component({
@@ -9,12 +10,13 @@ import { ModalMapPage } from '../modal-map/modal-map';
   templateUrl: 'evento-descricao.html',
 })
 export class EventoDescricaoPage {
-  evento:CardSlide;
-
+  evento:Evento;
+  mes: any = [  ];
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public modalCtrl:ModalController,public alertCtrl: AlertController, public menuCtrl: MenuController) {
+      this.mes = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez',''];  
      this.evento = navParams.get('evento');
      console.log(this.evento );
      

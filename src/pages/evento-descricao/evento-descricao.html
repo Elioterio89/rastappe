@@ -16,8 +16,9 @@
   <img src=" {{evento.banner}}" class="img-evento">
   <ion-fab right top  class="data_evento">
     <ion-badge class="bd-data_evento">
-      <h1 color="sub" class="boton_data">16
-        <p class="mes-evento">Jul/2018</p>
+      <h1 color="sub" class="boton_data">{{evento.dia.getDate().toString()}}
+        <p class="mes-evento">{{mes[(evento.dia.getMonth())]}}/{{evento.dia.getUTCFullYear() }}<br>
+          {{evento.dia.getHours().toString()}}:{{((evento.dia.getMinutes()<10?"0":"") + evento.dia.getMinutes())}}</p>
       </h1>
     </ion-badge>
   </ion-fab>
@@ -43,7 +44,7 @@
           <p>
       </ion-col>
       <ion-col col-9 class="colum">
-        <p class="texto-infor">Forro da Gota e Carua(SP)</p>
+        <p class="texto-infor">{{evento.atracoes}}</p>
       </ion-col>
     </ion-row>
     <ion-row class="linha">
@@ -52,7 +53,7 @@
             <p>
         </ion-col>
         <ion-col col-9 class="colum">
-          <p class="texto-infor">Arraiá F4a','2ªTrv Domningos Rabelo,100-Ribeira,Salvador(BA)</p>
+          <p class="texto-infor">{{evento.local}}</p>
         </ion-col>
       </ion-row>
     <ion-row class="linha">
@@ -61,7 +62,7 @@
           <p>
       </ion-col>
       <ion-col col-9 class="colum">
-        <p class="texto-infor">Forró da Gota</p>
+        <p class="texto-infor">{{evento.producao}}</p>
       </ion-col>
     </ion-row>
     <ion-row class="linha">
@@ -70,7 +71,7 @@
           <p>
       </ion-col>
       <ion-col col-9 class="colum">
-        <p class="texto-infor">20R$(Sympla)/30R$(Até as 23hrs)/40R$(Após 23hrs)</p>
+        <p class="texto-infor">{{evento.valores}}</p>
       </ion-col>
     </ion-row>
     <ion-row class="linha">
@@ -79,8 +80,7 @@
           <p>
       </ion-col>
       <ion-col col-9 class="colum">
-        <p class="texto-infor"><a href="https://www.sympla.com.br/forro-da-gota__300222" style="color: #fd9900">Sympla</a>/Local
-          do evento</p>
+        <p class="texto-infor">{{evento.venda}}</p>
       </ion-col>
     </ion-row>
     <ion-row class="linha">
@@ -89,7 +89,7 @@
           <p>
       </ion-col>
       <ion-col col-9 class="colum">
-        <p class="texto-infor">forrodagota@gmail.com/(71)3333-3333</p>
+        <p class="texto-infor">{{evento.contatos}}</p>
       </ion-col>
     </ion-row>
     <ion-row class="linha">
@@ -98,7 +98,7 @@
           <p>
       </ion-col>
       <ion-col col-9 class="colum">
-        <p class="texto-infor">Open Bar de Catuaba pra quem estiver com a camisa do f4a</p>
+        <p class="texto-infor">{{evento.infoExtra}}</p>
       </ion-col>
     </ion-row>
     <ion-row class="linha">
@@ -107,8 +107,7 @@
           <p>
       </ion-col>
       <ion-col col-9 class="colum">
-        <p class="texto-infor">Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota
-          #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes</p>
+        <p class="texto-infor">{{evento.descricao}}</p>
       </ion-col>
     </ion-row>
     <ion-row class="ultima_linha">
