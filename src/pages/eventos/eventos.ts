@@ -7,6 +7,7 @@ import { CardSlide } from '../../app/classes/CardSlide ';
 import { Evento } from '../../app/classes/Evento';
 import { MenuController } from 'ionic-angular';
 import { EventoDescricaoPage } from '../evento-descricao/evento-descricao';
+import { Calendar} from '@ionic-native/calendar';
 
 
 
@@ -30,7 +31,8 @@ export class EventosPage {
     public alertCtrl: AlertController,
     public sanitizer: DomSanitizer,
     public modalCtrl: ModalController,
-    public menuCtrl: MenuController) { 
+    public menuCtrl: MenuController,
+    private calendar: Calendar) { 
     this.mes = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez',''];    
       
 
@@ -148,9 +150,15 @@ export class EventosPage {
       
 
     );
+    
+  this.calendar.createCalendar('MyCalendar').then(
+    (msg) => { console.log(msg); },
+    (err) => { console.log(err); }
+  );
  
 
   }
+  
 
   formatMes( pMes){   
 

@@ -42,16 +42,19 @@ page-eventos{
 
   }
  .btn {
+   padding-left: 12px !important;
     top: 5px;
     width: 10px;
     height: 30px;
   }
-  
+  .colseach{
+    padding-right: 0px !important; 
+  }
   .icn{
     font-size: 25px;
     color: #fff;
     border: #fff;
-    text-align: left;
+   // text-align: left;
   }
   .img_slide{
     width: 100%;
@@ -320,6 +323,12 @@ ion-checkbox{
 ////////////////////////////////////////////////////////
 
 
+.searchbar-md {
+  padding: 8px;
+  padding-right: 0px;
+  padding-left: 4px;
+}
+
 .fab-md-prime {
   color: #7d551a; 
     border: 2px solid #7d551a !important; 
@@ -556,9 +565,16 @@ left:1px;
         width: auto;
         margin: auto;
         flex-basis: 50px;
-          border-radius: 30px;
+          border-radius: 40px;
+          -webkit-border-radius: 40px;
+          -moz-border-radius: 40px;
 
      }     
+´
+
+.nmAPP{
+  text-align: right;
+}
     
     .avatar {
       
