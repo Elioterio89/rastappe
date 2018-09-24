@@ -7,6 +7,7 @@ import { CardSlide } from '../../app/classes/CardSlide ';
 import { Evento } from '../../app/classes/Evento';
 import { MenuController } from 'ionic-angular';
 import { EventoDescricaoPage } from '../evento-descricao/evento-descricao';
+import { CalendarioModalPage } from '../calendario-modal/calendario-modal';
 
 
 
@@ -166,7 +167,9 @@ export class EventosPage {
  abrirMapa() {
     this.modalCtrl.create(ModalMapPage).present();
   }
-
+  abrirCalendario(){
+    this.modalCtrl.create(CalendarioModalPage).present();
+  }
   AlertNomelista() {
     let prompt = this.alertCtrl.create({
       title: "Lista Amiga",

@@ -16,6 +16,8 @@ import { BlogPage } from '../pages/blog/blog';
 import { LojaPage } from '../pages/loja/loja';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { EventoDescricaoPage } from '../pages/evento-descricao/evento-descricao';
+import { CalendarioModalPage } from '../pages/calendario-modal/calendario-modal';
+import { Calendar } from '@ionic-native/calendar';
 
 
 
@@ -31,7 +33,8 @@ import { EventoDescricaoPage } from '../pages/evento-descricao/evento-descricao'
     BlogPage,    
     LojaPage,
     PerfilPage,
-    EventoDescricaoPage
+    EventoDescricaoPage,
+    CalendarioModalPage
 
     
   ],
@@ -52,12 +55,14 @@ import { EventoDescricaoPage } from '../pages/evento-descricao/evento-descricao'
     BlogPage,
     LojaPage,    
     PerfilPage,
-    EventoDescricaoPage
+    EventoDescricaoPage,
+    CalendarioModalPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Calendar
   ]
 })
 export class AppModule {}
