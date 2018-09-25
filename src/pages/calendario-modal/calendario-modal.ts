@@ -24,9 +24,14 @@ export class CalendarioModalPage {
     currentYear: any;
     currentDate: any;
     eventList: any;
+    diasComEvento:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams ,private calendar: Calendar) {
     
+    this.diasComEvento  = new Array();
+    this.diasComEvento = [new Date(2018,9,23,20,0,0),new Date(2018,9,24,20,0,0),new Date(2018,9,29,20,0,0),new Date(2018,10,23,20,0,0)];
+
+
   }
   ionViewWillEnter() {
     this.date = new Date();
