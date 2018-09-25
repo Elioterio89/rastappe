@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
+import { DiaDoMes } from '../../app/classes/DiaDoMes';
 
 /**
  * Generated class for the CalendarioModalPage page.
@@ -16,9 +17,9 @@ import { Calendar } from '@ionic-native/calendar';
 })
 export class CalendarioModalPage {
     date: any;
-    daysInThisMonth: any;
-    daysInLastMonth: any;
-    daysInNextMonth: any;
+    daysInThisMonth: DiaDoMes[] = [];
+    daysInLastMonth: DiaDoMes[] = [];
+    daysInNextMonth: DiaDoMes[] = [];
     monthNames: string[];
     currentMonth: any;
     currentYear: any;
@@ -70,23 +71,24 @@ export class CalendarioModalPage {
     var firstDayThisMonth = new Date(this.date.getFullYear(), this.date.getMonth(), 1).getDay();
     var prevNumOfDays = new Date(this.date.getFullYear(), this.date.getMonth(), 0).getDate();
     for(var i = prevNumOfDays-(firstDayThisMonth-1); i <= prevNumOfDays; i++) {
-      this.daysInLastMonth.push(i);
+      this.daysInLastMonth.push(new DiaDoMes(false,i));
     }
   
     var thisNumOfDays = new Date(this.date.getFullYear(), this.date.getMonth()+1, 0).getDate();
     for (var i = 0; i < thisNumOfDays; i++) {
-      this.daysInThisMonth.push(i+1);
+      
+      this.daysInThisMonth.push(new DiaDoMes(false,i+1));
     }
   
     var lastDayThisMonth = new Date(this.date.getFullYear(), this.date.getMonth()+1, 0).getDay();
     var nextNumOfDays = new Date(this.date.getFullYear(), this.date.getMonth()+2, 0).getDate();
     for (var i = 0; i < (6-lastDayThisMonth); i++) {
-      this.daysInNextMonth.push(i+1);
+      this.daysInNextMonth.push(new DiaDoMes(false,i+1));
     }
     var totalDays = this.daysInLastMonth.length+this.daysInThisMonth.length+this.daysInNextMonth.length;
     if(totalDays<36) {
       for(var i = (7-lastDayThisMonth); i < ((7-lastDayThisMonth)+7); i++) {
-        this.daysInNextMonth.push(i);
+        this.daysInNextMonth.push(new DiaDoMes(false,i));
       }
     }
   }
