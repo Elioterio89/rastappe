@@ -16,14 +16,41 @@ page-calendario-modal {
         color: #999999;
         font-size: 90%;
       }
-      .currentDate, .otherDate {
-        padding: 5px;
+      .otherDate {
+        padding: 0px;
+        margin: 0px;        
+        color: #000;
+        background-color: white;
       }
       .currentDate {
         font-weight: bold;
         background-color: #CF8E2C;
         color: white;
-        border-radius: 30px;
+        border-radius: 50px;
+        padding: 3px !important;
+        margin: 0px;
+        min-width: 26px !important;
+        text-align:center !important;
+      }
+      .hojecomevento{
+        font-weight: bold;
+        padding: 3px !important;
+        min-width: 26px !important;
+        background-color: #CF8E2C;        
+        margin: 0px;
+        color: white;
+        border-radius: 50px;
+        border: 2px solid #7d551a;
+      }
+      .diacomevento{        
+        margin: 0px;
+        font-weight: bold;
+        padding: 3px !important;
+        min-width: 26px !important;
+        background-color: #FFFFFF;
+        color: #000;
+        border-radius:50px;
+        border: 2px solid #7d551a;
       }
       .calendar-header {
         background-color: #7d551a;

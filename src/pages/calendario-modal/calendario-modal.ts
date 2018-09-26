@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
 import { DiaDoMes } from '../../app/classes/DiaDoMes';
 
@@ -16,6 +16,7 @@ import { DiaDoMes } from '../../app/classes/DiaDoMes';
   templateUrl: 'calendario-modal.html',
 })
 export class CalendarioModalPage {
+    aux:boolean;
     date: any;
     daysInThisMonth: DiaDoMes[] = [];
     daysInLastMonth: DiaDoMes[] = [];
@@ -27,20 +28,24 @@ export class CalendarioModalPage {
     eventList: any;
     diasComEvento:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams ,private calendar: Calendar) {
+  constructor(public navCtrl: NavController, public navParams: NavParams ,private calendar: Calendar,public viewCtrl:ViewController) {
     
-    this.diasComEvento  = new Array();
-    this.diasComEvento = [new Date(2018,9,23,20,0,0),new Date(2018,9,24,20,0,0),new Date(2018,9,29,20,0,0),new Date(2018,10,23,20,0,0)];
+    
 
 
   }
   ionViewWillEnter() {
     this.date = new Date();
     this.monthNames = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+    this.diasComEvento  = new Array();
+    this.diasComEvento = [new Date(2018,7,25,20,0,0),new Date(2018,9,24,20,0,0),new Date(2018,9,29,20,0,0),new Date(2018,10,23,20,0,0)];
     this.getDaysOfMonth();
     this.loadEventThisMonth();
   }
 
+  fecharMapa2(){
+    this.viewCtrl.dismiss();
+  }
   loadEventThisMonth() {
     this.eventList = new Array();
     var startDate = new Date(this.date.getFullYear(), this.date.getMonth(), 1);
@@ -57,6 +62,7 @@ export class CalendarioModalPage {
     );
   }
   getDaysOfMonth() {
+    this.aux=false;
     this.daysInThisMonth = new Array();
     this.daysInLastMonth = new Array();
     this.daysInNextMonth = new Array();
@@ -76,8 +82,17 @@ export class CalendarioModalPage {
   
     var thisNumOfDays = new Date(this.date.getFullYear(), this.date.getMonth()+1, 0).getDate();
     for (var i = 0; i < thisNumOfDays; i++) {
-      
-      this.daysInThisMonth.push(new DiaDoMes(false,i+1));
+      this.diasComEvento.forEach(data => {
+        if(data.getDate()==(i+1) && (data.getMonth()+1)==(this.date.getMonth()+1)&& data.getFullYear()==this.date.getFullYear()&&this.aux==false){
+          this.daysInThisMonth.push(new DiaDoMes(true,i+1));
+          this.aux=true;
+        }
+      });
+
+      if(this.aux==false){
+        this.daysInThisMonth.push(new DiaDoMes(false,i+1));
+        }
+        this.aux=false;
     }
   
     var lastDayThisMonth = new Date(this.date.getFullYear(), this.date.getMonth()+1, 0).getDay();
