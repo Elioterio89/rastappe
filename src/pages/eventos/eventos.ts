@@ -8,6 +8,7 @@ import { Evento } from '../../app/classes/Evento';
 import { MenuController } from 'ionic-angular';
 import { EventoDescricaoPage } from '../evento-descricao/evento-descricao';
 import { CalendarioModalPage } from '../calendario-modal/calendario-modal';
+import { Filtro } from '../../app/classes/Filtro';
 
 
 
@@ -19,9 +20,11 @@ import { CalendarioModalPage } from '../calendario-modal/calendario-modal';
 })
 export class EventosPage {
   eventos: any = [];
+  eventosFiltro: any = [];
   itensSlide: Evento[] = [];
   rootPage = EventosPage;
   date :DateTime;
+  filtro:Filtro;
   mes: any = [  ];
 
 
@@ -33,6 +36,8 @@ export class EventosPage {
     public modalCtrl: ModalController,
     public menuCtrl: MenuController,
     ) { 
+    this.filtro = navParams.get('filtro');
+
     this.mes = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez',''];    
       
 
@@ -112,6 +117,9 @@ export class EventosPage {
       '',
       '')}
     ];
+
+
+
     this.itensSlide = new Array(
       new Evento('../../assets/imgs/1.jpg',1,'Arraiá F4a Ressaca  SJ','Discotecagem',
       new Date(2018,5,8,13,0,0),'2ªTrv Domningos Rabelo,100-Ribeira,Salvador(BA)','Escola de Dança -Forro 4º Andar',

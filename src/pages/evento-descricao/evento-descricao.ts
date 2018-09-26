@@ -18,7 +18,7 @@ export class EventoDescricaoPage {
     public modalCtrl:ModalController,public alertCtrl: AlertController, public menuCtrl: MenuController) {
       this.mes = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez',''];  
      this.evento = navParams.get('evento');
-     console.log(this.evento );
+     //console.log(this.evento );
      
   }
 

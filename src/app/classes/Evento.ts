@@ -35,7 +35,7 @@ export class Evento {
         this.descricao =pDescricao;
 
         
-       // pDia.getUTCFullYear().toString()
+        //pDia.getDate().toString()
 
         
     }
