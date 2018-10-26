@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
 import { DiaDoMes } from '../../app/classes/DiaDoMes';
+import { Storage } from '@ionic/storage';
+import { Filtro } from '../../app/classes/Filtro';
 
 /**
  * Generated class for the CalendarioModalPage page.
@@ -27,8 +29,10 @@ export class CalendarioModalPage {
     currentDate: any;
     eventList: any;
     diasComEvento:any;
+    filtro:Filtro;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams ,private calendar: Calendar,public viewCtrl:ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams ,private calendar: Calendar,
+          public viewCtrl:ViewController,private storage:Storage) {
     
     
 
@@ -43,7 +47,9 @@ export class CalendarioModalPage {
     this.loadEventThisMonth();
   }
 
-  fecharMapa2(){
+  fecharMapa2(dia){
+    this.filtro.data = dia;
+    this.storage.set('diaFiltro',this.filtro.data);
     this.viewCtrl.dismiss();
   }
   loadEventThisMonth() {

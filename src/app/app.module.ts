@@ -18,7 +18,7 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { EventoDescricaoPage } from '../pages/evento-descricao/evento-descricao';
 import { CalendarioModalPage } from '../pages/calendario-modal/calendario-modal';
 import { Calendar } from '@ionic-native/calendar';
-
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -42,6 +42,7 @@ import { Calendar } from '@ionic-native/calendar';
     ComponentsModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
