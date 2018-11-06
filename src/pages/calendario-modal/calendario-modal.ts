@@ -33,7 +33,7 @@ export class CalendarioModalPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams ,private calendar: Calendar,
           public viewCtrl:ViewController,private storage:Storage) {
-    
+            
     
 
 
@@ -48,6 +48,7 @@ export class CalendarioModalPage {
   }
 
   fecharMapa2(dia){
+    this.filtro = new Filtro(); 
     this.filtro.data = dia;
     this.storage.set('diaFiltro',this.filtro.data);
     this.viewCtrl.dismiss();

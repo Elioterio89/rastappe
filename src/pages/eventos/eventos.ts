@@ -9,6 +9,7 @@ import { MenuController } from 'ionic-angular';
 import { EventoDescricaoPage } from '../evento-descricao/evento-descricao';
 import { CalendarioModalPage } from '../calendario-modal/calendario-modal';
 import { Filtro } from '../../app/classes/Filtro';
+import { Storage } from '@ionic/storage';
 
 
 
@@ -24,6 +25,7 @@ export class EventosPage {
   itensSlide: Evento[] = [];
   rootPage = EventosPage;
   date :DateTime;
+  testeData:any;
   filtro:Filtro;
   mes: any = [  ];
 
@@ -35,7 +37,10 @@ export class EventosPage {
     public sanitizer: DomSanitizer,
     public modalCtrl: ModalController,
     public menuCtrl: MenuController,
+    private storage:Storage,
     ) { 
+
+      this.testeData = '5';
     this.filtro = navParams.get('filtro');
 
     this.mes = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez',''];    
@@ -215,7 +220,18 @@ export class EventosPage {
     });
 
   }
+  ionViewWillEnter() {
+
+  }
+
+  ionViewDidEnter(){
+    this.storage.get("diaFiltro").then((valor)=>{
+      this.testeData = valor;
+    });
+    
+  }
   ionViewDidLoad() {
+
     console.log('ionViewDidLoad EventosPage');
   }
 

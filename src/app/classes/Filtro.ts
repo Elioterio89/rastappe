@@ -1,7 +1,7 @@
 export class Filtro {
-    public data: Date;
+    public data: any;
 
-    constructor(pData: Date) {
+    constructor(pData: any) {
         this.data = pData;
     }
 }
