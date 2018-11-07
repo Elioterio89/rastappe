@@ -48,10 +48,8 @@ export class CalendarioModalPage {
   }
 
   fecharMapa2(dia){
-    this.filtro = new Filtro(); 
-    this.filtro.data = dia;
-    this.storage.set('diaFiltro',this.filtro.data);
-    this.viewCtrl.dismiss();
+
+    this.viewCtrl.dismiss(dia);
   }
   loadEventThisMonth() {
     this.eventList = new Array();

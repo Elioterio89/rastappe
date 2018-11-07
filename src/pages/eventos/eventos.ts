@@ -40,7 +40,7 @@ export class EventosPage {
     private storage:Storage,
     ) { 
 
-      this.testeData = '5';
+   
     this.filtro = navParams.get('filtro');
 
     this.mes = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez',''];    
@@ -177,11 +177,16 @@ export class EventosPage {
   detalharEvento(item) {
     this.navCtrl.push(EventoDescricaoPage, { evento: item });
   }
- abrirMapa() {
+  abrirMapa() {
     this.modalCtrl.create(ModalMapPage).present();
   }
   abrirCalendario(){
-    this.modalCtrl.create(CalendarioModalPage).present();
+    let pModal = this.modalCtrl.create(CalendarioModalPage);
+    pModal.onDidDismiss(data => {
+      this.testeData = data;
+      console.log(data);
+    });
+    pModal.present();   
   }
   AlertNomelista() {
     let prompt = this.alertCtrl.create({
@@ -220,17 +225,10 @@ export class EventosPage {
     });
 
   }
-  ionViewWillEnter() {
+  
 
-  }
 
-  ionViewDidEnter(){
-    this.storage.get("diaFiltro").then((valor)=>{
-      this.testeData = valor;
-    });
-    
-  }
-  ionViewDidLoad() {
+  ionViewDidLoad() {   
 
     console.log('ionViewDidLoad EventosPage');
   }
