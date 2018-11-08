@@ -42,7 +42,7 @@ export class CalendarioModalPage {
     this.date = new Date();
     this.monthNames = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
     this.diasComEvento  = new Array();
-    this.diasComEvento = [new Date(2018,7,25,20,0,0),new Date(2018,9,24,20,0,0),new Date(2018,9,29,20,0,0),new Date(2018,10,23,20,0,0)];
+    this.diasComEvento = [new Date(2018,7,25,20,0,0),new Date(2018,9,24,20,0,0),new Date(2018,9,29,20,0,0),new Date(2018,10,8,20,0,0)];
     this.getDaysOfMonth();
     this.loadEventThisMonth();
   }
@@ -79,17 +79,18 @@ export class CalendarioModalPage {
       this.currentDate = 999;
     }
   
-    var firstDayThisMonth = new Date(this.date.getFullYear(), this.date.getMonth(), 1).getDay();
+    var firstDayThisMonth = new Date(this.date.getFullYear(), this.date.getMonth(), 1).getDay();    
     var prevNumOfDays = new Date(this.date.getFullYear(), this.date.getMonth(), 0).getDate();
     for(var i = prevNumOfDays-(firstDayThisMonth-1); i <= prevNumOfDays; i++) {
       this.daysInLastMonth.push(new DiaDoMes(false,i));
     }
   
     var thisNumOfDays = new Date(this.date.getFullYear(), this.date.getMonth()+1, 0).getDate();
-    for (var i = 0; i < thisNumOfDays; i++) {
-      this.diasComEvento.forEach(data => {
+    //console.log( prevNumOfDays);
+    for (var i = 0; i < thisNumOfDays; i++) {     
+      this.diasComEvento.forEach(data => {       
         if(data.getDate()==(i+1) && (data.getMonth()+1)==(this.date.getMonth()+1)&& data.getFullYear()==this.date.getFullYear()&&this.aux==false){
-          this.daysInThisMonth.push(new DiaDoMes(true,i+1));
+          this.daysInThisMonth.push(new DiaDoMes(true,i+1,this.date.getMonth()+1,this.date.getFullYear()));          
           this.aux=true;
         }
       });

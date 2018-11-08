@@ -10,6 +10,7 @@ import { EventoDescricaoPage } from '../evento-descricao/evento-descricao';
 import { CalendarioModalPage } from '../calendario-modal/calendario-modal';
 import { Filtro } from '../../app/classes/Filtro';
 import { Storage } from '@ionic/storage';
+import { DiaDoMes } from '../../app/classes/DiaDoMes';
 
 
 
@@ -21,11 +22,12 @@ import { Storage } from '@ionic/storage';
 })
 export class EventosPage {
   eventos: any = [];
+  eventosFiltrados:any = [];
   eventosFiltro: any = [];
   itensSlide: Evento[] = [];
   rootPage = EventosPage;
   date :DateTime;
-  testeData:any;
+  dataFiltro:DiaDoMes;
   filtro:Filtro;
   mes: any = [  ];
 
@@ -122,7 +124,23 @@ export class EventosPage {
       '',
       '')}
     ];
+    
+    if(this.dataFiltro == null){
+      console.log(this.dataFiltro);
+     this.eventosFiltrados = this.eventos;
 
+    }else{
+      this.eventos.forEach(evento => {       
+         
+        evento.forEach(item =>{
+          console.log(item[1]);
+        });
+
+        //if(evento[]==(i+1) && (data.getMonth()+1)==(this.date.getMonth()+1)&& data.getFullYear()==this.date.getFullYear()&&this.aux==false){
+      //this.eventosFiltrados.push(new DiaDoMes(true,i+1,this.date.getMonth()+1,this.date.getFullYear()));          
+        //  }
+      });
+    }
 
 
     this.itensSlide = new Array(
@@ -183,8 +201,8 @@ export class EventosPage {
   abrirCalendario(){
     let pModal = this.modalCtrl.create(CalendarioModalPage);
     pModal.onDidDismiss(data => {
-      this.testeData = data;
-      console.log(data);
+      this.dataFiltro = data;
+      //console.log(data);
     });
     pModal.present();   
   }
@@ -225,11 +243,13 @@ export class EventosPage {
     });
 
   }
-  
+  ionViewWillEnter() {
+    this.dataFiltro = new DiaDoMes(false,0,0,0);
+  }
 
 
   ionViewDidLoad() {   
-
+    this.dataFiltro = new DiaDoMes(false,0,0,0);
     console.log('ionViewDidLoad EventosPage');
   }
 
