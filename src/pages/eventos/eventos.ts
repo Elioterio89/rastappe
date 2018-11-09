@@ -1,4 +1,4 @@
-import { Component, AUTO_STYLE } from '@angular/core';
+import { Component, AUTO_STYLE, ViewChild, TemplateRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, DateTime } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -20,6 +20,7 @@ import { DiaDoMes } from '../../app/classes/DiaDoMes';
   selector: 'page-eventos',
   templateUrl: 'eventos.html',
 })
+
 export class EventosPage {
   eventos: any = [];
   eventosFiltrados:any = [];
@@ -27,7 +28,7 @@ export class EventosPage {
   itensSlide: Evento[] = [];
   rootPage = EventosPage;
   date :DateTime;
-  dataFiltro:DiaDoMes;
+  dataFiltro:DiaDoMes ;
   filtro:Filtro;
   mes: any = [  ];
 
@@ -46,25 +47,25 @@ export class EventosPage {
     this.filtro = navParams.get('filtro');
 
     this.mes = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez',''];    
-      
+    this.dataFiltro = new DiaDoMes(false,0,0,0); 
 
     this.eventos = [
       { expanded: false ,itemEvento: new Evento('../../assets/imgs/eventos/0.png',0,'Forro da Gota','Forro da Gota + Agusto Luiz',
-      new Date(2018,5,8,23,0,0),'Amsterdan-Salvador(BA)','Forro da Gota',
+      new Date(2018,10,8,23,0,0),'Amsterdan-Salvador(BA)','Forro da Gota',
       '20R$(Sympla)/30R$(ate 23hrs)/40R$(Após 23Hrs)',
       'Sympla/Local do evento','forrodagota@gmail.com/(71)3333-3333',
       'open bar de catuaba ate 00hrs',
       'Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes')
       },
       { expanded: false ,itemEvento:  new Evento('../../assets/imgs/eventos/1.jpg',1,'','Trio Caruá',
-      new Date(2018,1,18,18,0,0),'Tenda dos guardiões-São Carlos(SP)','Forro dos Guardões',
+      new Date(2018,10,8,18,0,0),'Tenda dos guardiões-São Carlos(SP)','Forro dos Guardões',
       'Entrada Franca',
       '','triocarua@gmail.com/(15)3444-3333',
       '',
       'Forro dos guardiões apresenta :TRIO CARUÁ')
       },
       { expanded: false ,itemEvento:   new Evento('../../assets/imgs/eventos/2.jpeg',2,'','Trio Bastião + PEIXELETRICO',
-      new Date(2018,6,13,8,0,0),'Remelexo Brasil-São Paulo(SP)','Remeleio Brasil',
+      new Date(2018,10,9,8,0,0),'Remelexo Brasil-São Paulo(SP)','Remeleio Brasil',
       '30R$',
       'Local do evento','FB.COM/REMELEXOBR ',
       '',
@@ -94,7 +95,7 @@ export class EventosPage {
       '',
       'Villea Convida')},
       { expanded: false ,itemEvento:new Evento('../../assets/imgs/eventos/7.jpeg',7,'','Trio dona Zefa + DJ Edu RQ',
-      new Date(2018,4,26,23,0,0),'Forro Brasil-São Paulo(SP)','Forro Brasil',
+      new Date(2018,10,9,23,0,0),'Forro Brasil-São Paulo(SP)','Forro Brasil',
       '40R$',
       'Local do evento','forrobrasil@gmail.com/(15)3500-3333',
       '',
@@ -125,22 +126,6 @@ export class EventosPage {
       '')}
     ];
     
-    if(this.dataFiltro == null){
-      console.log(this.dataFiltro);
-     this.eventosFiltrados = this.eventos;
-
-    }else{
-      this.eventos.forEach(evento => {       
-         
-        evento.forEach(item =>{
-          console.log(item[1]);
-        });
-
-        //if(evento[]==(i+1) && (data.getMonth()+1)==(this.date.getMonth()+1)&& data.getFullYear()==this.date.getFullYear()&&this.aux==false){
-      //this.eventosFiltrados.push(new DiaDoMes(true,i+1,this.date.getMonth()+1,this.date.getFullYear()));          
-        //  }
-      });
-    }
 
 
     this.itensSlide = new Array(
@@ -200,7 +185,7 @@ export class EventosPage {
   }
   abrirCalendario(){
     let pModal = this.modalCtrl.create(CalendarioModalPage);
-    pModal.onDidDismiss(data => {
+    pModal.onDidDismiss(data => {     
       this.dataFiltro = data;
       //console.log(data);
     });

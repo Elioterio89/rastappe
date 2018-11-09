@@ -42,7 +42,7 @@ export class CalendarioModalPage {
     this.date = new Date();
     this.monthNames = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
     this.diasComEvento  = new Array();
-    this.diasComEvento = [new Date(2018,7,25,20,0,0),new Date(2018,9,24,20,0,0),new Date(2018,9,29,20,0,0),new Date(2018,10,8,20,0,0)];
+    this.diasComEvento = [new Date(2018,7,25,20,0,0),new Date(2018,9,24,20,0,0),new Date(2018,9,29,20,0,0),new Date(2018,10,8,20,0,0),,new Date(2018,10,9,20,0,0)];
     this.getDaysOfMonth();
     this.loadEventThisMonth();
   }

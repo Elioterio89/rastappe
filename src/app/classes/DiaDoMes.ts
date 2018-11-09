@@ -4,7 +4,7 @@ export class DiaDoMes {
     public mes: number;
     public ano: number;
 
-    constructor(pEvento: boolean, pDia: number =null, pMes: number=null , pAno:number= null) {
+    constructor(pEvento: boolean=null, pDia: number =null, pMes: number=null , pAno:number= null) {
         this.evento = pEvento;
         this.dia = pDia;
         this.mes = pMes;

@@ -39,7 +39,15 @@
             <ion-col col-1 *ngFor="let nextDay of daysInNextMonth" class="next-month">{{nextDay.dia}}</ion-col>
           </ion-row>
         </ion-grid>
+
       </div>
+      <ion-item>
+          <ion-fab bottom center class="btn-modal-calendario">
+              <button  color="prime">
+                  <ion-icon name="md-refresh"> </ion-icon>
+              </button>
+          </ion-fab>
+      </ion-item>
     </ion-card>
   </div>
 </ion-content>

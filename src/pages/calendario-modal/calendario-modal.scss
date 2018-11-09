@@ -143,6 +143,20 @@ page-calendario-modal {
         }
       
 
+        .btn-modal-calendario{
+          border-style: solid !important;
+          border: 2px solid #7d551a !important;
+          height: 55px;
+          width:  55px;
+          background-color:#CF8E2C;
+          position: absolute;
+          margin-top: 220px!important;
+          margin-bottom: 1px !important;
+          //margin-left: 1px;
+          -webkit-border-radius: 50px !important;
+          -moz-border-radius: 50px !important;
+          border-radius:50px !important;
+        }
   
 
 }

@@ -13,6 +13,7 @@ export class Evento {
     public contatos: string;
     public infoExtra :string;
     public descricao : string;
+    public ano :number;
 
 
     constructor(pBanner: string, pId: number,pNome:string,pAtracoes:string, pDia:Date,pLocal:string,
@@ -33,9 +34,9 @@ export class Evento {
         this.contatos =pContatos;
         this.infoExtra=pInfoExtra;
         this.descricao =pDescricao;
-
+        this.ano = pDia.getFullYear();
         
-        //pDia.getDate().toString()
+        //pDia.getFullYear().toString()
 
         
     }
