@@ -5,6 +5,7 @@
                 <ion-icon name="menu"></ion-icon>
             </button>
         </ion-buttons>
+
         <ion-title class="menu_header"> Eventos- {{dataFiltro.dia}} </ion-title>
     </ion-navbar>
 </ion-header>
@@ -49,7 +50,7 @@
             <ion-scroll scrollY="true" class="scroll" style="width: 100%; height: 60%;">
                 <ion-list>
                     <span *ngFor="let item of eventos">
-                        <span *ngIf="dataFiltro.dia===0 ; else comFiltro">
+                        <span *ngIf="dataFiltro.dia===0  ; else comFiltro">
                             <ion-item class="list-evetos">
                                 <ion-fab top right class="fab-evento">
                                     <button ion-fab class="btn-fab-evento" color="prime">

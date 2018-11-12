@@ -1,4 +1,4 @@
-import { Component, AUTO_STYLE, ViewChild, TemplateRef } from '@angular/core';
+import { Component,OnInit,AfterViewInit, AUTO_STYLE, ViewChild, TemplateRef, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, DateTime } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -21,18 +21,17 @@ import { DiaDoMes } from '../../app/classes/DiaDoMes';
   templateUrl: 'eventos.html',
 })
 
-export class EventosPage {
+export class EventosPage  {
   eventos: any = [];
   eventosFiltrados:any = [];
   eventosFiltro: any = [];
   itensSlide: Evento[] = [];
   rootPage = EventosPage;
   date :DateTime;
-  dataFiltro:DiaDoMes ;
+  dataFiltro:DiaDoMes;
   filtro:Filtro;
   mes: any = [  ];
-
-
+  
   //itemExpandHeight: string = 'auto';
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -169,7 +168,6 @@ export class EventosPage {
 
 
   }
-  
 
   formatMes( pMes){   
 
@@ -187,7 +185,11 @@ export class EventosPage {
     let pModal = this.modalCtrl.create(CalendarioModalPage);
     pModal.onDidDismiss(data => {     
       this.dataFiltro = data;
-      //console.log(data);
+      if(data=== null){
+        data = new DiaDoMes(false,0,0,0);
+      }
+      this.dataFiltro =data;
+      console.log("abrirCalendario",data);
     });
     pModal.present();   
   }
