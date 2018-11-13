@@ -31,7 +31,7 @@
             <ion-col col-1 *ngFor="let lastDay of daysInLastMonth" class="last-month">{{lastDay.dia}}</ion-col>
             <ion-col class="coldatas" col-1 *ngFor="let day of daysInThisMonth">
               <button class="hojecomevento" *ngIf="currentDate === day.dia && day.evento===true; else hojesemevento" (click)="fecharMapa2(day)">{{day.dia}}</button>
-              <button #hojesemevento class="currentDate" *ngIf="currentDate === day.dia && day.evento===false; else diacomevento"(click)="fecharMapa2(day)">{{day.dia}}</button>
+              <button #hojesemevento class="currentDate" *ngIf="currentDate === day.dia && day.evento===false; else diacomevento">{{day.dia}}</button>
               <button #diacomevento class="diacomevento" *ngIf="day.evento==true && day.dia !== currentDate  ; else otherDate"(click)="fecharMapa2(day)">{{day.dia}}</button>
               <ion-badge #otherDate class="otherDate" *ngIf="day.evento==false && day.dia !== currentDate">{{day.dia}}</ion-badge>
               

@@ -19,6 +19,7 @@ import { EventoDescricaoPage } from '../pages/evento-descricao/evento-descricao'
 import { CalendarioModalPage } from '../pages/calendario-modal/calendario-modal';
 import { Calendar } from '@ionic-native/calendar';
 import { IonicStorageModule } from '@ionic/storage';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { IonicStorageModule } from '@ionic/storage';
   providers: [
     StatusBar,
     SplashScreen,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Calendar
   ]

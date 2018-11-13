@@ -11,6 +11,7 @@ import { CalendarioModalPage } from '../calendario-modal/calendario-modal';
 import { Filtro } from '../../app/classes/Filtro';
 import { Storage } from '@ionic/storage';
 import { DiaDoMes } from '../../app/classes/DiaDoMes';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 
 
@@ -40,6 +41,7 @@ export class EventosPage  {
     public modalCtrl: ModalController,
     public menuCtrl: MenuController,
     private storage:Storage,
+    private socialSharing: SocialSharing
     ) { 
 
    
@@ -48,20 +50,106 @@ export class EventosPage  {
     this.mes = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez',''];    
     this.dataFiltro = new DiaDoMes(false,0,0,0); 
 
-    this.eventos = [
-      { expanded: false ,itemEvento: new Evento('../../assets/imgs/eventos/0.png',0,'Forro da Gota','Forro da Gota + Agusto Luiz',
-      new Date(2018,10,8,23,0,0),'Amsterdan-Salvador(BA)','Forro da Gota',
+    this.listaEventos();
+
+    this.slideEventos();    
+
+
+  }
+
+  compartilhar(){
+    //https://www.youtube.com/watch?v=sU-JdM5h0-k
+    let ev = "sdsad";
+    this.socialSharing.share(ev)
+    .then(()=>{
+      console.log(ev);
+      }).catch(()=>{
+
+      });
+  }
+
+  formatMes( pMes){   
+
+     this.mes[pMes];
+
+  }
+
+  pegarEventos(ev :any){
+
+    this.listaEventos();
+
+    // set val to the value of the searchbar
+    const val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.eventos = this.eventos.filter((item) => {
+        return (item.itemEvento.nome.toLowerCase().indexOf(val.toLowerCase()) > -1 || item.itemEvento.atracoes.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+
+  }
+
+  slideEventos(){
+
+
+    this.itensSlide = new Array(
+      new Evento('../../assets/imgs/1.jpg',1,'Arraiá F4a Ressaca  SJ','Discotecagem',
+      new Date(2018,5,8,13,0,0),'2ªTrv Domningos Rabelo,100-Ribeira,Salvador(BA)','Escola de Dança -Forro 4º Andar',
+      '10R$ + Comida ou Beida',
+      'Local do evento','forro4andar@gmail.com',
+      'Consumir o produto equivalente ao que voce levou',
+      'Venha curtir a ressaca do são Joao')
+      ,
+      new Evento('../../assets/imgs/2.jpg',2,'B-Day G.E./F4a','Forro da Gota + Agusto Luiz',
+      new Date(2018,5,8,23,0,0),'Rua da casa de Danilo,704-Pernambues,Salvador(BA)','Forro da Gota',
       '20R$(Sympla)/30R$(ate 23hrs)/40R$(Após 23Hrs)',
       'Sympla/Local do evento','forrodagota@gmail.com/(71)3333-3333',
       'open bar de catuaba ate 00hrs',
       'Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes')
-      },
+      ,
+      new Evento('../../assets/imgs/3.jpg',3,'WorkShop de Forro','Forro da Gota + Agusto Luiz',
+      new Date(2018,5,8,23,0,0), 'Na casa da porra,69-ALI,Salvador(BA)','Forro da Gota',
+      '20R$(Sympla)/30R$(ate 23hrs)/40R$(Após 23Hrs)',
+      'Sympla/Local do evento','forrodagota@gmail.com/(71)3333-3333',
+      'open bar de catuaba ate 00hrs',
+      'Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes')
+      ,
+      new Evento('../../assets/imgs/4.jpg',4,'Aniversario A4a','Forro da Gota + Agusto Luiz',
+      new Date(2018,5,8,23,0,0),'Rua da casa de Danilo,704-Pernambues,Salvador(BA)','Forro da Gota',
+      '20R$(Sympla)/30R$(ate 23hrs)/40R$(Após 23Hrs)',
+      'Sympla/Local do evento','forrodagota@gmail.com/(71)3333-3333',
+      'open bar de catuaba ate 00hrs',
+      'Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes')
+      ,
+      new Evento('../../assets/imgs/5.jpg',5,'#2 Uma Tonelada de Forró','Forro da Gota + Agusto Luiz',
+      new Date(2018,5,8,23,0,0),'Eco Resort,Santo Estevão(BA)','Forro da Gota',
+      '20R$(Sympla)/30R$(ate 23hrs)/40R$(Após 23Hrs)',
+      'Sympla/Local do evento','forrodagota@gmail.com/(71)3333-3333',
+      'open bar de catuaba ate 00hrs',
+      'Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes')
+      
+
+    );
+
+
+  }
+
+  listaEventos(){
+    this.eventos = [
       { expanded: false ,itemEvento:  new Evento('../../assets/imgs/eventos/1.jpg',1,'','Trio Caruá',
       new Date(2018,10,8,18,0,0),'Tenda dos guardiões-São Carlos(SP)','Forro dos Guardões',
       'Entrada Franca',
       '','triocarua@gmail.com/(15)3444-3333',
       '',
       'Forro dos guardiões apresenta :TRIO CARUÁ')
+      },
+      { expanded: false ,itemEvento: new Evento('../../assets/imgs/eventos/0.png',0,'Forro da Gota','Forro da Gota + Agusto Luiz',
+      new Date(2018,10,8,23,0,0),'Amsterdan-Salvador(BA)','Forro da Gota',
+      '20R$(Sympla)/30R$(ate 23hrs)/40R$(Após 23Hrs)',
+      'Sympla/Local do evento','forrodagota@gmail.com/(71)3333-3333',
+      'open bar de catuaba ate 00hrs',
+      'Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes')
       },
       { expanded: false ,itemEvento:   new Evento('../../assets/imgs/eventos/2.jpeg',2,'','Trio Bastião + PEIXELETRICO',
       new Date(2018,10,9,8,0,0),'Remelexo Brasil-São Paulo(SP)','Remeleio Brasil',
@@ -124,57 +212,8 @@ export class EventosPage  {
       '',
       '')}
     ];
-    
-
-
-    this.itensSlide = new Array(
-      new Evento('../../assets/imgs/1.jpg',1,'Arraiá F4a Ressaca  SJ','Discotecagem',
-      new Date(2018,5,8,13,0,0),'2ªTrv Domningos Rabelo,100-Ribeira,Salvador(BA)','Escola de Dança -Forro 4º Andar',
-      '10R$ + Comida ou Beida',
-      'Local do evento','forro4andar@gmail.com',
-      'Consumir o produto equivalente ao que voce levou',
-      'Venha curtir a ressaca do são Joao')
-      ,
-      new Evento('../../assets/imgs/2.jpg',2,'B-Day G.E./F4a','Forro da Gota + Agusto Luiz',
-      new Date(2018,5,8,23,0,0),'Rua da casa de Danilo,704-Pernambues,Salvador(BA)','Forro da Gota',
-      '20R$(Sympla)/30R$(ate 23hrs)/40R$(Após 23Hrs)',
-      'Sympla/Local do evento','forrodagota@gmail.com/(71)3333-3333',
-      'open bar de catuaba ate 00hrs',
-      'Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes')
-      ,
-      new Evento('../../assets/imgs/3.jpg',3,'WorkShop de Forro','Forro da Gota + Agusto Luiz',
-      new Date(2018,5,8,23,0,0), 'Na casa da porra,69-ALI,Salvador(BA)','Forro da Gota',
-      '20R$(Sympla)/30R$(ate 23hrs)/40R$(Após 23Hrs)',
-      'Sympla/Local do evento','forrodagota@gmail.com/(71)3333-3333',
-      'open bar de catuaba ate 00hrs',
-      'Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes')
-      ,
-      new Evento('../../assets/imgs/4.jpg',4,'Aniversario A4a','Forro da Gota + Agusto Luiz',
-      new Date(2018,5,8,23,0,0),'Rua da casa de Danilo,704-Pernambues,Salvador(BA)','Forro da Gota',
-      '20R$(Sympla)/30R$(ate 23hrs)/40R$(Após 23Hrs)',
-      'Sympla/Local do evento','forrodagota@gmail.com/(71)3333-3333',
-      'open bar de catuaba ate 00hrs',
-      'Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes')
-      ,
-      new Evento('../../assets/imgs/5.jpg',5,'#2 Uma Tonelada de Forró','Forro da Gota + Agusto Luiz',
-      new Date(2018,5,8,23,0,0),'Eco Resort,Santo Estevão(BA)','Forro da Gota',
-      '20R$(Sympla)/30R$(ate 23hrs)/40R$(Após 23Hrs)',
-      'Sympla/Local do evento','forrodagota@gmail.com/(71)3333-3333',
-      'open bar de catuaba ate 00hrs',
-      'Peeense num salão chameguento! Se achegue sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador #forróbaiano #forródabahia @hedernovaes')
-      
-
-    );
-
 
   }
-
-  formatMes( pMes){   
-
-     this.mes[pMes];
-
-  }
-
   detalharEvento(item) {
     this.navCtrl.push(EventoDescricaoPage, { evento: item });
   }
@@ -241,3 +280,4 @@ export class EventosPage  {
   }
 
 }
+
