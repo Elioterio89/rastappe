@@ -57,17 +57,6 @@ export class EventosPage  {
 
   }
 
-  compartilhar(){
-    //https://www.youtube.com/watch?v=sU-JdM5h0-k
-    let ev = "sdsad";
-    this.socialSharing.share(ev)
-    .then(()=>{
-      console.log(ev);
-      }).catch(()=>{
-
-      });
-  }
-
   formatMes( pMes){   
 
      this.mes[pMes];
@@ -218,8 +207,23 @@ export class EventosPage  {
     this.navCtrl.push(EventoDescricaoPage, { evento: item });
   }
   abrirMapa() {
+    console.log("sdasd");
     this.modalCtrl.create(ModalMapPage).present();
   }
+
+  compartilhar(evento){
+    //https://www.youtube.com/watch?v=sU-JdM5h0-k
+    //https://www.edivaldobrito.com.br/emulador-android-anbox-no-linux-via-snap/
+   
+   
+    this.socialSharing.share(evento)
+    .then(()=>{
+     
+      }).catch(()=>{
+
+      });
+  }
+
   abrirCalendario(){
     let pModal = this.modalCtrl.create(CalendarioModalPage);
     pModal.onDidDismiss(data => {     
@@ -233,6 +237,7 @@ export class EventosPage  {
     pModal.present();   
   }
   AlertNomelista() {
+    console.log("sdasd");
     let prompt = this.alertCtrl.create({
       title: "Lista Amiga",
       message: "Envie o nome aqui!",

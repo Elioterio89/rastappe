@@ -85,7 +85,7 @@
                                         <expandable [expanded]="item.expanded">
                                             <ion-card-content>
                                                 <ion-fab left midle>
-                                                    <button ion-fab mini class="btn-fab-conteudo" color="prime">
+                                                    <button ion-fab mini class="btn-fab-conteudo" color="prime" (click)="compartilhar(item.itemEvento)">
                                                         <ion-icon name="md-share" class="rstp-icone-conteudo"> </ion-icon>
                                                     </button>
                                                     <button ion-fab mini class="btn-fab-conteudo" color="prime" (click)="abrirMapa()">
@@ -265,7 +265,7 @@
                                                     <expandable [expanded]="item.expanded">
                                                         <ion-card-content>
                                                             <ion-fab left midle>
-                                                                <button ion-fab mini class="btn-fab-conteudo" color="prime" (click)="compartilhar()">
+                                                                <button ion-fab mini class="btn-fab-conteudo" color="prime" (click)="compartilhar(item.itemEvento)">
                                                                     <ion-icon name="md-share" class="rstp-icone-conteudo"> </ion-icon>
                                                                 </button>
                                                                 <button ion-fab mini class="btn-fab-conteudo" color="prime" (click)="abrirMapa()">
