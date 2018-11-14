@@ -224,6 +224,18 @@ export class EventosPage  {
       });
   }
 
+  favoritoBtn(favorito){
+
+    console.log(favorito);
+    if(favorito!=true){
+      favorito=true;
+    }else{
+      favorito=false;
+    }
+    console.log(favorito);
+    //return favorito;
+  }
+
   abrirCalendario(){
     let pModal = this.modalCtrl.create(CalendarioModalPage);
     pModal.onDidDismiss(data => {     

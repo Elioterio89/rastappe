@@ -48,7 +48,7 @@ page-eventos{
     height: 30px;
   }
   .colseach{
-    padding-right: 0px !important; 
+    padding-right: 0px !important;
   }
   .icn{
     font-size: 25px;
@@ -215,9 +215,20 @@ ion-checkbox{
 
 .rstp-icone{
   font-size: 36px;
+
+}
+
+.rstp-icone-favorito{
+  font-size: 30px !important;
   color: #7d551a;
 
 }
+.rstp-icone-favorito-chck{
+  font-size: 30px !important;
+  color: #fff !important;
+}
+
+
 .rstp-icone-conteudo{
   font-size: 26px;
   color: #7d551a;
@@ -321,13 +332,38 @@ ion-checkbox{
 }
 
 ////////////////////////////////////////////////////////
-
-
-.searchbar-md {
-  padding: 8px;
-  padding-right: 0px;
-  padding-left: 4px;
+.searchbar-md .searchbar-input {
+ // padding: 6px 55px;
+  border-radius: 20px;
+  background-position: left 8px center;
+  height: 30px;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: #141414;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
+
+.searchbar-md .searchbar-search-icon {
+  left: 10px;
+  top: 7px;
+  background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'><path%20fill='%235b5b5b'%20d='M337.509,305.372h-17.501l-6.571-5.486c20.791-25.232,33.922-57.054,33.922-93.257C347.358,127.632,283.896,64,205.135,64C127.452,64,64,127.632,64,206.629s63.452,142.628,142.225,142.628c35.011,0,67.831-13.167,92.991-34.008l6.561,5.487v17.551L415.18,448L448,415.086L337.509,305.372z%20M206.225,305.372c-54.702,0-98.463-43.887-98.463-98.743c0-54.858,43.761-98.742,98.463-98.742c54.7,0,98.462,43.884,98.462,98.742C304.687,261.485,260.925,305.372,206.225,305.372z'/></svg>");
+  width: 21px;
+  height: 21px;
+}
+
+/*
+.searchbar-md {
+  padding: 1px;
+ // padding-right: 0px;
+  //padding-left: 4px;
+  height: 10px !important;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px; 
+}*/
 
 .fab-md-prime {
   color: #7d551a; 

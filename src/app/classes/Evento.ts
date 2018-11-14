@@ -14,11 +14,11 @@ export class Evento {
     public infoExtra :string;
     public descricao : string;
     public ano :number;
-
+    public favorito :boolean;
 
     constructor(pBanner: string, pId: number,pNome:string,pAtracoes:string, pDia:Date,pLocal:string,
             pProducoes:string,pValores:string,pVenda:string,pContatos:string,
-            pInfoExtra:string,pDescricao:string) 
+            pInfoExtra:string,pDescricao:string,pFavorito:boolean=false) 
     {
         
         
@@ -35,7 +35,7 @@ export class Evento {
         this.infoExtra=pInfoExtra;
         this.descricao =pDescricao;
         this.ano = pDia.getFullYear();
-        
+        this.favorito = pFavorito;
         //pDia.getFullYear().toString()
 
         

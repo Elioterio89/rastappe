@@ -119,6 +119,7 @@ page-calendario-modal {
 
       }
 
+
       .headermodalcalendario{
         padding: 10PX !important;
         background-color: #CF8E2C !important; 
@@ -156,6 +157,19 @@ page-calendario-modal {
           -webkit-border-radius: 50px !important;
           -moz-border-radius: 50px !important;
           border-radius:50px !important;
+        }
+
+        .btnfecharCalendario{
+          border-style: solid !important;
+          border: 2px solid #7d551a !important;
+          position: absolute;
+          background-color: #CF8E2C;
+          height: 55px;
+          width: 55px;
+          -webkit-border-radius: 50px !important;
+          -moz-border-radius: 50px !important;
+          border-radius:50px !important;
+          margin-left: 120px !important;
         }
   
 

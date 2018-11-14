@@ -39,11 +39,11 @@
                         <ion-col class="colseach">
                             <ion-searchbar (ionInput)="pegarEventos($event)" placeholder="Procurar" class="searchbar-input"></ion-searchbar>
                         </ion-col>
-                        <ion-col col-1>
+                       <!-- <ion-col col-1>
                             <button ion-button class="btn" clear (click)="abrirMapa()">
                                 <ion-icon name="ios-funnel-outline" color="#fff" class="icn"></ion-icon>
                             </button>
-                        </ion-col>
+                        </ion-col>-->
                     </ion-row>
                 </ion-grid>
             </ion-card>
@@ -62,6 +62,15 @@
                                     </button>
                                     <button ion-fab class="btn-fab-evento" color="prime" (click)="AlertNomelista()">
                                         <ion-icon name="ios-list" class="rstp-icone"> </ion-icon>
+                                    </button>
+
+                                    <button ion-fab class="btn-fab-evento" color="prime" (click)="favoritoBtn(item.itemEvento.favorito)">
+                                        <span *ngIf="item.itemEvento.favorito===false; else  favorito" class="rstp-icone-favorito">
+                                            <ion-icon name="ios-star-outline" class="rstp-icone-favorito"> </ion-icon>
+                                        </span>
+                                        <ng-template #favorito class="rstp-icone-favorito-chck">
+                                            <ion-icon name="ios-star" class="rstp-icone-favorito-chck"> </ion-icon>
+                                        </ng-template>
                                     </button>
                                 </ion-fab>
                                 <ion-card class="card_evento">
@@ -242,6 +251,15 @@
                                                 </button>
                                                 <button ion-fab class="btn-fab-evento" color="prime" (click)="AlertNomelista()">
                                                     <ion-icon name="ios-list" class="rstp-icone"> </ion-icon>
+                                                </button>
+
+                                                <button ion-fab class="btn-fab-evento" color="prime" (click)="favoritoBtn(item.itemEvento.favorito)">
+                                                    <span *ngIf="item.itemEvento.favorito===false; else  favorito" class="rstp-icone-favorito">
+                                                        <ion-icon name="ios-star-outline" class="rstp-icone-favorito"> </ion-icon>
+                                                    </span>
+                                                    <ng-template #favorito class="rstp-icone-favorito-chck">
+                                                        <ion-icon name="ios-star" class="rstp-icone-favorito-chck"> </ion-icon>
+                                                    </ng-template>
                                                 </button>
                                             </ion-fab>
                                             <ion-card class="card_evento">

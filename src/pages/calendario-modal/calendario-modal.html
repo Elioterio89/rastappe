@@ -32,22 +32,17 @@
             <ion-col class="coldatas" col-1 *ngFor="let day of daysInThisMonth">
               <button class="hojecomevento" *ngIf="currentDate === day.dia && day.evento===true; else hojesemevento" (click)="fecharMapa2(day)">{{day.dia}}</button>
               <button #hojesemevento class="currentDate" *ngIf="currentDate === day.dia && day.evento===false; else diacomevento">{{day.dia}}</button>
-              <button #diacomevento class="diacomevento" *ngIf="day.evento==true && day.dia !== currentDate  ; else otherDate"(click)="fecharMapa2(day)">{{day.dia}}</button>
+              <button #diacomevento class="diacomevento" *ngIf="day.evento==true && day.dia !== currentDate  ; else otherDate" (click)="fecharMapa2(day)">{{day.dia}}</button>
               <ion-badge #otherDate class="otherDate" *ngIf="day.evento==false && day.dia !== currentDate">{{day.dia}}</ion-badge>
-              
+
             </ion-col>
             <ion-col col-1 *ngFor="let nextDay of daysInNextMonth" class="next-month">{{nextDay.dia}}</ion-col>
           </ion-row>
         </ion-grid>
-
       </div>
-      <ion-item>
-          <ion-fab bottom center class="btn-modal-calendario">
-              <button  color="prime">
-                  <ion-icon name="md-refresh"> </ion-icon>
-              </button>
-          </ion-fab>
-      </ion-item>
+      <button ion-fab mini class="btnfecharCalendario" color="prime" (click)="fecharMapa2(null)">
+        <ion-icon name="md-refresh" color="terci"> </ion-icon>
+      </button>
     </ion-card>
   </div>
 </ion-content>
