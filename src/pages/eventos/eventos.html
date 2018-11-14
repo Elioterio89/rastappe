@@ -1,0 +1,512 @@
+<ion-header>
+    <ion-navbar color="prime">
+        <ion-buttons left>
+            <button ion-button icon-only menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-title class="menu_header"> Eventos- {{dataFiltro.dia}} </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content no-bounce class="bgView2 ">
+    <ion-content>
+        <ion-content class="bg no-scroll" style="overflow-y: hidden;">
+            <ion-fab bottom right>
+                <button ion-fab clas="btn-fab-externo" color="prime">
+                    <ion-icon name="add"> </ion-icon>
+                </button>
+            </ion-fab>
+            <ion-fab bottom left>
+                <button ion-fab clas="btn-fab-externo" color="prime" (click)="abrirCalendario()">
+                    <ion-icon name="md-calendar"></ion-icon>
+                </button>
+            </ion-fab>
+
+            <ion-card class="card_slide_geral">
+                <ion-slides pager="true" autoplay="3000" loop="true" speed="500">
+                    <ion-slide *ngFor="let item of itensSlide">
+                        <button class="card_slide" (click)="detalharEvento(item)">
+                            <img src="{{item.banner}}" class="img_slide" />
+                        </button>
+                    </ion-slide>
+                </ion-slides>
+
+            </ion-card>
+            <ion-card class="card-itens">
+                <ion-grid no-padding>
+                    <ion-row>
+                        <ion-col class="colseach">
+                            <ion-searchbar placeholder="Procurar" class="searchbar-input"></ion-searchbar>
+                        </ion-col>
+                        <ion-col col-1>
+                            <button ion-button class="btn" clear (click)="abrirMapa()">
+                                <ion-icon name="ios-funnel-outline" color="#fff" class="icn"></ion-icon>
+                            </button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
+            <ion-scroll scrollY="true" class="scroll" style="width: 100%; height: 60%;">
+                <ion-list>
+                    <span *ngFor="let item of eventos">
+                        <span *ngIf="dataFiltro.dia===0  ; else comFiltro">
+                            <ion-item class="list-evetos">
+                                <ion-fab top right class="fab-evento">
+                                    <button ion-fab class="btn-fab-evento" color="prime">
+                                        <div class="div-check">
+                                            <ion-item color="prime">
+                                                <ion-checkbox checked="true"></ion-checkbox>
+                                            </ion-item>
+                                        </div>
+                                    </button>
+                                    <button ion-fab class="btn-fab-evento" color="prime" (click)="AlertNomelista()">
+                                        <ion-icon name="ios-list" class="rstp-icone"> </ion-icon>
+                                    </button>
+                                </ion-fab>
+                                <ion-card class="card_evento">
+                                    <ion-item class="item_evento">
+                                        <button class="list-evetos-btn" detail-none (click)="expandItem(item)">
+                                            <ion-thumbnail item-start class="fab-evento-data">
+                                                <ion-fab left top class="fab-data">
+                                                    <ion-badge class="data-evento" item-end>
+                                                        <h1 color="sub">{{item.itemEvento.dia.getDate().toString()}}</h1>
+                                                        <br>
+                                                        <p class="data-evento">{{mes[(item.itemEvento.dia.getMonth())]}}/{{item.itemEvento.dia.getUTCFullYear()
+                                                            }}
+                                                        </p>
+                                                        <p class="hora-evento">{{item.itemEvento.dia.getHours().toString()}}:{{((item.itemEvento.dia.getMinutes()
+                                                            <10? "0": "") + item.itemEvento.dia.getMinutes())}}</p>
+                                                    </ion-badge>
+                                                </ion-fab>
+                                            </ion-thumbnail>
+                                            <img src="{{item.itemEvento.banner}}" class="img-evento">
+                                        </button>
+                                        <expandable [expanded]="item.expanded">
+                                            <ion-card-content>
+                                                <ion-fab left midle>
+                                                    <button ion-fab mini class="btn-fab-conteudo" color="prime">
+                                                        <ion-icon name="md-share" class="rstp-icone-conteudo"> </ion-icon>
+                                                    </button>
+                                                    <button ion-fab mini class="btn-fab-conteudo" color="prime" (click)="abrirMapa()">
+                                                        <ion-icon name="md-map" class="rstp-icone-conteudo"> </ion-icon>
+                                                    </button>
+                                                </ion-fab>
+                                                <div class="conteudo-mapa">
+                                                    <ion-card class="card-informaçoes-conteudo">
+                                                        <ion-card-content>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum-titulo ">
+                                                                    <p class="colum-titulo-header">Atrações
+                                                                        <p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum">
+                                                                    <p class="colum-texto-infor">{{item.itemEvento.atracoes}}</p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-informaçoes-conteudo">
+                                                        <ion-card-content>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum-titulo ">
+                                                                    <p class="colum-titulo-header">Local
+                                                                        <p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum">
+                                                                    <p class="colum-texto-infor">{{item.itemEvento.local}}</p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-informaçoes-conteudo">
+                                                        <ion-card-content>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum-titulo ">
+                                                                    <p class="colum-titulo-header">Produção
+                                                                        <p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum">
+                                                                    <p class="colum-texto-infor">{{item.itemEvento.producao}}</p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-informaçoes-conteudo">
+                                                        <ion-card-content>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum-titulo ">
+                                                                    <p class="colum-titulo-header">Valores
+                                                                        <p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum">
+                                                                    <p class="colum-texto-infor">{{item.itemEvento.valores}}</p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-informaçoes-conteudo">
+                                                        <ion-card-content>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum-titulo ">
+                                                                    <p class="colum-titulo-header">Venda
+                                                                        <p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum">
+                                                                    <p class="colum-texto-infor">
+                                                                        {{item.itemEvento.venda}}</p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-informaçoes-conteudo">
+                                                        <ion-card-content>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum-titulo ">
+                                                                    <p class="colum-titulo-header">Contatos
+                                                                        <p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum">
+                                                                    <p class="colum-texto-infor">{{item.itemEvento.contatos}}</p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-informaçoes-conteudo">
+                                                        <ion-card-content>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum-titulo ">
+                                                                    <p class="colum-titulo-header">Informaçoes Extras
+                                                                        <p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum">
+                                                                    <p class="colum-texto-infor">{{item.itemEvento.infoExtra}}</p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-informaçoes-conteudo">
+                                                        <ion-card-content>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum-titulo ">
+                                                                    <p class="colum-titulo-header">Descrição
+                                                                        <p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                            <ion-row class="linha">
+                                                                <ion-col class="colum">
+                                                                    <p class="colum-texto-infor">{{item.itemEvento.descricao}}</p>
+                                                                </ion-col>
+                                                            </ion-row>
+                                                        </ion-card-content>
+                                                    </ion-card>
+
+                                                </div>
+                                                <!--<ion-badge class="badge-conteudo"> 500  <ion-icon name="checkmark-circle"></ion-icon> </ion-badge>                                     -->
+
+                                            </ion-card-content>
+
+
+                                        </expandable>
+
+                                    </ion-item>
+                                </ion-card>
+                            </ion-item>
+                        </span>
+                        <ng-template #comFiltro>
+                            <span *ngIf="item.itemEvento.dia.getDate()=== dataFiltro.dia ; else semNada">
+                                <span *ngIf=" item.itemEvento.dia.getMonth()===dataFiltro.mes-1 ; else semNada">
+                                    <span *ngIf=" item.itemEvento.ano===dataFiltro.ano ; else semNada">
+                                        <ion-item class="list-evetos">
+                                            <ion-fab top right class="fab-evento">
+                                                <button ion-fab class="btn-fab-evento" color="prime">
+                                                    <div class="div-check">
+                                                        <ion-item color="prime">
+                                                            <ion-checkbox checked="true"></ion-checkbox>
+                                                        </ion-item>
+                                                    </div>
+                                                </button>
+                                                <button ion-fab class="btn-fab-evento" color="prime" (click)="AlertNomelista()">
+                                                    <ion-icon name="ios-list" class="rstp-icone"> </ion-icon>
+                                                </button>
+                                            </ion-fab>
+                                            <ion-card class="card_evento">
+                                                <ion-item class="item_evento">
+                                                    <button class="list-evetos-btn" detail-none (click)="expandItem(item)">
+                                                        <ion-thumbnail item-start class="fab-evento-data">
+                                                            <ion-fab left top class="fab-data">
+                                                                <ion-badge class="data-evento" item-end>
+                                                                    <h1 color="sub">{{item.itemEvento.dia.getDate().toString()}}</h1>
+                                                                    <br>
+                                                                    <p class="data-evento">{{mes[(item.itemEvento.dia.getMonth())]}}/{{item.itemEvento.dia.getUTCFullYear()
+                                                                        }}
+                                                                    </p>
+                                                                    <p class="hora-evento">{{item.itemEvento.dia.getHours().toString()}}:{{((item.itemEvento.dia.getMinutes()
+                                                                        <10? "0": "") + item.itemEvento.dia.getMinutes())}}</p>
+                                                                </ion-badge>
+                                                            </ion-fab>
+                                                        </ion-thumbnail>
+                                                        <img src="{{item.itemEvento.banner}}" class="img-evento">
+                                                    </button>
+                                                    <expandable [expanded]="item.expanded">
+                                                        <ion-card-content>
+                                                            <ion-fab left midle>
+                                                                <button ion-fab mini class="btn-fab-conteudo" color="prime">
+                                                                    <ion-icon name="md-share" class="rstp-icone-conteudo"> </ion-icon>
+                                                                </button>
+                                                                <button ion-fab mini class="btn-fab-conteudo" color="prime" (click)="abrirMapa()">
+                                                                    <ion-icon name="md-map" class="rstp-icone-conteudo"> </ion-icon>
+                                                                </button>
+                                                            </ion-fab>
+                                                            <div class="conteudo-mapa">
+                                                                <ion-card class="card-informaçoes-conteudo">
+                                                                    <ion-card-content>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum-titulo ">
+                                                                                <p class="colum-titulo-header">Atrações
+                                                                                    <p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum">
+                                                                                <p class="colum-texto-infor">{{item.itemEvento.atracoes}}</p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                    </ion-card-content>
+                                                                </ion-card>
+                                                                <ion-card class="card-informaçoes-conteudo">
+                                                                    <ion-card-content>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum-titulo ">
+                                                                                <p class="colum-titulo-header">Local
+                                                                                    <p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum">
+                                                                                <p class="colum-texto-infor">{{item.itemEvento.local}}</p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                    </ion-card-content>
+                                                                </ion-card>
+                                                                <ion-card class="card-informaçoes-conteudo">
+                                                                    <ion-card-content>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum-titulo ">
+                                                                                <p class="colum-titulo-header">Produção
+                                                                                    <p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum">
+                                                                                <p class="colum-texto-infor">{{item.itemEvento.producao}}</p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                    </ion-card-content>
+                                                                </ion-card>
+                                                                <ion-card class="card-informaçoes-conteudo">
+                                                                    <ion-card-content>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum-titulo ">
+                                                                                <p class="colum-titulo-header">Valores
+                                                                                    <p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum">
+                                                                                <p class="colum-texto-infor">{{item.itemEvento.valores}}</p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                    </ion-card-content>
+                                                                </ion-card>
+                                                                <ion-card class="card-informaçoes-conteudo">
+                                                                    <ion-card-content>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum-titulo ">
+                                                                                <p class="colum-titulo-header">Venda
+                                                                                    <p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum">
+                                                                                <p class="colum-texto-infor">
+                                                                                    {{item.itemEvento.venda}}</p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                    </ion-card-content>
+                                                                </ion-card>
+                                                                <ion-card class="card-informaçoes-conteudo">
+                                                                    <ion-card-content>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum-titulo ">
+                                                                                <p class="colum-titulo-header">Contatos
+                                                                                    <p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum">
+                                                                                <p class="colum-texto-infor">{{item.itemEvento.contatos}}</p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                    </ion-card-content>
+                                                                </ion-card>
+                                                                <ion-card class="card-informaçoes-conteudo">
+                                                                    <ion-card-content>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum-titulo ">
+                                                                                <p class="colum-titulo-header">Informaçoes Extras
+                                                                                    <p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum">
+                                                                                <p class="colum-texto-infor">{{item.itemEvento.infoExtra}}</p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                    </ion-card-content>
+                                                                </ion-card>
+                                                                <ion-card class="card-informaçoes-conteudo">
+                                                                    <ion-card-content>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum-titulo ">
+                                                                                <p class="colum-titulo-header">Descrição
+                                                                                    <p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                        <ion-row class="linha">
+                                                                            <ion-col class="colum">
+                                                                                <p class="colum-texto-infor">{{item.itemEvento.descricao}}</p>
+                                                                            </ion-col>
+                                                                        </ion-row>
+                                                                    </ion-card-content>
+                                                                </ion-card>
+
+                                                            </div>
+                                                            <!--<ion-badge class="badge-conteudo"> 500  <ion-icon name="checkmark-circle"></ion-icon> </ion-badge>                                     -->
+
+                                                        </ion-card-content>
+
+
+                                                    </expandable>
+
+                                                </ion-item>
+                                            </ion-card>
+                                        </ion-item>
+                                    </span>
+                                </span>
+                            </span>
+                        </ng-template>
+                        <ng-template #semNada>
+                        </ng-template>
+                    </span>
+                </ion-list>
+                <ion-card class="card-end-list">
+                </ion-card>
+            </ion-scroll>
+        </ion-content>
+
+
+
+    </ion-content>
+
+</ion-content>
+
+
+<!--<ion-card class="card-informaçoes-conteudo">
+                                                <ion-card-content>
+                                                    <ion-card class="card-infor">
+                                                        <ion-card-header class="header-infor">
+                                                            <p class="titulo-header">Atrações
+                                                                <p>
+                                                        </ion-card-header>
+                                                        <ion-card-content class="content-header">
+                                                            <p class="texto-infor">Forro da Gota e Carua(SP)</p>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
+                                                        <ion-card-header class="header-infor">
+                                                            <p class="titulo-header">Local
+                                                                <p>
+                                                        </ion-card-header>
+                                                        <ion-card-content class="content-header">
+                                                            <p class="texto-infor">Amsterdam-Salvador(BA)</p>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
+                                                        <ion-card-header class="header-infor">
+                                                            <p class="titulo-header">Produção
+                                                                <p>
+                                                        </ion-card-header>
+                                                        <ion-card-content class="content-header">
+                                                            <p class="texto-infor">Forró da Gota</p>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
+                                                        <ion-card-header class="header-infor">
+                                                            <p class="titulo-header">Valores
+                                                                <p>
+                                                        </ion-card-header>
+                                                        <ion-card-content class="content-header">
+                                                            <p class="texto-infor">20R$(Sympla)/30R$(Até as 23hrs)/40R$(Após
+                                                                23hrs)
+                                                            </p>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
+                                                        <ion-card-header class="header-infor">
+                                                            <p class="titulo-header">Venda
+                                                                <p>
+                                                        </ion-card-header>
+                                                        <ion-card-content class="content-header">
+                                                            <p class="texto-infor"><a href="https://www.sympla.com.br/forro-da-gota__300222"
+                                                                    style="color: #CF8E2C">Sympla</a>/Local do evento</p>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
+                                                        <ion-card-header class="header-infor">
+                                                            <p class="titulo-header">Contatos
+                                                                <p>
+                                                        </ion-card-header>
+                                                        <ion-card-content class="content-header">
+                                                            <p class="texto-infor">forrodagota@gmail.com/(71)3333-3333</p>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
+                                                        <ion-card-header class="header-infor">
+                                                            <p class="titulo-header">Informaçoes Extras
+                                                                <p>
+                                                        </ion-card-header>
+                                                        <ion-card-content class="content-header">
+                                                            <p class="texto-infor">Open Bar de Catuaba pra quem estiver com
+                                                                a camisa do f4a</p>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                    <ion-card class="card-infor">
+                                                        <ion-card-header class="header-infor">
+                                                            <p class="titulo-header">Descrição
+                                                                <p>
+                                                        </ion-card-header>
+                                                        <ion-card-content class="content-header">
+                                                            <p class="texto-infor">Peeense num salão chameguento! Se achegue
+                                                                sexta, às 23h, lá no @mirantedosaflitos #forródagota #meunorte
+                                                                #mirantedosaflitos #pensenumralabuchobom #forró #forróemsalvador
+                                                                #forróbaiano #forródabahia @hedernovaes</p>
+                                                        </ion-card-content>
+                                                    </ion-card>
+                                                </ion-card-content>
+                                            </ion-card>
+                                        -->

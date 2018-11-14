@@ -1,0 +1,162 @@
+page-calendario-modal {
+
+    [col-1] {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 8.33333%;
+        -ms-flex: 0 0 8.33333%;
+        flex: 0 0 14.285714285714286%;
+        width: 14.285714285714286%;
+        max-width: 14.285714285714286%;
+      }
+      .col {
+        text-align: center;
+        padding: 5px;
+      }
+      .last-month, .next-month {
+        color: #999999;
+        font-size: 90%;
+      }
+      .otherDate {
+        padding: 0px;
+        margin: 0px;        
+        color: #000;
+        background-color: white;
+      }
+      .currentDate {
+        font-weight: bold;
+        background-color: #CF8E2C;
+        color: white;
+        border-radius: 50px;
+        padding: 3px !important;
+        margin: 0px;
+        min-width: 26px !important;
+        text-align:center !important;
+      }
+      .hojecomevento{
+        font-weight: bold;
+        padding: 3px !important;
+        min-width: 26px !important;
+        background-color: #CF8E2C;        
+        margin: 0px;
+        color: white;
+        border-radius: 50px;
+        border: 2px solid #7d551a;
+      }
+      .diacomevento{        
+        margin: 0px;
+        font-weight: bold;
+        padding: 3px !important;
+        min-width: 26px !important;
+        background-color: #FFFFFF;
+        color: #000;
+        border-radius:50px;
+        border: 2px solid #7d551a;
+      }
+      .calendar-header {
+        background-color: #7d551a;
+        color: #FFFFFF;
+      }
+      .event-bullet {
+        margin: 2px auto;
+        height: 5px;
+        width: 5px;
+        background-color: green;
+        border-radius: 30px;
+      }
+      .selected-date {
+        width: 20px;
+        height: 2px;
+        background-color: blue;
+      }
+      .unselected-date {
+        border: none;
+      }
+      .calendar-body {
+        .grid {
+          padding: 0;
+        }
+        .col:last-child {
+          border-right: none;
+        }
+        .calendar-weekday, .calendar-date {
+          text-align: center;
+          margin: 0;
+        }
+        .calendar-weekday {
+          font-weight: bold;
+          border-bottom: solid 1px #7d551a;
+          background-color: #CF8E2C;
+        }
+        .calendar-date {
+          border-top: solid 1px #7d551a;
+          border-bottom: solid 1px #7d551a;
+        }
+      }
+
+
+
+      .modalcalendario{
+        background-color:transparentize($color: #000, $amount: 0.5 ) !important;
+      }
+
+      .overlay{
+        height: 100%;
+        width: 100%;      
+      }
+
+      .cardmodalcalendario{
+        border: 3px solid #7d551a !important;
+        border-radius: 2px !important;
+        width: calc(100% ) !important;
+        max-width: 290px !important;
+        max-height:350px !important;
+        height: calc(100% - 0px) !important;
+        -webkit-border-radius: 30px !important;
+        -moz-border-radius: 30px !important;
+        border-radius:30px !important;
+        margin: auto !important;
+        margin-top:20% !important;
+
+      }
+
+      .headermodalcalendario{
+        padding: 10PX !important;
+        background-color: #CF8E2C !important; 
+        background-image: url("../../assets/imgs/bg_marca_dagua.png") !important;
+        
+      }
+
+      .btn-modal{
+        border-style: solid !important;
+        border: 2px solid #7d551a !important;
+        height: 55px;
+        width:  55px;
+        background-color:#CF8E2C;
+        position: absolute;
+        margin-top: 225px;
+        margin-left: 34px;
+        }
+
+        .titulomodal{
+            color: #f4f4f4 !important;
+            font-size: 25px;
+        }
+      
+
+        .btn-modal-calendario{
+          border-style: solid !important;
+          border: 2px solid #7d551a !important;
+          height: 55px;
+          width:  55px;
+          background-color:#CF8E2C;
+          position: absolute;
+          margin-top: 220px!important;
+          margin-bottom: 1px !important;
+          //margin-left: 1px;
+          -webkit-border-radius: 50px !important;
+          -moz-border-radius: 50px !important;
+          border-radius:50px !important;
+        }
+  
+
+}

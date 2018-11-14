@@ -1,0 +1,120 @@
+<ion-header class="header_evento">
+
+  <ion-navbar color="prime" class="nav_evento">
+    <ion-title class="nav_evento">{{evento.nome}}</ion-title>
+  </ion-navbar>
+  <ion-fab right bottom class="fab_map">
+    <button ion-fab mini class="btn-fab-conteudo" color="prime" (click)="abrirMapa()">
+      <ion-icon name="md-map" class="rstp-icone-conteudo"> </ion-icon>
+    </button>
+  </ion-fab>
+  <ion-fab right bottom class="fab_compartilha">
+    <button ion-fab mini class="btn-fab-conteudo" color="prime">
+      <ion-icon name="md-share" class="rstp-icone-conteudo"> </ion-icon>
+    </button> 
+  </ion-fab>
+  <img src=" {{evento.banner}}" class="img-evento">
+  <ion-fab right top  class="data_evento">
+    <ion-badge class="bd-data_evento">
+      <h1 color="sub" class="boton_data">{{evento.dia.getDate().toString()}}
+        <p class="mes-evento">{{mes[(evento.dia.getMonth())]}}/{{evento.dia.getUTCFullYear() }}<br>
+          {{evento.dia.getHours().toString()}}:{{((evento.dia.getMinutes()<10?"0":"") + evento.dia.getMinutes())}}</p>
+      </h1>
+    </ion-badge>
+  </ion-fab>
+ <!-- <ion-card class="card_descricao_evento">
+
+    <p class="titulo_evento"> </p>
+    <p class="endereco_evento"> {{evento.endereco}}</p>
+
+  </ion-card>-->
+</ion-header>
+
+
+<ion-content class="background-page " scroll="true">
+  <ion-fab right bottom class="fab-nome-lista">
+    <button ion-fab class="btn-fab-evento" color="prime"  (click)="AlertNomelista()">
+      <ion-icon name="ios-list" class="rstp-icone"> </ion-icon>
+    </button>
+  </ion-fab>
+  <ion-grid class="grid-info">
+    <ion-row class="linha">
+      <ion-col col-3 class="colum ">
+        <p class="titulo-header">Atrações
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{evento.atracoes}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+        <ion-col col-3 class="colum ">
+          <p class="titulo-header">Local
+            <p>
+        </ion-col>
+        <ion-col col-9 class="colum">
+          <p class="texto-infor">{{evento.local}}</p>
+        </ion-col>
+      </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Produção
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{evento.producao}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Valores
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{evento.valores}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Venda
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{evento.venda}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Contatos
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{evento.contatos}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Info. Extra
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{evento.infoExtra}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Descrição
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{evento.descricao}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ultima_linha">
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

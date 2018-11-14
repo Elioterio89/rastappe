@@ -1,0 +1,679 @@
+page-eventos{
+
+  ion-slides{
+    height: auto;
+}
+
+
+
+
+///////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////
+
+.card-itens{
+  height: 45px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background-color:transparentize($color: #CF8E2C, $amount: 0.3)
+
+}
+.card-end-list{
+  background-color:transparentize($color: #CF8E2C, $amount: 1);
+  margin-bottom: 100px;
+}
+.bg-evento-list{
+  background-color:transparentize($color: #CF8E2C, $amount: 0.4);
+}
+.card-perfil{
+  height: 30%;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}
+#card-perfil-menu {
+
+    background-color: #CF8E2C;
+    
+    height:100%;
+    width:100%;
+
+  }
+ .btn {
+   padding-left: 12px !important;
+    top: 5px;
+    width: 10px;
+    height: 30px;
+  }
+  .colseach{
+    padding-right: 0px !important; 
+  }
+  .icn{
+    font-size: 25px;
+    color: #fff;
+    border: #fff;
+   // text-align: left;
+  }
+  .img_slide{
+    width: 100%;
+    max-width: 1024px;
+    height: 100%;
+    max-height: 200px;
+    
+  }
+
+  .img_evento{
+    width: 100%;
+    max-width: 1024px;
+    height: 100%;
+    max-height: 200px; 
+    min-height:100px ;   
+    min-width: 300px;
+  }
+
+
+  .card_slide{ 
+    height: 100%;
+    width: 100% !important;
+    max-width: 1024px;
+    margin: 0px 0px 0px 0px;
+    padding:  0px 0px 0px 0px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; 
+}
+.card_slide_geral{
+    height: 200px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; 
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px; 
+    border: 1.5px solid #fff;
+
+}
+.btn-fab-evento{
+  height: 35px;
+  width:  35px;
+  border-style: solid;
+  border: 2px solid #442d0b;  
+}
+
+.btn-fab-externo{
+  border-style: solid !important;
+  border: 2px solid #7d551a !important; 
+}
+.badge-conteudo{
+  right:1px;
+  color: #7d551a;
+  margin-left: 90px;
+  background-color: #CF8E2C !important;
+  text-align:initial;
+
+.cont-badge{ 
+  margin-bottom: 0px !important;
+  color: #7d551a;
+}
+
+}
+.rodape-conteudo{
+  height:35px;
+  width:  auto;
+  background-color:transparentize($color: #7d551a, $amount: 0.4);
+
+}
+
+.btn-fab-conteudo{
+  border-style: solid;
+  border: 2px solid #7d551a;  
+}
+.div-check{ 
+  position:relative;
+}
+
+ion-checkbox{
+  zoom: 1.5; 
+  background-color: #CF8E2C;
+}
+
+
+#fab2{
+  padding-top: 45px;
+}
+#fab3{
+  padding-top: 80px;
+}
+.fab-evento{ 
+  position: absolute;
+  right: 4px; 
+  height: 1px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 3px;
+  color: #fff;
+  
+}
+
+.fab-evento-data{
+  position: absolute ;
+  background-color: #7d551aa3;
+  //background-color:transparentize($color: #f7f7f7, $amount: 0.9);
+  height: 100%;
+  line-height: 16px;
+  padding-left: 0px;
+  padding-right: 8px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: 3px;  
+}
+
+.fab-eventoTESTE{
+  position: absolute;
+  right: 48px;
+  background: rgba(0,0,0,0.7);
+  height: 240px;
+  line-height: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 3px;
+  color: #fff;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+}
+.img-evento{
+  width: 100%;
+  max-width: 1024px;
+  height:  121px;
+  max-height: 200px;
+  min-height: 121px;
+  min-width: 300px;
+
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+ // width: auto !important;
+}
+.list-evetos{
+  background-color:transparentize($color: #CF8E2C, $amount: 1);
+  padding: 10px;
+  //margin-left:10px ;
+  //margin-right:10px ;
+  width: 100%;
+
+}
+
+
+
+.rstp-icone{
+  font-size: 36px;
+  color: #7d551a;
+
+}
+.rstp-icone-conteudo{
+  font-size: 26px;
+  color: #7d551a;
+}
+
+.titulo{
+        width:80px;
+        height: auto;
+        display: inline-block;
+        font-size: 5vw;
+       // font-weight: bold;
+        color: #fff;
+        text-align: center;
+        text-align:right;
+        background-color:transparentize($color: #fff, $amount: 1);
+}
+.texto-evento{
+        width: 50px;
+        height: 5px;
+        display: inline-block;
+        font-size: 4vw;
+        text-align: center;        
+        color: #fff;
+        background-color:transparentize($color: #fff, $amount: 1);
+}
+
+
+.card-botoes-conteudo{
+        width:80px;
+        height: auto;
+        display: inline-block;
+        text-align: center;
+        text-align:right;
+        background-color:transparentize($color: #7d551a, $amount: 1);
+        padding-left:0px;
+        padding-right:0px;
+        padding-top:0px;
+        padding-bottom:0px;        
+        margin-left:0px;
+        margin-right:0px;
+        margin-bottom:0px;
+        margin-top:0px;
+        position:relative;
+        
+
+}
+
+.card-informaçoes-conteudo{
+        width: auto;
+        height: auto;
+        background-color:transparentize($color: #f7f7f7, $amount: 0.9);       
+        text-align: center;
+        padding-left:0px;
+        padding-right:0px;
+        padding-top:0px;        
+        position:relative;
+        white-space:normal;
+        padding-bottom:0px;
+        margin-left:87px;
+        margin-right:0px;
+        margin-bottom:0px;
+        margin-top:0px;  
+        font-size: 4vw;
+        text-align: center;        
+        color: #fff; 
+}
+
+
+// #f7f7f7e0
+
+
+.list-evetos-btn{
+  background-color:transparentize($color: #CF8E2C, $amount: 1);
+  //padding-left: 10px;
+  //padding-right: 2px;
+  width: 100%;
+  padding: 0px !important;
+
+}
+
+.card-infor{
+  background-color:transparentize($color: #CF8E2C, $amount: 1);
+  margin:1px;
+}
+.header-infor{
+  padding:0px; 
+  
+  .titulo-header{ 
+    text-align: left;
+    font-size: 1.1rem; 
+    color:#7d551a;   
+  font-weight: bold;
+  }
+}
+.content-header{
+  padding:0px; 
+    .texto-infor{
+      text-align: left;
+      font-size: 1.5rem;  
+    }
+}
+
+////////////////////////////////////////////////////////
+
+
+.searchbar-md {
+  padding: 8px;
+  padding-right: 0px;
+  padding-left: 4px;
+}
+
+.fab-md-prime {
+  color: #7d551a; 
+    border: 2px solid #7d551a !important; 
+  
+}
+
+.label-md {
+ margin: 0px 0px 0px 0px;
+}
+  .card-md h1 {
+  margin: 0 0 0px;
+  font-size: 2.4rem;
+  font-weight: normal;
+  color: #fff;
+}
+
+
+.card-content-md {
+  padding: 0px 0px 0px 0px; 
+ font-size: 1.4rem;
+ line-height: 1.5;
+}
+
+
+
+.item-md p {
+  margin: 0 0 ;
+  overflow: inherit;
+  font-size: 1.4rem;
+  line-height: normal;
+  text-overflow: inherit;
+  color: #f7f7f7;
+}
+ion-badge {
+
+  padding: 10px 10px;
+  text-align: center;
+  display: inline-block;
+  min-width: 10px;
+  height:10px;
+  font-weight: bold;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+.badge-md {
+  border-radius: 50px;
+  color: #CF8E2C;
+  margin-left: 90px;
+  background-color:transparentize($color: #CF8E2C, $amount: 1);
+
+}
+
+
+.swiper-pagination-bullet-active {
+  background: #CF8E2C;
+  opacity: 1;
+}
+
+
+.checkbox-md-secondary .checkbox-checked {
+  border-color: #cf8e2c;
+  background-color: #7d551a;
+}
+
+.item-md.item-block .item-inner {
+  padding-right: 0px; 
+  border-bottom: 0px solid #CF8E2C;
+}
+
+.item-md {
+  padding-left: 0px;
+}
+.item.item-md .checkbox-md {
+  position: static;
+  display: block;
+  margin: 0px 0px 0px 0px;
+}
+
+.checkbox-md .checkbox-icon {
+  border-radius: 22px;
+  border-color: #cf8e2c;
+  background-color: #7d551a;
+}
+.list-md {
+  margin: 1px 6px 5px 15px;
+}
+
+.item-md ion-avatar[item-left],
+.item-md ion-thumbnail[item-left],
+.item-md ion-avatar[item-start],
+.item-md ion-thumbnail[item-start] {
+  margin: 0px 10px 1px 0px;
+}
+
+///////////////////////////////////////////////////////
+
+.fab-data{
+left:1px;
+}
+.list-evetos-item{
+  background-color:transparentize($color: #CF8E2C, $amount: 1);
+  padding-top: 0%;
+  padding-bottom: 0%;
+  width: 100%;
+  height: 30%;
+}
+.card_baner{
+  margin :0%;
+  padding: 0%;
+  width: 100%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px; 
+}
+.card_evento{ 
+  height: 30%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; 
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px; 
+  padding-right: 0%;
+  margin-right: 0%;
+  margin-left: 0%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  border: 1.0px solid #7d551a;
+  background-color:transparentize($color: #fff, $amount: 1);
+
+  
+  //background: linear-gradient(90deg,rgba(0, 0, 0, 0.9) 5%,transparentize($color: #fff, $amount: 1) 95%);
+  //background: linear-gradient(90deg, #000 40%, transparentize($color: #fff, $amount: 1) 60%);
+}
+
+.colum{
+  //background-color: #f7f7f7e0;
+  //border-bottom: 1px solid #7d551a4a;
+  //background-color: #7d551a;
+  text-align: left;
+  padding-left: 2px;
+  .colum-texto-infor{  
+    text-align: left;
+    color:#7d551a;   
+    font-size: 1.5rem;  
+  }
+}
+
+
+.colum-titulo{   
+  padding: 0px;
+  padding-left: 2px;
+  text-align: left;
+  
+  .colum-titulo-header{
+    font-size: 1.2rem; 
+    color:#7d551a;   
+    font-weight: bold;
+  }
+}
+
+.card-conteudo{
+  margin: 0%;
+  padding: 0%;
+  width: 100%;
+  position:relative;
+  background-color:transparentize($color: #fff, $amount: 1);
+  }
+
+
+.item_evento{ 
+  height: 30%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; 
+  margin-right: 0%;
+  margin-left: 0%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  background-color:transparentize($color: #f7f7f7, $amount: 0.3);
+  //background: linear-gradient(90deg,rgba(126, 84, 26, 0.925) 5%,transparentize($color: #fff, $amount: 0.8) 95%);
+}
+
+
+
+  .card-background-page {
+
+    //background-image: url("../../assets/imgs/bg_marca_dagua.png"); 
+    ion-card {
+      position: relative;
+      text-align: center;
+      background-color:transparentize($color: #CF8E2C, $amount: 0.2)
+      
+    }
+  
+    .card-data {
+      border-radius: 50% ;
+
+    }
+
+    .data-evento{   
+      color: #fff;
+   }
+   .hora-evento{   
+    color: #fff;
+ }
+    .card-title {
+      font-size: 1.8em;
+      width: 100%;
+      font-weight: inherit;
+      color: #fff;
+    }
+
+    .card-title {
+      font-size: 1.8em;
+      width: 100%;
+      font-weight: inherit;
+      color: #fff;
+    }
+
+    .photo-menu {
+      margin: 0.5em auto;
+      border-radius: 50% ;
+      width: 35%;
+      height: 35%;
+      
+      ion-searchbar{        
+        width: auto;
+        margin: auto;
+        flex-basis: 50px;
+          border-radius: 40px;
+          -webkit-border-radius: 40px;
+          -moz-border-radius: 40px;
+
+     }     
+´
+
+.nmAPP{
+  text-align: right;
+}
+    
+    .avatar {
+      
+      -webkit-border-radius: 40px;
+      -moz-border-radius: 40px;
+      border-radius: 40px;
+      width: 100%;
+
+    }
+    .avatar-grupo {
+      border-radius: 50%;
+      width: 15%;
+      top: 45%;
+      left: 60%;
+
+    }
+  }
+  .accoredeon
+  
+    .card-subtitle {
+      font-size: 1.0em;
+      top: 52%;
+      width: 100%;
+      color: #fff !important;
+    }
+  
+  }
+
+  .sidebara{
+    background-image: url("../../assets/imgs/bg_toogle.png"); 
+  }
+
+    .carrosel{
+      width: 100%;
+      height: 50px;
+    }
+
+  .icon-menu {
+    color :  #CF8E2C;    
+    margin-left:30px;
+    .fonte-menu{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+  }
+}
+.list-menu{
+  margin: 1px 6px 5px -1px;
+
+}
+
+  .icon-menu-premium{
+    color :  rgb(216, 240, 8);    
+   
+}
+
+  .title_rodape{
+    color :  #fff;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+    text-align: right;
+  }
+
+  .bg{
+    background: 
+    {
+      image: url("../../assets/imgs/bg_marca_dagua.png");     
+    };    
+    background-color: #CF8E2C;
+    height:100%;
+    width:100%;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bgView2 {
+
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: #CF8E2C;
+    
+
+  }
+
+  .no-scroll .scroll-content{
+    overflow: hidden;
+  }
+
+  .scroll .scroll-content{
+    overflow:auto;
+    width: auto;
+
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius:30px;
+    background-color:transparentize($color: #CF8E2C, $amount: 0.3);
+    //border: 1.5px solid #fff;
+
+  }
+
+}
