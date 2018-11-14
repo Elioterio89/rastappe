@@ -12,6 +12,7 @@ import { Filtro } from '../../app/classes/Filtro';
 import { Storage } from '@ionic/storage';
 import { DiaDoMes } from '../../app/classes/DiaDoMes';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { NomeListaModalPage } from '../nome-lista-modal/nome-lista-modal';
 
 
 
@@ -248,6 +249,14 @@ export class EventosPage  {
     });
     pModal.present();   
   }
+  
+  abrirNomeLista(){
+    let pModal = this.modalCtrl.create(NomeListaModalPage);
+    pModal.onDidDismiss(data => {  
+    });
+    pModal.present();   
+  }
+
   AlertNomelista() {
     console.log("sdasd");
     let prompt = this.alertCtrl.create({

@@ -20,6 +20,7 @@ import { CalendarioModalPage } from '../pages/calendario-modal/calendario-modal'
 import { Calendar } from '@ionic-native/calendar';
 import { IonicStorageModule } from '@ionic/storage';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { NomeListaModalPage } from '../pages/nome-lista-modal/nome-lista-modal';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     LojaPage,
     PerfilPage,
     EventoDescricaoPage,
-    CalendarioModalPage
+    CalendarioModalPage,
+    NomeListaModalPage
 
     
   ],
@@ -58,7 +60,8 @@ import { SocialSharing } from '@ionic-native/social-sharing';
     LojaPage,    
     PerfilPage,
     EventoDescricaoPage,
-    CalendarioModalPage
+    CalendarioModalPage,
+    NomeListaModalPage
   ],
   providers: [
     StatusBar,
