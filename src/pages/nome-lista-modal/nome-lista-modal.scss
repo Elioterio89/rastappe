@@ -1,5 +1,18 @@
 page-nome-lista-modal {
 
+
+  ////////////////////////////////////////////
+  ion-app.md [padding] .scroll-content {
+    padding: 9px;
+  }
+
+  .card-content-md {
+    padding: 1px 1px;
+  }
+  
+  
+  ////////////////////////////////////////////
+
       .modalnomelista{
         background-color:transparentize($color: #000, $amount: 0.5 ) !important;
       }
@@ -63,6 +76,47 @@ page-nome-lista-modal {
           border-radius:50px !important;
         }
 
+        .iconsend{          
+            font-size: 30px !important;
+        }
+
+        .fab-addnome{
+          position: absolute;
+          top:1px;
+          right: 1px;
+         }
+         .btn-fab-addnome
+         {
+          border-style: solid !important;
+          border: 2px solid #7d551a !important;
+          background-color: #CF8E2C;
+          -webkit-border-radius: 50px !important;
+          -moz-border-radius: 50px !important;
+          border-radius:50px !important;
+          height: 30px !important;
+          width: 30px !important;
+         }
+
+
+        .titulonomelista{
+          color:#CF8E2C;
+          font-weight: bold;
+        }
+
+        .btnEnviar{
+          border-style: solid !important;
+          border: 2px solid #7d551a !important;
+          position: absolute;
+          background-color: #CF8E2C;
+          height: 55px;
+          width: 55px;
+          -webkit-border-radius: 50px !important;
+          -moz-border-radius: 50px !important;
+          border-radius:50px !important;
+          margin-left: 160px !important;
+
+        }
+
         .btnFecharLista{
           border-style: solid !important;
           border: 2px solid #7d551a !important;
@@ -73,7 +127,7 @@ page-nome-lista-modal {
           -webkit-border-radius: 50px !important;
           -moz-border-radius: 50px !important;
           border-radius:50px !important;
-          margin-left: 120px !important;
+          margin-left: 80px !important;
         }
 
         .cardsNomes{

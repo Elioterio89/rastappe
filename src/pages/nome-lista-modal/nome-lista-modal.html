@@ -6,8 +6,16 @@
           Lista Amiga
         </p>
       </ion-card-header>
-      <ion-card >
-        <ion-card-content > 
+      <ion-card>
+        <ion-item>
+            <ion-fab top right class="fab-addnome">
+                <button ion-fab mini class="btn-fab-addnome" color="prime">
+                  <ion-icon name="add" color="terci"> </ion-icon>
+                </button>
+              </ion-fab>
+          <h2 class="titulonomelista">Forro do Talco</h2>
+        </ion-item>
+        <ion-card-content>
           <ion-scroll scrollY="true" class="cardsNomes scroll">
             <ion-list>
               <p>
@@ -23,18 +31,20 @@
                 </ion-item>
               </p>
               <p>
-                  <ion-item>
-                    <ion-label floating>Nome</ion-label>
-                    <ion-input type="text"></ion-input>
-                  </ion-item>
-                </p>
+                <ion-item>
+                  <ion-label floating>Nome</ion-label>
+                  <ion-input type="text"></ion-input>
+                </ion-item>
+              </p>
             </ion-list>
           </ion-scroll>
         </ion-card-content>
       </ion-card>
-
+      <button ion-fab mini class="btnEnviar" color="prime">
+        <ion-icon class="iconsend" name="ios-send" color="terci"> </ion-icon>
+      </button>
       <button ion-fab mini class="btnFecharLista" color="prime">
-        <ion-icon name="md-refresh" color="terci"> </ion-icon>
+        <ion-icon name="md-close" color="terci"> </ion-icon>
       </button>
     </ion-card>
   </div>
