@@ -21,6 +21,10 @@ page-nome-lista-modal {
         height: 100%;
         width: 100%;      
       }
+      
+      .nomelista{
+        padding: 0px !important;
+      }
 
       .cardmodalnomelista{
         border: 3px solid #7d551a !important;
@@ -28,7 +32,7 @@ page-nome-lista-modal {
         width: calc(100% ) !important;
         max-width: 290px !important;
         max-height:350px !important;
-        height: calc(100% - 0px) !important;
+        height: calc(350px - 0px) !important;
         -webkit-border-radius: 30px !important;
         -moz-border-radius: 30px !important;
         border-radius:30px !important;
@@ -132,6 +136,7 @@ page-nome-lista-modal {
 
         .cardsNomes{
           height: 160px;
+          padding: 0px !important;
         }
 
         .no-scroll .scroll-content{
