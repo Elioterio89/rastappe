@@ -9,35 +9,23 @@
       <ion-card>
         <ion-item>
             <ion-fab top right class="fab-addnome">
-                <button ion-fab mini class="btn-fab-addnome" color="prime">
-                  <ion-icon name="add" color="terci"> </ion-icon>
-                </button>
+                <button ion-fab mini class="btn-fab-addnome" color="prime" (click)="addNome()">
+                    <ion-icon name="add" color="terci" > </ion-icon>
+                  </button>
               </ion-fab>
           <h2 class="titulonomelista">Forro do Talco</h2>
         </ion-item>
         <ion-card-content>
-          <ion-scroll scrollY="true" class="cardsNomes scroll">
+          
             <ion-list>
-              <p>
-                <ion-item class="nomelista">
-                  <ion-label color="terci" stacked>Nome/Sobrenome</ion-label>
-                  <ion-input type="text" ></ion-input>
+                <ion-scroll scrollY="true" class="cardsNomes scroll">
+                <ion-item class="nomelista" *ngFor="let nome of nomes" >
+                  <ion-label color="terci" stacked>{{nome.titulo}}</ion-label>
+                  <ion-input type="{{nome.type}}" value="{{nome.value}}" ></ion-input>
                 </ion-item>
-              </p>
-              <p>
-                <ion-item>
-                  <ion-label color="primary" stacked>Stacked Label</ion-label>
-                  <ion-input type="email" placeholder="Email Input"></ion-input>
-                </ion-item>
-              </p>
-              <p>
-                <ion-item>
-                  <ion-label color="primary" stacked>Stacked Label</ion-label>
-                  <ion-input type="email" placeholder="Email Input"></ion-input>
-                </ion-item>
-              </p>
+              </ion-scroll>  
             </ion-list>
-          </ion-scroll>
+         
         </ion-card-content>
       </ion-card>
       <button ion-fab mini class="btnEnviar" color="prime">
