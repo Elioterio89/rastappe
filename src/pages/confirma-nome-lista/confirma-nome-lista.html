@@ -1,0 +1,29 @@
+<ion-content padding class="modalnomelista no-scroll">
+  <div class="overlay">
+    <ion-card class="cardmodalnomelista">
+      <ion-card-header class="headermodalnomelista">
+        <p class="titulomodal">
+         Confirma?
+        </p>
+      </ion-card-header>
+      <ion-card>
+        <ion-card-content>          
+            <ion-list>
+                <ion-scroll scrollY="true" class="cardsNomes scroll">
+                <ion-item class="nomelista" *ngFor="let nome of nomes" >
+                 
+                </ion-item>
+              </ion-scroll>  
+            </ion-list>
+         
+        </ion-card-content>
+      </ion-card>
+      <button ion-fab mini class="btnEnviar" color="prime"(click)="fecharModal(nomes,true)">
+        <ion-icon class="iconsend" name="ios-send" color="terci"> </ion-icon>
+      </button>
+      <button ion-fab mini class="btnFecharLista" color="prime" (click)="fecharModal(nomes,false)">
+        <ion-icon name="md-close" color="terci"> </ion-icon>
+      </button>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,163 @@
+page-confirma-nome-lista {
+
+
+        ////////////////////////////////////////////
+        ion-app.md [padding] .scroll-content {
+          padding: 9px;
+        }
+      
+        .card-content-md {
+          padding: 1px 1px;
+        }
+        
+      
+        .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+      .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+        border-bottom-color: #7d551a;
+        -webkit-box-shadow: inset 0 -1px 0 0 #7d551a;
+        box-shadow: inset 0 -1px 0 0 #7d551a;
+      }
+        
+        ////////////////////////////////////////////
+      
+            .modalnomelista{
+              background-color:transparentize($color: #000, $amount: 0.5 ) !important;
+            }
+      
+            .overlay{
+              height: 100%;
+              width: 100%;      
+            }
+            
+            .nomelista{
+              padding: 0px !important;
+            }
+      
+            .cardmodalnomelista{
+              border: 3px solid #7d551a !important;
+              border-radius: 2px !important;
+              width: calc(100% ) !important;
+              max-width: 290px !important;
+              max-height:350px !important;
+              height: calc(350px - 0px) !important;
+              -webkit-border-radius: 30px !important;
+              -moz-border-radius: 30px !important;
+              border-radius:30px !important;
+              margin: auto !important;
+              margin-top:20% !important;
+      
+            }
+      
+      
+            .headermodalnomelista{
+              padding: 10PX !important;
+              background-color: #CF8E2C !important; 
+              background-image: url("../../assets/imgs/bg_marca_dagua.png") !important;
+              
+            }
+      
+            .btn-modal{
+              border-style: solid !important;
+              border: 2px solid #7d551a !important;
+              height: 55px;
+              width:  55px;
+              background-color:#CF8E2C;
+              position: absolute;
+              margin-top: 225px;
+              margin-left: 34px;
+              }
+      
+              .titulomodal{
+                  color: #ffffff !important;
+                  font-size: 25px;
+                  font-weight: bold;
+              }
+            
+              .btn-modal-calendario{
+                border-style: solid !important;
+                border: 2px solid #7d551a !important;
+                height: 55px;
+                width:  55px;
+                background-color:#CF8E2C;
+                position: absolute;
+                margin-top: 220px!important;
+                margin-bottom: 1px !important;
+                //margin-left: 1px;
+                -webkit-border-radius: 50px !important;
+                -moz-border-radius: 50px !important;
+                border-radius:50px !important;
+              }
+      
+              .iconsend{          
+                  font-size: 30px !important;
+              }
+      
+              .fab-addnome{
+                position: absolute;
+                top:1px;
+                right: 1px;
+               }
+               .btn-fab-addnome
+               {
+                border-style: solid !important;
+                border: 2px solid #7d551a !important;
+                background-color: #CF8E2C;
+                -webkit-border-radius: 50px !important;
+                -moz-border-radius: 50px !important;
+                border-radius:50px !important;
+                height: 30px !important;
+                width: 30px !important;
+               }
+      
+      
+              .titulonomelista{
+                color:#CF8E2C;
+                font-weight: bold;
+              }
+      
+              .btnEnviar{
+                border-style: solid !important;
+                border: 2px solid #7d551a !important;
+                position: absolute;
+                background-color: #CF8E2C;
+                height: 55px;
+                width: 55px;
+                -webkit-border-radius: 50px !important;
+                -moz-border-radius: 50px !important;
+                border-radius:50px !important;
+                margin-left: 160px !important;
+      
+              }
+      
+              .btnFecharLista{
+                border-style: solid !important;
+                border: 2px solid #7d551a !important;
+                position: absolute;
+                background-color: #CF8E2C;
+                height: 55px;
+                width: 55px;
+                -webkit-border-radius: 50px !important;
+                -moz-border-radius: 50px !important;
+                border-radius:50px !important;
+                margin-left: 80px !important;
+              }
+      
+              .cardsNomes{
+                height: 160px;
+                padding: 0px !important;
+              }
+      
+              .no-scroll .scroll-content{
+                overflow: hidden;
+              } 
+              .scroll .scroll-content{
+                overflow:auto;
+                width: auto;
+              }
+            
+        
+      
+      
+      
+
+}

@@ -13,6 +13,7 @@ import { Storage } from '@ionic/storage';
 import { DiaDoMes } from '../../app/classes/DiaDoMes';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { NomeListaModalPage } from '../nome-lista-modal/nome-lista-modal';
+import { ConfirmaNomeListaPage } from '../confirma-nome-lista/confirma-nome-lista';
 
 
 
@@ -33,7 +34,7 @@ export class EventosPage  {
   dataFiltro:DiaDoMes;
   filtro:Filtro;
   mes: any = [  ];
-  nomes: Array<{titulo: string, type: string, value: string}>;
+  nomes: Array<{titulo: string, type: string, value: string , checked: boolean}>;
   testCheckboxResult:any;
   testCheckboxOpen:boolean;
   
@@ -240,10 +241,6 @@ export class EventosPage  {
     //return favorito;
   }
 
-  showCheckbox() {
-
-  }
-
 
 
   abrirCalendario(){
@@ -263,48 +260,30 @@ export class EventosPage  {
     let pModal = this.modalCtrl.create(NomeListaModalPage);
     pModal.onDidDismiss(data => {
       this.nomes = [
-        { titulo: "Nome/Sobrenome", type: "text", value: "" },
+        { titulo: "Nome/Sobrenome", type: "text", value: "" ,checked: true },
       ];
       
       if(data === null || data ===false)
       {
         
       }else{
-        this.nomes=data.vet;  
-        this.AlertNomelista(data)        
+        this.nomes=data;  
+        this.ConfirmaEnviaNomelista(data)        
       }   
     });
     pModal.present();   
   }
 
-  AlertNomelista(nomes) { 
+  ConfirmaEnviaNomelista(nomes) {  
     console.log(nomes);
-    let alert = this.alertCtrl.create();
-    alert.setTitle('Which planets have you visited?');
-
-    alert.addInput({
-      type: 'checkbox',
-      label: 'Alderaan',
-      value: 'value1',
-      checked: true
+    let pModal = this.modalCtrl.create(ConfirmaNomeListaPage);
+    pModal.onDidDismiss(data => {
+ 
+  
     });
+    pModal.present();     
+   
 
-    alert.addInput({
-      type: 'checkbox',
-      label: 'Bespin',
-      value: 'value2'
-    });
-
-    alert.addButton('Cancel');
-    alert.addButton({
-      text: 'Okay',
-      handler: data => {
-        console.log('Checkbox data:', data);
-        this.testCheckboxOpen = false;
-        this.testCheckboxResult = data;
-      }
-    });
-    alert.present();
   }
   expandItem(item) {
 
