@@ -33,6 +33,9 @@ export class EventosPage  {
   dataFiltro:DiaDoMes;
   filtro:Filtro;
   mes: any = [  ];
+  nomes: Array<{titulo: string, type: string, value: string}>;
+  testCheckboxResult:any;
+  testCheckboxOpen:boolean;
   
   //itemExpandHeight: string = 'auto';
   constructor(public navCtrl: NavController,
@@ -237,6 +240,12 @@ export class EventosPage  {
     //return favorito;
   }
 
+  showCheckbox() {
+
+  }
+
+
+
   abrirCalendario(){
     let pModal = this.modalCtrl.create(CalendarioModalPage);
     pModal.onDidDismiss(data => {     
@@ -252,33 +261,50 @@ export class EventosPage  {
   
   abrirNomeLista(){
     let pModal = this.modalCtrl.create(NomeListaModalPage);
-    pModal.onDidDismiss(data => {  
+    pModal.onDidDismiss(data => {
+      this.nomes = [
+        { titulo: "Nome/Sobrenome", type: "text", value: "" },
+      ];
+      
+      if(data === null || data ===false)
+      {
+        
+      }else{
+        this.nomes=data.vet;  
+        this.AlertNomelista(data)        
+      }   
     });
     pModal.present();   
   }
 
-  AlertNomelista() {
-    console.log("sdasd");
-    let prompt = this.alertCtrl.create({
-      title: "Lista Amiga",
-      message: "Envie o nome aqui!",
-      inputs: [
-        {
-          name: 'mome',
-          placeholder: 'Nome'
-        },
-      ],
-      buttons: [
-        {
-          text: 'OK',
-          handler: data => {
-            console.log('Saved clicked');
-          }
-        }
-      ],
-      cssClass: 'alertLista'
+  AlertNomelista(nomes) { 
+    console.log(nomes);
+    let alert = this.alertCtrl.create();
+    alert.setTitle('Which planets have you visited?');
+
+    alert.addInput({
+      type: 'checkbox',
+      label: 'Alderaan',
+      value: 'value1',
+      checked: true
     });
-    prompt.present();
+
+    alert.addInput({
+      type: 'checkbox',
+      label: 'Bespin',
+      value: 'value2'
+    });
+
+    alert.addButton('Cancel');
+    alert.addButton({
+      text: 'Okay',
+      handler: data => {
+        console.log('Checkbox data:', data);
+        this.testCheckboxOpen = false;
+        this.testCheckboxResult = data;
+      }
+    });
+    alert.present();
   }
   expandItem(item) {
 

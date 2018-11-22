@@ -21,17 +21,17 @@
                 <ion-scroll scrollY="true" class="cardsNomes scroll">
                 <ion-item class="nomelista" *ngFor="let nome of nomes" >
                   <ion-label color="terci" stacked>{{nome.titulo}}</ion-label>
-                  <ion-input type="{{nome.type}}" value="{{nome.value}}" ></ion-input>
+                  <ion-input type="{{nome.type}}" [value]="nome.value" [(ngModel)]="nome.value" autofocus></ion-input>
                 </ion-item>
               </ion-scroll>  
             </ion-list>
          
         </ion-card-content>
       </ion-card>
-      <button ion-fab mini class="btnEnviar" color="prime">
+      <button ion-fab mini class="btnEnviar" color="prime"(click)="fecharModal(nomes,true)">
         <ion-icon class="iconsend" name="ios-send" color="terci"> </ion-icon>
       </button>
-      <button ion-fab mini class="btnFecharLista" color="prime">
+      <button ion-fab mini class="btnFecharLista" color="prime" (click)="fecharModal(nomes,false)">
         <ion-icon name="md-close" color="terci"> </ion-icon>
       </button>
     </ion-card>
