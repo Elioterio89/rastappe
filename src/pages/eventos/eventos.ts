@@ -263,43 +263,48 @@ export class EventosPage  {
       
       var cout =0;
       var Vnomes =[];
-      data.vet.forEach(function(nome){
-        
-        if(nome.value===""){
+      if(data!==null){
+        data.vet.forEach(function(nome){
           
-        }else{          
-          Vnomes.push(nome);
-          cout++;
-        }     
-        
-      });
-      if(data.bool === null || data.bool ===false || cout===0)
-      {        
-      }else{ 
-        this.ConfirmaEnviaNomelista(Vnomes)        
-      } 
+          if(nome.value===""){
+            
+          }else{          
+            Vnomes.push(nome);
+            cout++;
+          }     
+          
+        });
+        if(data.bool === null || data.bool ===false || cout===0)
+        {        
+        }else{ 
+          this.ConfirmaEnviaNomelista(Vnomes)        
+        } 
+     }
     });
     pModal.present();   
   }
 
   ConfirmaEnviaNomelista(nomes) {  
    
-      nomes.forEach(function(nome){
-      nome.nome = nome.value;
-    });
+      nomes.forEach(function(nome)
+      {
+         nome.nome = nome.value;
+      });
     let pModal = this.modalCtrl.create(ConfirmaNomeListaPage,{nomes:nomes});
     pModal.onDidDismiss(data => {
     //console.log(data);
     var VnomesConf =[];
-    data.vet.forEach(function(nome){
+    if(data!==null){
+      data.vet.forEach(function(nome){
+          
+        if(nome.checked===true){
+          VnomesConf.push(nome);
+        }
         
-      if(nome.checked===true){
-        VnomesConf.push(nome);
-      }
-      
-    }); 
-    this.nomeConfirmados =VnomesConf;
-    console.log(this.nomeConfirmados);
+      }); 
+      this.nomeConfirmados =VnomesConf;
+      console.log(this.nomeConfirmados);
+    }
     });
 
    

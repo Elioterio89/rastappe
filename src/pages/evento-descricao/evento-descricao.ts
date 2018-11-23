@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, ModalController, AlertController, 
 import { CardSlide } from '../../app/classes/CardSlide ';
 import { ModalMapPage } from '../modal-map/modal-map';
 import { Evento } from '../../app/classes/Evento';
+import { ConfirmaNomeListaPage } from '../confirma-nome-lista/confirma-nome-lista';
+import { NomeListaModalPage } from '../nome-lista-modal/nome-lista-modal';
 
 @IonicPage()
 @Component({
@@ -12,6 +14,8 @@ import { Evento } from '../../app/classes/Evento';
 export class EventoDescricaoPage {
   evento:Evento;
   mes: any = [  ];
+  nomes: Array<{titulo: string, type: string, value: string , checked: boolean, nome:string}>;
+  nomeConfirmados: Array<{titulo: string, type: string, value: string , checked: boolean, nome:string}>;
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -36,28 +40,63 @@ export class EventoDescricaoPage {
     this.modalCtrl.create(ModalMapPage).present();
   }
 
-  AlertNomelista() {
-    let prompt = this.alertCtrl.create({
-      title: "Lista Amiga",
-      message: "Envie o nome aqui!",
-      inputs: [
-        {
-          name: 'mome',
-          placeholder: 'Nome'
-        },
-      ],
-      buttons: [
-        {
-          text: 'OK',
-          handler: data => {
-            console.log('Saved clicked');
-          }
-        }
-      ],
-      cssClass: 'alertLista'
+  abrirNomeLista(nome){
+
+    let pModal = this.modalCtrl.create(NomeListaModalPage,{nome:nome});
+    pModal.onDidDismiss(data => {
+      
+      var cout =0;
+      var Vnomes =[];
+      if(data!==null){
+        data.vet.forEach(function(nome){
+          
+          if(nome.value===""){
+            
+          }else{          
+            Vnomes.push(nome);
+            cout++;
+          }     
+          
+        });
+        if(data.bool === null || data.bool ===false || cout===0)
+        {        
+        }else{ 
+          this.ConfirmaEnviaNomelista(Vnomes)        
+        } 
+     }
     });
-    prompt.present();
+    pModal.present();   
   }
+
+  ConfirmaEnviaNomelista(nomes) {  
+   
+      nomes.forEach(function(nome)
+      {
+         nome.nome = nome.value;
+      });
+    let pModal = this.modalCtrl.create(ConfirmaNomeListaPage,{nomes:nomes});
+    pModal.onDidDismiss(data => {
+    //console.log(data);
+    var VnomesConf =[];
+    if(data!==null){
+      data.vet.forEach(function(nome){
+          
+        if(nome.checked===true){
+          VnomesConf.push(nome);
+        }
+        
+      }); 
+      this.nomeConfirmados =VnomesConf;
+      console.log(this.nomeConfirmados);
+    }
+    });
+
+   
+    pModal.present();     
+   
+
+  }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventoDescricaoPage');
