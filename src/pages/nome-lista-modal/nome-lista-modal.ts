@@ -14,11 +14,13 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   templateUrl: 'nome-lista-modal.html',
 })
 export class NomeListaModalPage {
-  nomes: Array<{titulo: string, type: string, value: string}>;
-
+  nomes: Array<{titulo: string, type: string, value: string , checked: boolean, nome:string}>;
+  nomeEvento:string;
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
+    this.nomeEvento=navParams.get('nome');
+    console.log(this.nomeEvento);
     this.nomes = [
-      { titulo: "Nome/Sobrenome", type: "text", value: "" },
+      { titulo: "Nome/Sobrenome", type: "text", value: "",checked:true,nome:"" },
   ];
   }
 
@@ -29,7 +31,7 @@ export class NomeListaModalPage {
 
   addNome(){
     //console.log(this.nomes);
-    this.nomes.push({ titulo: "Nome/Sobrenome", type: "text", value: "" });
+    this.nomes.push({ titulo: "Nome/Sobrenome", type: "text", value: "",checked:true,nome:"" });
   }
 
   fecharModal(nomes,enviar){
@@ -38,7 +40,7 @@ export class NomeListaModalPage {
       nomes=null;
     }
     
-   // var dados={vet:nomes,bool:enviar };
-    this.viewCtrl.dismiss(nomes);
+    var dados={vet:nomes,bool:enviar };
+    this.viewCtrl.dismiss(dados);
   }
 }

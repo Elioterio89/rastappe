@@ -70,7 +70,9 @@ page-confirma-nome-lista {
               .titulomodal{
                   color: #ffffff !important;
                   font-size: 25px;
-                  font-weight: bold;
+              }
+              .card-confirma-nome{
+                  height: 200px !important;
               }
             
               .btn-modal-calendario{
@@ -153,6 +155,7 @@ page-confirma-nome-lista {
               .scroll .scroll-content{
                 overflow:auto;
                 width: auto;
+                height: 200px !important;
               }
             
         

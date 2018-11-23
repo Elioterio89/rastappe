@@ -34,7 +34,8 @@ export class EventosPage  {
   dataFiltro:DiaDoMes;
   filtro:Filtro;
   mes: any = [  ];
-  nomes: Array<{titulo: string, type: string, value: string , checked: boolean}>;
+  nomes: Array<{titulo: string, type: string, value: string , checked: boolean, nome:string}>;
+  nomeConfirmados: Array<{titulo: string, type: string, value: string , checked: boolean, nome:string}>;
   testCheckboxResult:any;
   testCheckboxOpen:boolean;
   
@@ -131,7 +132,7 @@ export class EventosPage  {
 
   listaEventos(){
     this.eventos = [
-      { expanded: false ,itemEvento:  new Evento('../../assets/imgs/eventos/1.jpg',1,'','Trio Caruá',
+      { expanded: false ,itemEvento:  new Evento('../../assets/imgs/eventos/1.jpg',1,'Forro dos Guardões','Trio Caruá',
       new Date(2018,10,8,18,0,0),'Tenda dos guardiões-São Carlos(SP)','Forro dos Guardões',
       'Entrada Franca',
       '','triocarua@gmail.com/(15)3444-3333',
@@ -241,8 +242,6 @@ export class EventosPage  {
     //return favorito;
   }
 
-
-
   abrirCalendario(){
     let pModal = this.modalCtrl.create(CalendarioModalPage);
     pModal.onDidDismiss(data => {     
@@ -255,36 +254,60 @@ export class EventosPage  {
     });
     pModal.present();   
   }
+
   
-  abrirNomeLista(){
-    let pModal = this.modalCtrl.create(NomeListaModalPage);
+  abrirNomeLista(nome){
+
+    let pModal = this.modalCtrl.create(NomeListaModalPage,{nome:nome});
     pModal.onDidDismiss(data => {
-      this.nomes = [
-        { titulo: "Nome/Sobrenome", type: "text", value: "" ,checked: true },
-      ];
       
-      if(data === null || data ===false)
-      {
+      var cout =0;
+      var Vnomes =[];
+      data.vet.forEach(function(nome){
         
-      }else{
-        this.nomes=data;  
-        this.ConfirmaEnviaNomelista(data)        
-      }   
+        if(nome.value===""){
+          
+        }else{          
+          Vnomes.push(nome);
+          cout++;
+        }     
+        
+      });
+      if(data.bool === null || data.bool ===false || cout===0)
+      {        
+      }else{ 
+        this.ConfirmaEnviaNomelista(Vnomes)        
+      } 
     });
     pModal.present();   
   }
 
   ConfirmaEnviaNomelista(nomes) {  
-    console.log(nomes);
-    let pModal = this.modalCtrl.create(ConfirmaNomeListaPage);
-    pModal.onDidDismiss(data => {
- 
-  
+   
+      nomes.forEach(function(nome){
+      nome.nome = nome.value;
     });
+    let pModal = this.modalCtrl.create(ConfirmaNomeListaPage,{nomes:nomes});
+    pModal.onDidDismiss(data => {
+    //console.log(data);
+    var VnomesConf =[];
+    data.vet.forEach(function(nome){
+        
+      if(nome.checked===true){
+        VnomesConf.push(nome);
+      }
+      
+    }); 
+    this.nomeConfirmados =VnomesConf;
+    console.log(this.nomeConfirmados);
+    });
+
+   
     pModal.present();     
    
 
   }
+
   expandItem(item) {
 
     this.eventos.map((listItem) => {

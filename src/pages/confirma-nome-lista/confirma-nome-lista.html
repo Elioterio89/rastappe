@@ -6,12 +6,13 @@
          Confirma?
         </p>
       </ion-card-header>
-      <ion-card>
+      <ion-card class="card-confirma-nome">
         <ion-card-content>          
             <ion-list>
                 <ion-scroll scrollY="true" class="cardsNomes scroll">
                 <ion-item class="nomelista" *ngFor="let nome of nomes" >
-                 
+                    <ion-checkbox [(ngModel)]="nome.checked" mode="ios" ></ion-checkbox>
+                    <ion-label>{{nome.value}}</ion-label>                 
                 </ion-item>
               </ion-scroll>  
             </ion-list>
