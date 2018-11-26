@@ -35,6 +35,7 @@ export class EventosPage  {
   filtro:Filtro;
   mes: any = [  ];
   nomes: Array<{titulo: string, type: string, value: string , checked: boolean, nome:string}>;
+  favoritoChange: Array<{value: string , checked: boolean , icon:string}>;
   nomeConfirmados: Array<{titulo: string, type: string, value: string , checked: boolean, nome:string}>;
   testCheckboxResult:any;
   testCheckboxOpen:boolean;
@@ -54,7 +55,8 @@ export class EventosPage  {
     this.filtro = navParams.get('filtro');
 
     this.mes = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez',''];    
-    this.dataFiltro = new DiaDoMes(false,0,0,0); 
+    this.dataFiltro = new DiaDoMes(false,0,0,0);  
+    this.favoritoChange =[ {value: "false", checked:false ,icon:"ion" }];
 
     this.listaEventos();
 
@@ -233,10 +235,10 @@ export class EventosPage  {
   favoritoBtn(favorito){
 
     console.log(favorito);
-    if(favorito!=true){
-      favorito=true;
+    if(favorito===false || favorito===undefined ){
+      this.favoritoChange.push({ value: "true", checked:true,icon:"ios-star" });
     }else{
-      favorito=false;
+      this.favoritoChange.push({ value: "false", checked:false,icon:"ios-star-outline" });
     }
     console.log(favorito);
     //return favorito;

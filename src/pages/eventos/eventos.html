@@ -63,9 +63,10 @@
                                     <button ion-fab class="btn-fab-evento" color="prime" (click)="abrirNomeLista(item.itemEvento.nome)">
                                         <ion-icon name="ios-list" class="rstp-icone"> </ion-icon>
                                     </button>
-
-                                    <button ion-fab class="btn-fab-evento" color="prime" (click)="favoritoBtn(item.itemEvento.favorito)">
-                                        <span *ngIf="item.itemEvento.favorito===false; else  favorito" class="rstp-icone-favorito">
+                                    <input type="hidden" id="custId"[value]="favoritoChange.value" [(ngModel)]="favoritoChange.value"  name="custId" >
+                                    <button ion-fab class="btn-fab-evento"  color="prime" (click)="favoritoBtn(favoritoChange.value)">
+                                      <!--  [value]="nome.value" [(ngModel)]="nome.value"-->
+                                        <span  *ngIf="favoritoChange.value===false; else  favorito" class="rstp-icone-favorito">
                                             <ion-icon name="ios-star-outline" class="rstp-icone-favorito"> </ion-icon>
                                         </span>
                                         <ng-template #favorito class="rstp-icone-favorito-chck">
@@ -252,9 +253,9 @@
                                                 <button ion-fab class="btn-fab-evento" color="prime" (click)="abrirNomeLista(item.itemEvento.nome)">
                                                     <ion-icon name="ios-list" class="rstp-icone"> </ion-icon>
                                                 </button>
-
-                                                <button ion-fab class="btn-fab-evento" color="prime" (click)="favoritoBtn(item.itemEvento.favorito)">
-                                                    <span *ngIf="item.itemEvento.favorito===false; else  favorito" class="rstp-icone-favorito">
+                                                <input type="hidden"[value]="favoritoChange.value" [(ngModel)]="favoritoChange.value"  name="custId" >
+                                                <button ion-fab class="btn-fab-evento"  color="prime" (click)="favoritoBtn(favoritoChange.value)">
+                                                    <span  *ngIf="favoritoChange.value===false; else  favorito" class="rstp-icone-favorito">
                                                         <ion-icon name="ios-star-outline" class="rstp-icone-favorito"> </ion-icon>
                                                     </span>
                                                     <ng-template #favorito class="rstp-icone-favorito-chck">
