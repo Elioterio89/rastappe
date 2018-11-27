@@ -60,18 +60,11 @@
                                             </ion-item>
                                         </div>
                                     </button>-->
-                                    <button ion-fab class="btn-fab-evento" color="prime" (click)="abrirNomeLista(item.itemEvento.nome)">
+                                    <button ion-fab class="btn-fab-evento"  color="prime" (click)="abrirNomeLista(item.itemEvento.nome)">
                                         <ion-icon name="ios-list" class="rstp-icone"> </ion-icon>
                                     </button>
-                                    <input type="hidden" id="custId"[value]="favoritoChange.value" [(ngModel)]="favoritoChange.value"  name="custId" >
-                                    <button ion-fab class="btn-fab-evento"  color="prime" (click)="favoritoBtn(favoritoChange.value)">
-                                      <!--  [value]="nome.value" [(ngModel)]="nome.value"-->
-                                        <span  *ngIf="favoritoChange.value===false; else  favorito" class="rstp-icone-favorito">
-                                            <ion-icon name="ios-star-outline" class="rstp-icone-favorito"> </ion-icon>
-                                        </span>
-                                        <ng-template #favorito class="rstp-icone-favorito-chck">
-                                            <ion-icon name="ios-star" class="rstp-icone-favorito-chck"> </ion-icon>
-                                        </ng-template>
+                                    <button ion-fab  #btnfav class="btn-fab-evento" color="prime" (click)="favoritoBtn(item.itemEvento.favorito)">
+                                            <ion-icon #iconfav [name]="item.itemEvento.favorito.icon" class="rstp-icone-favorito"> </ion-icon>
                                     </button>
                                 </ion-fab>
                                 <ion-card class="card_evento">
@@ -250,17 +243,11 @@
                                                         </ion-item>
                                                     </div>
                                                 </button>-->
-                                                <button ion-fab class="btn-fab-evento" color="prime" (click)="abrirNomeLista(item.itemEvento.nome)">
+                                                <button ion-fab class="btn-fab-evento"  color="prime" (click)="abrirNomeLista(item.itemEvento.nome)">
                                                     <ion-icon name="ios-list" class="rstp-icone"> </ion-icon>
                                                 </button>
-                                                <input type="hidden"[value]="favoritoChange.value" [(ngModel)]="favoritoChange.value"  name="custId" >
-                                                <button ion-fab class="btn-fab-evento"  color="prime" (click)="favoritoBtn(favoritoChange.value)">
-                                                    <span  *ngIf="favoritoChange.value===false; else  favorito" class="rstp-icone-favorito">
-                                                        <ion-icon name="ios-star-outline" class="rstp-icone-favorito"> </ion-icon>
-                                                    </span>
-                                                    <ng-template #favorito class="rstp-icone-favorito-chck">
-                                                        <ion-icon name="ios-star" class="rstp-icone-favorito-chck"> </ion-icon>
-                                                    </ng-template>
+                                                <button ion-fab  #btnfav class="btn-fab-evento" color="prime" (click)="favoritoBtn(item.itemEvento.favorito)">
+                                                        <ion-icon #iconfav [name]="item.itemEvento.favorito.icon" class="rstp-icone-favorito"> </ion-icon>
                                                 </button>
                                             </ion-fab>
                                             <ion-card class="card_evento">

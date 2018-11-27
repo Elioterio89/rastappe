@@ -1,4 +1,5 @@
 import { DateTime } from "ionic-angular/umd";
+import { Favorito } from "./Favorito";
 
 export class Evento {
     public banner: string;
@@ -14,14 +15,14 @@ export class Evento {
     public infoExtra :string;
     public descricao : string;
     public ano :number;
-    public favorito :boolean;
+    public favorito :Favorito;
 
     constructor(pBanner: string, pId: number,pNome:string,pAtracoes:string, pDia:Date,pLocal:string,
             pProducoes:string,pValores:string,pVenda:string,pContatos:string,
-            pInfoExtra:string,pDescricao:string,pFavorito:boolean=false) 
+            pInfoExtra:string,pDescricao:string,pFavorito:Favorito) 
     {
         
-        
+        //favoritoChange: 
         this.banner = pBanner;
         this.id = pId;
         this.dia=pDia;
