@@ -23,6 +23,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { NomeListaModalPage } from '../pages/nome-lista-modal/nome-lista-modal';
 import { ConfirmaNomeListaPage } from '../pages/confirma-nome-lista/confirma-nome-lista';
 import { FavoritosPage } from '../pages/favoritos/favoritos';
+import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { FavoritosPage } from '../pages/favoritos/favoritos';
     CalendarioModalPage,
     NomeListaModalPage,
     ConfirmaNomeListaPage,
-    FavoritosPage
+    FavoritosPage,
+    CadastroEventoPage
 
     
   ],
@@ -67,7 +69,8 @@ import { FavoritosPage } from '../pages/favoritos/favoritos';
     CalendarioModalPage,
     NomeListaModalPage,
     ConfirmaNomeListaPage,
-    FavoritosPage
+    FavoritosPage,
+    CadastroEventoPage
   ],
   providers: [
     StatusBar,

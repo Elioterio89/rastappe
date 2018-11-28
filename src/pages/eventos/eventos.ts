@@ -15,6 +15,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { NomeListaModalPage } from '../nome-lista-modal/nome-lista-modal';
 import { ConfirmaNomeListaPage } from '../confirma-nome-lista/confirma-nome-lista';
 import { Favorito } from '../../app/classes/Favorito';
+import { CadastroEventoPage } from '../cadastro-evento/cadastro-evento';
 
 
 
@@ -58,8 +59,7 @@ export class EventosPage  {
 
     this.listaEventos();
 
-    this.slideEventos();    
-
+    this.slideEventos();  
 
   }
 
@@ -209,11 +209,17 @@ export class EventosPage  {
     ];
 
   }
+
   detalharEvento(item) {
     this.navCtrl.push(EventoDescricaoPage, { evento: item });
   }
+
   abrirMapa() {
     this.modalCtrl.create(ModalMapPage).present();
+  }
+
+  abrirCadEvento(){
+    this.modalCtrl.create(CadastroEventoPage).present();
   }
 
   compartilhar(evento){
@@ -255,7 +261,6 @@ export class EventosPage  {
     });
     pModal.present();   
   }
-
   
   abrirNomeLista(nome){
 
@@ -329,10 +334,10 @@ export class EventosPage  {
     });
 
   }
+
   ionViewWillEnter() {
     this.dataFiltro = new DiaDoMes(false,0,0,0);
   }
-
 
   ionViewDidLoad() {   
     this.dataFiltro = new DiaDoMes(false,0,0,0);

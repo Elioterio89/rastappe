@@ -3,19 +3,19 @@ import { Favorito } from "./Favorito";
 
 export class Evento {
     public banner: string;
-    public id: number
+    public id: number//*
     public dia:Date;
-    public nome:string;
-    public atracoes :string;
+    public nome:string;//
+    public atracoes :string;//
     public local : string;
-    public producao: string;
-    public valores :string;
-    public venda : string;
+    public producao: string;//
+    public valores :string;//
+    public venda : string;//
     public contatos: string;
     public infoExtra :string;
     public descricao : string;
-    public ano :number;
-    public favorito :Favorito;
+    public ano :number;//*
+    public favorito :Favorito;//*
 
     constructor(pBanner: string, pId: number,pNome:string,pAtracoes:string, pDia:Date,pLocal:string,
             pProducoes:string,pValores:string,pVenda:string,pContatos:string,
