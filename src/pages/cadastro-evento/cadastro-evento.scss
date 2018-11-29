@@ -1,6 +1,8 @@
 page-cadastro-evento {
 
 
+
+
     .background-page {
 
         background-image: url("../../assets/imgs/bg_marca_dagua.png"); 
@@ -12,11 +14,25 @@ page-cadastro-evento {
     }
 
     .card-cadastro{
+        padding-top: 0px;
         background-color:transparentize($color: #7d551a, $amount: 0.8);
-        height: 500px;
+        height: 530px;
     }
     .item-imput-card{
+        padding-left: 0px !important;
         background-color:transparentize($color: #7d551a, $amount: 1);
+        border-bottom:1px solid #7d551a !important;
     }
+
+    .scroll .scroll-content{
+        overflow: auto;
+        height: 300px;
+    }
+
+
+      
+
+
+
 
 }

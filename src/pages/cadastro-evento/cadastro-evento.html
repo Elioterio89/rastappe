@@ -10,44 +10,47 @@
   </ion-navbar>
 
 </ion-header>
-
-<ion-content class="background-page " padding>
+<ion-content class="background-page " padding >
   <ion-card>
+
     <ion-card-content class="card-cadastro">
+
       <ion-item class="item-imput-card">
-        <ion-label color="terci" stacked>Nome do Evento</ion-label>
-        <ion-input type="text"  ng-model="nEvento.nome" autofocus></ion-input>
+        <ion-label color="terci" floating>Nome do Evento</ion-label>
+        <ion-input type="text" ng-model="nEvento.nome" autofocus></ion-input>
       </ion-item>
       <ion-item class="item-imput-card">
-        <ion-label color="terci" stacked>Atrações do Evento</ion-label>
+        <ion-label color="terci" floating>Atrações do Evento</ion-label>
         <ion-input type="text" value=""></ion-input>
       </ion-item>
       <ion-item class="item-imput-card">
-        <ion-label color="terci" stacked>Produção do Evento</ion-label>
+        <ion-label color="terci" floating>Produção do Evento</ion-label>
         <ion-input type="text" value=""></ion-input>
       </ion-item>
       <ion-item class="item-imput-card">
-        <ion-label color="terci" stacked>Valores do Evento</ion-label>
+        <ion-label color="terci" floating>Valores do Evento</ion-label>
         <ion-input type="text" value=""></ion-input>
       </ion-item>
       <ion-item class="item-imput-card">
-        <ion-label color="terci" stacked>Locais de venda</ion-label>
+        <ion-label color="terci" floating>Pontos de venda</ion-label>
         <ion-input type="text" value=""></ion-input>
       </ion-item>
       <ion-item class="item-imput-card">
-        <ion-label color="terci" stacked>Contatos</ion-label>
+        <ion-label color="terci" floating>Contatos</ion-label>
         <ion-input type="text" value=""></ion-input>
       </ion-item>
       <ion-item class="item-imput-card">
-        <ion-label color="terci" stacked>Pontos de venda</ion-label>
-        <ion-input type="text" value=""></ion-input>
-      </ion-item>
+          <ion-label color="terci" floating >Data/Hora</ion-label>
+          <ion-datetime  displayFormat="DD/MMM/YYYY H:mm" pickerFormat="DD/MMM/YYYY H:mm"  [(ngModel)]="myDate"></ion-datetime>
+        </ion-item>
       <ion-buttons right>
         <button ion-button icon-only round (click)="cadastroPT2()">
           <ion-icon name="arrow-forward"></ion-icon>
         </button>
       </ion-buttons>
+
     </ion-card-content>
+
 
   </ion-card>
 

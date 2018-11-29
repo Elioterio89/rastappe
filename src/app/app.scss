@@ -20,6 +20,13 @@ modal-wrapper {
   }
 }
 
+.picker-md .picker-wrapper {
+  height: 260px;
+  border: 0.55px solid #482F1D;
+  background-color:transparentize($color: #CF8E2C, $amount: 0.0);
+  //background-image: url("../../assets/imgs/bg_marca_dagua.png");        
+}
+
 
 #custom-overlay {
     position: fixed;

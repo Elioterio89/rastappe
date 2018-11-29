@@ -20,7 +20,7 @@
             <ion-list>
                 <ion-scroll scrollY="true" class="cardsNomes scroll">
                 <ion-item class="nomelista" *ngFor="let nome of nomes" >
-                  <ion-label color="terci" stacked>{{nome.titulo}}</ion-label>
+                  <ion-label color="terci" floating>{{nome.titulo}}</ion-label>
                   <ion-input type="{{nome.type}}" [value]="nome.value" [(ngModel)]="nome.value" autofocus></ion-input>
                 </ion-item>
               </ion-scroll>  
