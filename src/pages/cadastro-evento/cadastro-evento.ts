@@ -17,8 +17,11 @@ import { Favorito } from '../../app/classes/Favorito';
 })
 export class CadastroEventoPage {
   nEvento : Evento;
+  btnok:string;
+  btnCancel:String;
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
-
+    this.btnCancel="md-close";
+    this.btnok='"<ion-icon name="arrow-forward"></ion-icon>"';
 
 
   }

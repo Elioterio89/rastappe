@@ -22,9 +22,57 @@ modal-wrapper {
 
 .picker-md .picker-wrapper {
   height: 260px;
-  border: 0.55px solid #482F1D;
+  border: 0.55px solid #7d551a;
   background-color:transparentize($color: #CF8E2C, $amount: 0.0);
   //background-image: url("../../assets/imgs/bg_marca_dagua.png");        
+}
+
+.picker-md .picker-col {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  padding: 0 8px;
+  border-style: solid;
+  border: 0.1vw solid #7d551a !important;
+}
+
+
+.picker-md .picker-toolbar{
+  //background-color: #CF8E2C;
+  height: 60px;
+         
+
+
+}
+.picker-md .picker-opt {
+
+  color: #ffffff ;
+  font-size: 18px;
+
+}
+
+.picker-md .picker-button,
+.picker-md .picker-button.activated {
+  border-style: solid;
+  border: 2px solid #7d551a; 
+  margin: 4px;
+  height: 44px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background: #CF8E2C;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  height: 48px;
+  width: 40px;
+  font-size: 20px;
+  font-style: normal;
+
+  
+}
+
+.picker-md .picker-opt.picker-opt-selected {
+  color: #7d551a;
+  font-size: 21px;
 }
 
 

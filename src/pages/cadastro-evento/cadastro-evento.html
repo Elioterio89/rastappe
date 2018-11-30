@@ -41,7 +41,8 @@
       </ion-item>
       <ion-item class="item-imput-card">
           <ion-label color="terci" floating >Data/Hora</ion-label>
-          <ion-datetime  displayFormat="DD/MMM/YYYY H:mm" pickerFormat="DD/MMM/YYYY H:mm"  [(ngModel)]="myDate"></ion-datetime>
+          <ion-datetime  max="2120" min="2000" cancelText =✖ doneText=✔  displayFormat="DD/MMM/YYYY HH:mm" pickerFormat="DD/MMM/YYYY HH:mm"  [(ngModel)]="myDate"   
+           monthShortNames="Jan, Fev, Mar, Abr ,Mai , Jun, Jul,Ago,Set,Out,Nov,Dez"></ion-datetime>
         </ion-item>
       <ion-buttons right>
         <button ion-button icon-only round (click)="cadastroPT2()">

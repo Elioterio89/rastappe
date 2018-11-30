@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { IonicPageModule, DateTime } from 'ionic-angular';
 import { CadastroEventoPage } from './cadastro-evento';
 
 @NgModule({
@@ -10,4 +10,10 @@ import { CadastroEventoPage } from './cadastro-evento';
     IonicPageModule.forChild(CadastroEventoPage),
   ],
 })
-export class CadastroEventoPageModule {}
+export class CadastroEventoPageModule {
+
+   // ion-DateTime
+
+
+  
+}
