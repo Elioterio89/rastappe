@@ -3,6 +3,14 @@ page-cadastro-evento {
     /////////////////////////////////
 
 
+    .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+  border-bottom-color: #7d551a;
+  -webkit-box-shadow: inset 0 -1px 0 0 #7d551a;
+  box-shadow: inset 0 -1px 0 0 #7d551a;
+}
+
+
     ///////////////////////////////////
 
 
@@ -15,6 +23,9 @@ page-cadastro-evento {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .datetimeCad{
+        color: #7d551a !important;
     }
 
 

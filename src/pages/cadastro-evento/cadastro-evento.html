@@ -17,35 +17,35 @@
 
       <ion-item class="item-imput-card">
         <ion-label color="terci" floating>Nome do Evento</ion-label>
-        <ion-input type="text" ng-model="nEvento.nome" autofocus></ion-input>
+        <ion-input type="text" [value]="preCadastro.nome" [(ngModel)]="preCadastro.nome" autofocus></ion-input>
       </ion-item>
       <ion-item class="item-imput-card">
         <ion-label color="terci" floating>Atrações do Evento</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <ion-input type="text" [value]="preCadastro.atracoes" [(ngModel)]="preCadastro.atracoes"></ion-input>
       </ion-item>
       <ion-item class="item-imput-card">
         <ion-label color="terci" floating>Produção do Evento</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <ion-input type="text" [value]="preCadastro.producao" [(ngModel)]="preCadastro.producao"></ion-input>
       </ion-item>
       <ion-item class="item-imput-card">
         <ion-label color="terci" floating>Valores do Evento</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <ion-input type="text" [value]="preCadastro.valores" [(ngModel)]="preCadastro.valores"></ion-input>
       </ion-item>
       <ion-item class="item-imput-card">
         <ion-label color="terci" floating>Pontos de venda</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <ion-input type="text" [value]="preCadastro.vendas" [(ngModel)]="preCadastro.vendas"></ion-input>
       </ion-item>
       <ion-item class="item-imput-card">
         <ion-label color="terci" floating>Contatos</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <ion-input type="text" [value]="preCadastro.contatos" [(ngModel)]="preCadastro.contatos"></ion-input>
       </ion-item>
       <ion-item class="item-imput-card">
           <ion-label color="terci" floating >Data/Hora</ion-label>
-          <ion-datetime  max="2120" min="2000" cancelText =✖ doneText=✔  displayFormat="DD/MMM/YYYY HH:mm" pickerFormat="DD/MMM/YYYY HH:mm"  [(ngModel)]="myDate"   
+          <ion-datetime class="datetimeCad"max="2120" name ="datahora" min="2000" cancelText =✖ doneText=✔  displayFormat="DD/MMM/YYYY HH:mm" pickerFormat="DD/MMM/YYYY HH:mm"   [(ngModel)]="preCadastro.datahora"   
            monthShortNames="Jan, Fev, Mar, Abr ,Mai , Jun, Jul,Ago,Set,Out,Nov,Dez"></ion-datetime>
         </ion-item>
       <ion-buttons right>
-        <button ion-button icon-only round (click)="cadastroPT2()">
+        <button ion-button icon-only round (click)="cadPt1(preCadastro)">
           <ion-icon name="arrow-forward"></ion-icon>
         </button>
       </ion-buttons>

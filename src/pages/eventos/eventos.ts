@@ -16,6 +16,7 @@ import { NomeListaModalPage } from '../nome-lista-modal/nome-lista-modal';
 import { ConfirmaNomeListaPage } from '../confirma-nome-lista/confirma-nome-lista';
 import { Favorito } from '../../app/classes/Favorito';
 import { CadastroEventoPage } from '../cadastro-evento/cadastro-evento';
+import { CadastroEventopt2Page } from '../cadastro-eventopt2/cadastro-eventopt2';
 
 
 
@@ -218,8 +219,28 @@ export class EventosPage  {
     this.modalCtrl.create(ModalMapPage).present();
   }
 
-  abrirCadEvento(){
-    this.modalCtrl.create(CadastroEventoPage).present();
+  abrirCadEvento(preCad){
+
+    
+    let pModal =this.modalCtrl.create(CadastroEventoPage,{preCad:preCad});
+    pModal.onDidDismiss(data => {
+      var VpreCad =[];
+      VpreCad.push(data);
+     // console.log(data);
+      if(data !== null){
+      this.abrirCadEventoopt2(data);
+      }
+    });
+    pModal.present(); 
+  }
+
+  abrirCadEventoopt2(preCad){
+    let pModal =this.modalCtrl.create(CadastroEventopt2Page,{preCad:preCad});
+        pModal.onDidDismiss(data => {
+          data =preCad;
+          this.abrirCadEvento(data);  
+    });
+    pModal.present(); 
   }
 
   compartilhar(evento){

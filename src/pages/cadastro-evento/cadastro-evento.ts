@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, DateTime } from 'ionic-angular';
 import { Evento } from '../../app/classes/Evento';
 import { Favorito } from '../../app/classes/Favorito';
 
@@ -19,9 +19,19 @@ export class CadastroEventoPage {
   nEvento : Evento;
   btnok:string;
   btnCancel:String;
+  preCadastro: Array<{nome: string, atracoes: string,contatos: string, producao: string , valores: string, vendas: string, datahora: Date }>;
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
-    this.btnCancel="md-close";
-    this.btnok='"<ion-icon name="arrow-forward"></ion-icon>"';
+
+ 
+    if (navParams.get('preCad')===null)
+    {
+    this.preCadastro = [
+      { nome: "", atracoes: "",contatos:"",  producao:"",valores:"",vendas:"",datahora:new Date(1900,1,1,0,0,0) },
+    ];
+  ''}else{
+    this.preCadastro=navParams.get('preCad');
+    }
+
 
 
   }
@@ -30,8 +40,17 @@ export class CadastroEventoPage {
     console.log('ionViewDidLoad CadastroEventoPage');
   }
 
-  fecharModal(){
-    this.viewCtrl.dismiss();
+  cadPt1(preCadastro){   
+      
+   // console.log(preCadastro);
+   
+    this.viewCtrl.dismiss(preCadastro);
   }
 
+  fecharModal(){
+
+    this.viewCtrl.dismiss(null);
+  }
 }
+
+

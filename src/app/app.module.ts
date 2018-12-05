@@ -24,6 +24,7 @@ import { NomeListaModalPage } from '../pages/nome-lista-modal/nome-lista-modal';
 import { ConfirmaNomeListaPage } from '../pages/confirma-nome-lista/confirma-nome-lista';
 import { FavoritosPage } from '../pages/favoritos/favoritos';
 import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
+import { CadastroEventopt2Page } from '../pages/cadastro-eventopt2/cadastro-eventopt2';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
     NomeListaModalPage,
     ConfirmaNomeListaPage,
     FavoritosPage,
-    CadastroEventoPage
+    CadastroEventoPage,
+    CadastroEventopt2Page
 
     
   ],
@@ -70,7 +72,8 @@ import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
     NomeListaModalPage,
     ConfirmaNomeListaPage,
     FavoritosPage,
-    CadastroEventoPage
+    CadastroEventoPage,
+    CadastroEventopt2Page
   ],
   providers: [
     StatusBar,
