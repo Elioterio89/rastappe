@@ -25,6 +25,8 @@ import { ConfirmaNomeListaPage } from '../pages/confirma-nome-lista/confirma-nom
 import { FavoritosPage } from '../pages/favoritos/favoritos';
 import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
 import { CadastroEventopt2Page } from '../pages/cadastro-eventopt2/cadastro-eventopt2';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 
 
 @NgModule({
@@ -78,6 +80,8 @@ import { CadastroEventopt2Page } from '../pages/cadastro-eventopt2/cadastro-even
   providers: [
     StatusBar,
     SplashScreen,
+    FileTransfer,
+    File,
     SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Calendar

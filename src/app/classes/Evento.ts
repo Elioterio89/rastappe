@@ -4,14 +4,14 @@ import { Favorito } from "./Favorito";
 export class Evento {
     public banner: string;
     public id: number//*
-    public dia:Date;
-    public nome:string;////
-    public atracoes :string;////
+    public dia:Date;//
+    public nome:string;//
+    public atracoes :string;//
     public local : string;
-    public producao: string;////
-    public valores :string;////
-    public venda : string;////
-    public contatos: string;////
+    public producao: string;//
+    public valores :string;//
+    public venda : string;//
+    public contatos: string;//
     public infoExtra :string;
     public descricao : string;
     public ano :number;//*
