@@ -2,12 +2,12 @@ import { DateTime } from "ionic-angular/umd";
 import { Favorito } from "./Favorito";
 
 export class Evento {
-    public banner: string;
+    public banner: string;//*******
     public id: number//*
     public dia:Date;//
     public nome:string;//
     public atracoes :string;//
-    public local : string;
+    public local : string;//*******
     public producao: string;//
     public valores :string;//
     public venda : string;//
