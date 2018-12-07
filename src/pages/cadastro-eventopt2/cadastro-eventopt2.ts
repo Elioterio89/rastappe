@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, LoadingController, Option, ModalController } from 'ionic-angular';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { IonicPage, NavController, NavParams, ViewController, LoadingController, Option, ModalController, TextInput } from 'ionic-angular';
 import { FileTransfer, FileTransferObject, FileUploadOptions } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
 import { Evento } from '../../app/classes/Evento';
@@ -20,20 +20,19 @@ import { ModalMapPage } from '../modal-map/modal-map';
   templateUrl: 'cadastro-eventopt2.html',
 })
 export class CadastroEventopt2Page {
+
   preCadastro: Array<{nome: string, atracoes: string,contatos: string, producao: string , valores: string, vendas: string, datahora: Date }>;
-  newEvento:Evento;
+  preCadastro2: Array<{banner: string, localicao: string,descricao: string, infoEx: string }>;
+  newEvento:string;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public modalCtrl: ModalController,public viewCtrl:ViewController,
     private transfer: FileTransfer, private file: File ,private loadingCtrl:LoadingController) {
 
     this.preCadastro=navParams.get('preCad');
 
-    this.newEvento =new Evento('',1,'','',
-    new Date(2018,5,8,13,0,0),'','',
-    '',
-    '','',
-    '',
-    '',new Favorito(false))
+    this.preCadastro2 = [
+      { banner: "", localicao: "",descricao:"",  infoEx:"" },
+    ];
 
 
     console.log(this.preCadastro);
@@ -68,7 +67,7 @@ export class CadastroEventopt2Page {
       headers:{}
     }
 
-    fileTransfer.upload(this.newEvento.banner,'../../assets/imgs/',options).then((data)=> {
+    fileTransfer.upload(this.preCadastro2['banner'],'../../assets/imgs/',options).then((data)=> {
       alert("Sucesso");
       loader.dismiss();
     },(err)=> {
@@ -85,9 +84,6 @@ export class CadastroEventopt2Page {
   }
 
 
-  resize() {
-    // Something good, something bad? A bit of both!
-  }
 
 //https://www.youtube.com/watch?v=M1vMRAgt4NM minuto 4:18
   }

@@ -1,5 +1,16 @@
 page-cadastro-eventopt2 {
 
+
+
+    ////////////////////////////////////
+    .item-md.item-block .item-inner {
+        padding-right: 0px;
+    }
+
+    .label-md {
+        margin: 0;
+      }
+    ////////////////////////////////////
     .background-page {
 
         background-image: url("../../assets/imgs/bg_marca_dagua.png"); 
@@ -22,11 +33,30 @@ page-cadastro-eventopt2 {
 
     }
 
+    .item-txtA{
+        background-color:transparentize($color: #e5dcd1, $amount: 0.0);
+        padding: 0 !important;
+        margin: 0 !important;
+    }
     .icons{
         font-size: 50px;
         color: #e5dcd1;
     }
 
+    .txtA {
+        width: calc(100%);
+        height: 130px;
+        border: 0;
+        border-radius: 0;
+        background-color:transparentize($color: #efbf78, $amount: 0.9);
+        border:1px solid #7d551a !important;
+        margin: 0 !important;
+    }
+
+    .labeltxtA{
+        color: #7d551a;
+        margin: 0 !important;
+    }
 
 
 }

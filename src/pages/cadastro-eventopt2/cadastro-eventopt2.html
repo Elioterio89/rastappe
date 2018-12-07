@@ -29,9 +29,14 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-      <ion-item class="item-imput-card">
-      <ion-textarea #msgInput rows="1" maxLength="500" (keyup)="resize()"></ion-textarea>
-    </ion-item>
+      <ion-label class="labeltxtA">Descricao</ion-label>
+      <ion-item class="item-txtA">
+        <textarea class="txtA" id="txtA" rows="1" maxLength="2000" [(ngModel)]="txtAr"></textarea>
+      </ion-item>
+      <ion-label class="labeltxtA">Info. Extra</ion-label>
+      <ion-item class="item-txtA">
+        <textarea class="txtA" id="infex" rows="1" maxLength="2000" [(ngModel)]="infext"></textarea>
+      </ion-item>
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -12,8 +12,8 @@ export class Evento {
     public valores :string;//
     public venda : string;//
     public contatos: string;//
-    public infoExtra :string;
-    public descricao : string;
+    public infoExtra :string;//
+    public descricao : string;//
     public ano :number;//*
     public favorito :Favorito;//*
 

@@ -28,7 +28,7 @@ export class CadastroEventoPage {
     this.preCadastro = [
       { nome: "", atracoes: "",contatos:"",  producao:"",valores:"",vendas:"",datahora:new Date(1900,1,1,0,0,0) },
     ];
-  ''}else{
+   }else{
     this.preCadastro=navParams.get('preCad');
     }
 

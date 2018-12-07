@@ -236,11 +236,20 @@ export class EventosPage  {
 
   abrirCadEventoopt2(preCad){
     let pModal =this.modalCtrl.create(CadastroEventopt2Page,{preCad:preCad});
-        pModal.onDidDismiss(data => {
+    pModal.onDidDismiss(data => {
           data =preCad;
           this.abrirCadEvento(data);  
     });
     pModal.present(); 
+  }
+
+  abrirConfirma(cadFull){
+    let pModal =this.modalCtrl.create(CadastroEventopt2Page,{cadFull:cadFull});    
+    pModal.onDidDismiss(data => {
+     // data =preCad;
+      this.abrirCadEventoopt2(data);  
+});
+pModal.present(); 
   }
 
   compartilhar(evento){
