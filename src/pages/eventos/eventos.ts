@@ -223,9 +223,7 @@ export class EventosPage  {
 
     
     let pModal =this.modalCtrl.create(CadastroEventoPage,{preCad:preCad});
-    pModal.onDidDismiss(data => {
-      var VpreCad =[];
-      VpreCad.push(data);
+    pModal.onDidDismiss(data => { 
      // console.log(data);
       if(data !== null){
       this.abrirCadEventoopt2(data);
@@ -238,6 +236,7 @@ export class EventosPage  {
     let pModal =this.modalCtrl.create(CadastroEventopt2Page,{preCad:preCad});
     pModal.onDidDismiss(data => {
           data =preCad;
+          console.log(data);
           this.abrirCadEvento(data);  
     });
     pModal.present(); 

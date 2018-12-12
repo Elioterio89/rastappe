@@ -31,12 +31,17 @@
       </ion-grid>
       <ion-label class="labeltxtA">Descricao</ion-label>
       <ion-item class="item-txtA">
-        <textarea class="txtA" id="txtA" rows="1" maxLength="2000" [(ngModel)]="txtAr"></textarea>
+        <textarea class="txtA" [value]="preCadastro.descricao" [(ngModel)]="preCadastro.descricao" id="txtA" rows="1" maxLength="2000" ></textarea>
       </ion-item>
       <ion-label class="labeltxtA">Info. Extra</ion-label>
       <ion-item class="item-txtA">
-        <textarea class="txtA" id="infex" rows="1" maxLength="2000" [(ngModel)]="infext"></textarea>
+        <textarea class="txtA" id="infex" [value]="preCadastro.infoEx" [(ngModel)]="preCadastro.infoEx" rows="1" maxLength="2000" ></textarea>
       </ion-item>
+      <ion-buttons right>
+        <button class="btncnfrCAD" ion-button icon-only round (click)="finalizarCad()">
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+      </ion-buttons>
     </ion-card-content>
   </ion-card>
 </ion-content>

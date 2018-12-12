@@ -27,6 +27,7 @@ import { CadastroEventoPage } from '../pages/cadastro-evento/cadastro-evento';
 import { CadastroEventopt2Page } from '../pages/cadastro-eventopt2/cadastro-eventopt2';
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
+import { ConfirmaCadastroPage } from '../pages/confirma-cadastro/confirma-cadastro';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { File } from '@ionic-native/file';
     ConfirmaNomeListaPage,
     FavoritosPage,
     CadastroEventoPage,
-    CadastroEventopt2Page
+    CadastroEventopt2Page,
+    ConfirmaCadastroPage
 
     
   ],
@@ -75,7 +77,8 @@ import { File } from '@ionic-native/file';
     ConfirmaNomeListaPage,
     FavoritosPage,
     CadastroEventoPage,
-    CadastroEventopt2Page
+    CadastroEventopt2Page,
+    ConfirmaCadastroPage
   ],
   providers: [
     StatusBar,

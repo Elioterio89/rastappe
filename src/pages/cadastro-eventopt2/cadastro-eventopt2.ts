@@ -1,17 +1,12 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, LoadingController, Option, ModalController, TextInput } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, LoadingController, Option, ModalController, TextInput,ToastController } from 'ionic-angular';
 import { FileTransfer, FileTransferObject, FileUploadOptions } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
 import { Evento } from '../../app/classes/Evento';
 import { Favorito } from '../../app/classes/Favorito';
 import { ModalMapPage } from '../modal-map/modal-map';
+import { ConfirmaCadastroPage } from '../confirma-cadastro/confirma-cadastro';
 
-/**
- * Generated class for the CadastroEventopt2Page page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 
@@ -21,19 +16,14 @@ import { ModalMapPage } from '../modal-map/modal-map';
 })
 export class CadastroEventopt2Page {
 
-  preCadastro: Array<{nome: string, atracoes: string,contatos: string, producao: string , valores: string, vendas: string, datahora: Date }>;
-  preCadastro2: Array<{banner: string, localicao: string,descricao: string, infoEx: string }>;
+  preCadastro: Array<{nome: string, atracoes: string,contatos: string, producao: string , valores: string, vendas: string,
+    datahora: Date ,banner: string, localicao: string,descricao: string, infoEx: string}>;
   newEvento:string;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public modalCtrl: ModalController,public viewCtrl:ViewController,
-    private transfer: FileTransfer, private file: File ,private loadingCtrl:LoadingController) {
+    private transfer: FileTransfer, private file: File ,private loadingCtrl:LoadingController,private toastCtrl: ToastController) {
 
     this.preCadastro=navParams.get('preCad');
-
-    this.preCadastro2 = [
-      { banner: "", localicao: "",descricao:"",  infoEx:"" },
-    ];
-
 
     console.log(this.preCadastro);
   }
@@ -67,7 +57,7 @@ export class CadastroEventopt2Page {
       headers:{}
     }
 
-    fileTransfer.upload(this.preCadastro2['banner'],'../../assets/imgs/',options).then((data)=> {
+    fileTransfer.upload(this.preCadastro['banner'],'../../assets/imgs/',options).then((data)=> {
       alert("Sucesso");
       loader.dismiss();
     },(err)=> {
@@ -81,6 +71,36 @@ export class CadastroEventopt2Page {
 
   abrirMapa() {
     this.modalCtrl.create(ModalMapPage).present();
+  }
+
+  finalizarCad(){
+    let pModal =this.modalCtrl.create(ConfirmaCadastroPage,{Cad:this.preCadastro});
+    pModal.onDidDismiss(data => {
+          data =this.preCadastro;
+          console.log(data); 
+    });
+    if(this.preCadastro["nome"]!==null && this.preCadastro["nome"]!==undefined){
+      
+      pModal.present(); 
+    }else{
+      console.log(this.preCadastro);
+      this.presentToast();
+    }
+    
+  }
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Faltam dados',
+      duration: 2000,
+      position: 'top'
+    });
+  
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+  
+    toast.present();
   }
 
 

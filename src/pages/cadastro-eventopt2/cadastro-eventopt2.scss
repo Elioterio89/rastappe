@@ -32,7 +32,11 @@ page-cadastro-eventopt2 {
         height: 120px;
 
     }
-
+    .btncnfrCAD{
+        top :10px;
+        width: 40px;
+        height: 40px;
+    }
     .item-txtA{
         background-color:transparentize($color: #e5dcd1, $amount: 0.0);
         padding: 0 !important;
@@ -50,6 +54,7 @@ page-cadastro-eventopt2 {
         border-radius: 0;
         background-color:transparentize($color: #efbf78, $amount: 0.9);
         border:1px solid #7d551a !important;
+        color: #7d551a;
         margin: 0 !important;
     }
 
