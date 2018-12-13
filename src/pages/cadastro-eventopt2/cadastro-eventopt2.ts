@@ -25,7 +25,7 @@ export class CadastroEventopt2Page {
 
     this.preCadastro=navParams.get('preCad');
 
-    console.log(this.preCadastro);
+    //console.log(this.preCadastro);
   }
 
   ionViewDidLoad() {
@@ -76,14 +76,14 @@ export class CadastroEventopt2Page {
   finalizarCad(){
     let pModal =this.modalCtrl.create(ConfirmaCadastroPage,{Cad:this.preCadastro});
     pModal.onDidDismiss(data => {
-          data =this.preCadastro;
-          console.log(data); 
+          this.preCadastro =data;
+          //console.log(this.preCadastro); 
     });
-    if(this.preCadastro["nome"]!==null && this.preCadastro["nome"]!==undefined){
+    if(this.preCadastro["nome"]!==null && this.preCadastro["nome"]!==undefined && this.preCadastro["datahora"]!==null && this.preCadastro["datahora"]!==undefined){
       
       pModal.present(); 
     }else{
-      console.log(this.preCadastro);
+      //console.log(this.preCadastro);
       this.presentToast();
     }
     
@@ -97,7 +97,7 @@ export class CadastroEventopt2Page {
     });
   
     toast.onDidDismiss(() => {
-      console.log('Dismissed toast');
+      //console.log('Dismissed toast');
     });
   
     toast.present();

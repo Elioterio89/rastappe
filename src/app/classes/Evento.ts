@@ -35,6 +35,7 @@ export class Evento {
         this.contatos =pContatos;
         this.infoExtra=pInfoExtra;
         this.descricao =pDescricao;
+       // console.log(pDia);
         this.ano = pDia.getFullYear();
         this.favorito = pFavorito;
         //pDia.getFullYear().toString()

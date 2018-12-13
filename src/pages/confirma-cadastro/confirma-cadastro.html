@@ -1,18 +1,109 @@
-<!--
-  Generated template for the ConfirmaCadastroPage page.
+<ion-header class="header_cadastro">
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>confirmaCadastro</ion-title>
+  <ion-navbar color="prime" class="">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="voltarCad()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title >{{cadastro.nome}}</ion-title>
   </ion-navbar>
-
+  <img src=" {{cadastro.banner}}" class="img-evento">
 </ion-header>
 
+<ion-content class="background-page " scroll="true">
 
-<ion-content padding>
+  <ion-fab right bottom>
+    <button ion-fab class="btn-fab-confirma" color="prime"  (click)="abrirNomeLista(cadastro.nome)">
+      <ion-icon name="checkmark" class="rstp-icone"> </ion-icon>
+    </button>
+  </ion-fab>
+  <ion-grid class="grid-info">
+    <ion-row class="linha">
+      <ion-col col-3 class="colum ">
+        <p class="titulo-header">Atrações
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{cadastro.atracoes}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+        <ion-col col-3 class="colum ">
+          <p class="titulo-header">Dia
+            <p>
+        </ion-col>
+        <ion-col col-9 class="colum">
+          <p class="texto-infor">{{cadastro.dia}}</p>
+        </ion-col>
+      </ion-row>
+    <ion-row class="linha">
+        <ion-col col-3 class="colum ">
+          <p class="titulo-header">Local
+            <p>
+        </ion-col>
+        <ion-col col-9 class="colum">
+          <p class="texto-infor">{{cadastro.local}}</p>
+        </ion-col>
+      </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Produção
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{cadastro.producao}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Valores
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{cadastro.valores}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Venda
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{cadastro.venda}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Contatos
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{cadastro.contatos}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Info. Extra
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{cadastro.infoExtra}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="linha">
+      <ion-col col-3 class="colum">
+        <p class="titulo-header">Descrição
+          <p>
+      </ion-col>
+      <ion-col col-9 class="colum">
+        <p class="texto-infor">{{cadastro.descricao}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ultima_linha">
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
