@@ -1,5 +1,5 @@
 import { Component,OnInit,AfterViewInit, AUTO_STYLE, ViewChild, TemplateRef, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, DateTime } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, DateTime, ViewController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModalMapPage } from '../modal-map/modal-map';
@@ -50,7 +50,8 @@ export class EventosPage  {
     public modalCtrl: ModalController,
     public menuCtrl: MenuController,
     private storage:Storage,
-    private socialSharing: SocialSharing
+    private socialSharing: SocialSharing,
+    public viewCtrl:ViewController,
     ) { 
 
     this.filtro = navParams.get('filtro');
@@ -237,7 +238,11 @@ export class EventosPage  {
     pModal.onDidDismiss(data => {
           data =preCad;
           console.log(data);
+          if(data['fim']===true){
+            
+          }else{
           this.abrirCadEvento(data);  
+          }
     });
     pModal.present(); 
   }
@@ -245,7 +250,7 @@ export class EventosPage  {
   abrirConfirma(cadFull){
     let pModal =this.modalCtrl.create(CadastroEventopt2Page,{cadFull:cadFull});    
     pModal.onDidDismiss(data => {
-     // data =preCad;
+      console.log(data);
       this.abrirCadEventoopt2(data);  
 });
 pModal.present(); 
@@ -274,7 +279,7 @@ pModal.present();
       dado.icon ="ios-star-outline";
     }  
 
-    console.log(dado);
+    //console.log(dado);
 
   }
 
@@ -338,7 +343,7 @@ pModal.present();
         
       }); 
       this.nomeConfirmados =VnomesConf;
-      console.log(this.nomeConfirmados);
+     // console.log(this.nomeConfirmados);
     }
     });
 

@@ -14,7 +14,7 @@
 <ion-content class="background-page " scroll="true">
 
   <ion-fab right bottom>
-    <button ion-fab class="btn-fab-confirma" color="prime"  (click)="abrirNomeLista(cadastro.nome)">
+    <button ion-fab class="btn-fab-confirma" color="prime"  (click)="finalizarCadastro()">
       <ion-icon name="checkmark" class="rstp-icone"> </ion-icon>
     </button>
   </ion-fab>
@@ -34,7 +34,8 @@
             <p>
         </ion-col>
         <ion-col col-9 class="colum">
-          <p class="texto-infor">{{cadastro.dia}}</p>
+          <p class="texto-infor">{{cadastro.dia.getDate().toString()}}/{{(cadastro.dia.getMonth()+1).toString()}}/
+            {{cadastro.dia.getUTCFullYear().toString()}}  {{cadastro.dia.getHours().toString()}}:{{((cadastro.dia.getMinutes()<10?"0":"") + cadastro.dia.getMinutes())}}</p>
         </ion-col>
       </ion-row>
     <ion-row class="linha">

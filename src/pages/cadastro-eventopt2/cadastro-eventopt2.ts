@@ -17,7 +17,7 @@ import { ConfirmaCadastroPage } from '../confirma-cadastro/confirma-cadastro';
 export class CadastroEventopt2Page {
 
   preCadastro: Array<{nome: string, atracoes: string,contatos: string, producao: string , valores: string, vendas: string,
-    datahora: Date ,banner: string, localicao: string,descricao: string, infoEx: string}>;
+    datahora: Date ,banner: string, localicao: string,descricao: string, infoEx: string,fim:boolean}>;
   newEvento:string;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public modalCtrl: ModalController,public viewCtrl:ViewController,
@@ -77,7 +77,11 @@ export class CadastroEventopt2Page {
     let pModal =this.modalCtrl.create(ConfirmaCadastroPage,{Cad:this.preCadastro});
     pModal.onDidDismiss(data => {
           this.preCadastro =data;
-          //console.log(this.preCadastro); 
+         // console.log(this.preCadastro);
+          if(this.preCadastro['fim']===true){
+            this.viewCtrl.dismiss(this.preCadastro);
+          }
+
     });
     if(this.preCadastro["nome"]!==null && this.preCadastro["nome"]!==undefined && this.preCadastro["datahora"]!==null && this.preCadastro["datahora"]!==undefined){
       

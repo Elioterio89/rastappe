@@ -20,14 +20,14 @@ export class CadastroEventoPage {
   btnok:string;
   btnCancel:String;
   preCadastro: Array<{nome: string, atracoes: string,contatos: string, producao: string , valores: string, vendas: string,
-     datahora: Date ,banner: string, localicao: string,descricao: string, infoEx: string}>;
+     datahora: Date ,banner: string, localicao: string,descricao: string, infoEx: string,fim:boolean}>;
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
 
  
     if (navParams.get('preCad')===null)
     {
     this.preCadastro = [
-      { nome: "", atracoes: "",contatos:"",  producao:"",valores:"",vendas:"",datahora:new Date(1900,1,1,0,0,0),banner:"",localicao:"",descricao:"",infoEx:"" },
+      { nome: "", atracoes: "",contatos:"",  producao:"",valores:"",vendas:"",datahora:new Date(1900,1,1,0,0,0),banner:"",localicao:"",descricao:"",infoEx:"" ,fim:false},
     ];
    }else{
     this.preCadastro=navParams.get('preCad');

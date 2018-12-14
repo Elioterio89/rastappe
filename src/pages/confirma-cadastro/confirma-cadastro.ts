@@ -17,8 +17,9 @@ import { Favorito } from '../../app/classes/Favorito';
 })
 export class ConfirmaCadastroPage {
   preCadastro: Array<{nome: string, atracoes: string,contatos: string, producao: string , valores: string, vendas: string,
-            datahora: Date ,banner: string, localicao: string,descricao: string, infoEx: string}>;
+            datahora: Date ,banner: string, localicao: string,descricao: string, infoEx: string,fim:boolean}>;
   cadastro :Evento;
+  dados: any = [  ];
   DATA:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
@@ -35,7 +36,8 @@ export class ConfirmaCadastroPage {
 
 
 
-    console.log(this.cadastro);
+   // console.log(this.cadastro);
+   
   }
 
   ionViewDidLoad() {
@@ -43,6 +45,7 @@ export class ConfirmaCadastroPage {
   }
 
   voltarCad(){
+    this.preCadastro['fim']=false;
     this.viewCtrl.dismiss(this.preCadastro);
   }
 
@@ -58,5 +61,10 @@ export class ConfirmaCadastroPage {
     return new Date(vetData[0],vetData[1]-1,vetData[2],vetData[3],vetData[4],vetData[5]);
   }
 
+
+  finalizarCadastro(){
+    this.preCadastro['fim']=true;
+    this.viewCtrl.dismiss(this.preCadastro);
+  }
 
 }
