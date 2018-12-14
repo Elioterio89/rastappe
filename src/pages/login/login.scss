@@ -1,3 +1,60 @@
 page-login {
 
+///////////////////////
+.card-md {
+     margin: 0px !important; 
+}
+
+.card-content-md {
+    padding: 5px 10px;
+}
+
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+  border-bottom-color: #7d551a;
+  -webkit-box-shadow: inset 0 -1px 0 0 #7d551a;
+  box-shadow: inset 0 -1px 0 0 #7d551a;
+}
+/////////////////////////
+
+    .background-page {
+
+        background-image: url("../../assets/imgs/bg_marca_dagua.png"); 
+        height:100%;
+        width:100%;   
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .contentcardlogin{
+
+        background-color: rgb(230, 216, 196);
+    }
+    .cardlogologin{
+        margin-top: 0px;
+        background-color:transparentize($color: #CF8E2C, $amount: 0.6);
+        height: 320px;
+        width: 100%
+
+    }
+    .loginsenha{
+        padding-left: 0px !important;
+        background-color:transparentize($color: #7d551a, $amount: 1);
+        border-bottom:1px solid #7d551a !important;
+    }
+
+
+    .imglogo{
+    width: 150px;
+    margin-left:calc(50% - 75px);
+    }
+
+    .no-scroll .scroll-content{
+        overflow: hidden;
+      }
+    
+   
+
 }

@@ -10,9 +10,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
+  logo:string;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.navCtrl.setRoot(MenuPage);
+    this.logo='../../assets/imgs/logo2.png';
   }
 
   ionViewDidLoad() {
