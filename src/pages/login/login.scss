@@ -28,14 +28,16 @@ page-login {
   .item-md {
     padding-left: 0px;
     color: #7d551a;
-    background-color: #e6d7c4;
+    background-color: transparent;
+    //background-color: #e6d7c4;
    
   }
 
   .checkbox-md .checkbox-icon {
 
     border-color: #7d551a;
-    background-color:#e6d7c4;
+    background-color: transparent;
+    //background-color:#e6d7c4;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px; 
@@ -92,7 +94,7 @@ margin-left:calc(50% - 100px);
     }
     .contentcardlogin{
 
-        background-color: rgb(230, 216, 196);
+        background-color: transparentize($color: rgb(230, 216, 196), $amount: 0.2); 
     }
     .cardlogologin{
         margin-top: 0px;
