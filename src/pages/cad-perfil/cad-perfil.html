@@ -1,0 +1,51 @@
+<ion-header class="">
+
+  <ion-navbar color="prime" class="">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="fecharModal()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title class="nav_evento">Cadastro Perfil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="background-page " padding>
+
+  <ion-item class="item-imput-card">
+    <ion-label color="terci" floating>Nome</ion-label>
+    <ion-input type="text" [value]="perfil.nome" [(ngModel)]="perfil.nome" autofocus></ion-input>
+  </ion-item>
+  <ion-item class="item-imput-card">
+    <ion-label color="terci" floating>Sobrenome</ion-label>
+    <ion-input type="text" [value]="perfil.sobrenome" [(ngModel)]="perfil.sobrenome"></ion-input>
+  </ion-item>
+  <ion-item class="item-imput-card">
+    <ion-label color="terci" floating>Usuario</ion-label>
+    <ion-input type="text" [value]="perfil.usuario" [(ngModel)]="perfil.usuario"></ion-input>
+  </ion-item>
+  <ion-item class="item-imput-card">
+    <ion-label color="terci" floating>Senha</ion-label>
+    <ion-input type="text" [value]="perfil.senha" [(ngModel)]="perfil.senha"></ion-input>
+  </ion-item>
+  <ion-item class="item-imput-card">
+    <ion-label color="terci" floating>Email</ion-label>
+    <ion-input type="text" [value]="perfil.email" [(ngModel)]="perfil.email"></ion-input>
+  </ion-item>
+  <ion-item class="item-imput-card">
+    <ion-label color="terci" floating>Celular</ion-label>
+    <ion-input type="text" [value]="perfil.celular" [(ngModel)]="perfil.celular"></ion-input>
+  </ion-item>
+  <ion-item>
+        <ion-label>País
+        <ion-select [selectOptions]="selectOptions">
+          <ion-option *ngFor="let op of selectOptions.opcoes" [value]="op">{{op}}</ion-option>
+        </ion-select></ion-label>
+        <ion-label>País
+        <ion-select [selectOptions]="selectOptions">
+          <ion-option *ngFor="let op of selectOptions.opcoes" [value]="op">{{op}}</ion-option>
+        </ion-select>
+      </ion-label>
+  </ion-item>
+
+</ion-content>

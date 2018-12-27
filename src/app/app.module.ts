@@ -28,6 +28,7 @@ import { CadastroEventopt2Page } from '../pages/cadastro-eventopt2/cadastro-even
 import { FileTransfer } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
 import { ConfirmaCadastroPage } from '../pages/confirma-cadastro/confirma-cadastro';
+import { CadPerfilPage } from '../pages/cad-perfil/cad-perfil';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { ConfirmaCadastroPage } from '../pages/confirma-cadastro/confirma-cadast
     FavoritosPage,
     CadastroEventoPage,
     CadastroEventopt2Page,
-    ConfirmaCadastroPage
+    ConfirmaCadastroPage,
+    CadPerfilPage
 
     
   ],
@@ -78,7 +80,8 @@ import { ConfirmaCadastroPage } from '../pages/confirma-cadastro/confirma-cadast
     FavoritosPage,
     CadastroEventoPage,
     CadastroEventopt2Page,
-    ConfirmaCadastroPage
+    ConfirmaCadastroPage,
+    CadPerfilPage
   ],
   providers: [
     StatusBar,
