@@ -10,33 +10,70 @@
   </ion-navbar>
 
 </ion-header>
-<ion-content class="background-page " padding>
 
-  <ion-item class="item-imput-card">
-    <ion-label color="terci" floating>Nome</ion-label>
-    <ion-input type="text" [value]="perfil.nome" [(ngModel)]="perfil.nome" autofocus></ion-input>
-  </ion-item>
-  <ion-item class="item-imput-card">
-    <ion-label color="terci" floating>Sobrenome</ion-label>
-    <ion-input type="text" [value]="perfil.sobrenome" [(ngModel)]="perfil.sobrenome"></ion-input>
-  </ion-item>
-  <ion-item class="item-imput-card">
-    <ion-label color="terci" floating>Usuario</ion-label>
-    <ion-input type="text" [value]="perfil.usuario" [(ngModel)]="perfil.usuario"></ion-input>
-  </ion-item>
-  <ion-item class="item-imput-card">
-    <ion-label color="terci" floating>Senha</ion-label>
-    <ion-input type="text" [value]="perfil.senha" [(ngModel)]="perfil.senha"></ion-input>
-  </ion-item>
-  <ion-item class="item-imput-card">
-    <ion-label color="terci" floating>Email</ion-label>
-    <ion-input type="text" [value]="perfil.email" [(ngModel)]="perfil.email"></ion-input>
-  </ion-item>
-  <ion-item class="item-imput-card">
-    <ion-label color="terci" floating>Celular</ion-label>
-    <ion-input type="text" [value]="perfil.celular" [(ngModel)]="perfil.celular"></ion-input>
-  </ion-item>
-  <ion-item>
+<ion-content class="background-page " padding>
+  <ion-card>
+
+    <ion-card-content class="card-cadastro">
+
+      <ion-item class="item-imput-card">
+        <ion-label color="terci" floating>Nome</ion-label>
+        <ion-input type="text" [value]="perfil.nome" [(ngModel)]="perfil.nome" autofocus></ion-input>
+      </ion-item>
+      <ion-item class="item-imput-card">
+        <ion-label color="terci" floating>Sobrenome</ion-label>
+        <ion-input type="text" [value]="perfil.sobrenome" [(ngModel)]="perfil.sobrenome"></ion-input>
+      </ion-item>
+      <ion-item class="item-imput-card">
+        <ion-label color="terci" floating>Email</ion-label>
+        <ion-input type="email" [value]="perfil.email" [(ngModel)]="perfil.email"></ion-input>
+      </ion-item>
+      <ion-item class="item-imput-card">
+        <ion-label color="terci" floating>Usuario</ion-label>
+        <ion-input type="text" [value]="perfil.usuario" [(ngModel)]="perfil.usuario"></ion-input>
+      </ion-item>
+      <ion-item class="item-imput-card">
+        <ion-label color="terci" floating>Senha</ion-label>
+        <ion-input type="password" [value]="perfil.senha" [(ngModel)]="perfil.senha"></ion-input>
+      </ion-item>
+      <ion-item class="item-imput-card">
+        <ion-label color="terci" floating>Confirma Senha</ion-label>
+        <ion-input type="password" [value]="senha2" [(ngModel)]="senha2" color="terci"></ion-input>
+      </ion-item>
+
+      <ion-item class="item-imput-card">
+        <ion-label color="terci">País</ion-label>
+        <ion-select [selectOptions]="selectOptions">
+          <ion-option *ngFor="let op of selectOptions.opcoes" [value]="op">{{op}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="item-imput-card">
+        <ion-label color="terci">Estado</ion-label>
+        <ion-select [selectOptions]="selectOptions" color="terci">
+          <ion-option color="terci" *ngFor="let op of selectOptions.opcoes" [value]="op">{{op}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item class="item-imput-card">
+        <ion-label color="terci">Cidade</ion-label>
+        <ion-select [selectOptions]="selectOptions">
+          <ion-option *ngFor="let op of selectOptions.opcoes" [value]="op">{{op}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-buttons right>
+          <button ion-button icon-only round (click)="cadPt(perfil,senha2)">
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
+        </ion-buttons>
+
+    </ion-card-content>
+
+
+  </ion-card>
+
+</ion-content>
+<!-- <ion-item>
         <ion-label>País
         <ion-select [selectOptions]="selectOptions">
           <ion-option *ngFor="let op of selectOptions.opcoes" [value]="op">{{op}}</ion-option>
@@ -47,5 +84,5 @@
         </ion-select>
       </ion-label>
   </ion-item>
-
-</ion-content>
+[value]="preCadastro.nome" [(ngModel)]="preCadastro.nome"
+-->

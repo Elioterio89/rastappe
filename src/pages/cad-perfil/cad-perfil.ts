@@ -16,12 +16,13 @@ import { Perfil } from '../../app/classes/Perfil';
 })
 export class CadPerfilPage {
   perfil:Perfil;
+  senha2:string;
   selectOptions: any = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public viewCtrl:ViewController) {
 
     this.perfil = new Perfil("","","","","","","","","");
-
+    this.senha2="";
     this.selectOptions = {
       title: 'País',
       opcoes:["Brasil","Alemanha","USA","Argentina","Uruguai"],
@@ -31,6 +32,14 @@ export class CadPerfilPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadPerfilPage');
+  }
+
+  cadPt(perfil,senha2){
+  
+    if(perfil.senha===senha2){
+
+    this.viewCtrl.dismiss(perfil);
+    }
   }
 
 
