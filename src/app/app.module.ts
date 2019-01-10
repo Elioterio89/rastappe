@@ -29,6 +29,17 @@ import { FileTransfer } from '@ionic-native/file-transfer';
 import { File } from '@ionic-native/file';
 import { ConfirmaCadastroPage } from '../pages/confirma-cadastro/confirma-cadastro';
 import { CadPerfilPage } from '../pages/cad-perfil/cad-perfil';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+var config = {
+  apiKey: "AIzaSyBVR0r8RKjVdLLwkoFDzN3TldCPEvJFaXY",
+  authDomain: "rastappe-bd3f4.firebaseapp.com",
+  databaseURL: "https://rastappe-bd3f4.firebaseio.com",
+  projectId: "rastappe-bd3f4",
+  storageBucket: "rastappe-bd3f4.appspot.com",
+  messagingSenderId: "264981965341"
+};
 
 
 @NgModule({
@@ -51,7 +62,7 @@ import { CadPerfilPage } from '../pages/cad-perfil/cad-perfil';
     CadastroEventoPage,
     CadastroEventopt2Page,
     ConfirmaCadastroPage,
-    CadPerfilPage
+    CadPerfilPage,
 
     
   ],
@@ -60,6 +71,8 @@ import { CadPerfilPage } from '../pages/cad-perfil/cad-perfil';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(config),
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

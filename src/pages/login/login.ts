@@ -2,7 +2,8 @@ import { MenuPage } from '../menu/menu';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { CadPerfilPage } from '../cad-perfil/cad-perfil';
-
+import firebase from 'firebase'; 
+//import {} from 'angularfire'
 
 
 @IonicPage()
@@ -15,6 +16,15 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public modalCtrl: ModalController,) {
     this.logo='../../assets/imgs/logo2.png';
+  }
+
+
+  loginComFacebook(){
+    
+  }
+
+  logouComFacebook(){
+    
   }
 
   ionViewDidLoad() {
