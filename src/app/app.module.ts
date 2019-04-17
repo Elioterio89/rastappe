@@ -31,6 +31,7 @@ import { ConfirmaCadastroPage } from '../pages/confirma-cadastro/confirma-cadast
 import { CadPerfilPage } from '../pages/cad-perfil/cad-perfil';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { GoogleMaps } from '@ionic-native/google-maps';
 
 var config = {
   apiKey: "AIzaSyBVR0r8RKjVdLLwkoFDzN3TldCPEvJFaXY",
@@ -99,6 +100,7 @@ var config = {
   providers: [
     StatusBar,
     SplashScreen,
+    GoogleMaps,
     FileTransfer,
     File,
     SocialSharing,

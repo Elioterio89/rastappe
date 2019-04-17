@@ -1,9 +1,19 @@
 page-modal-map {
 
+#mapLocal{
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+
     /////////////////////////
+    
     .card-content-md {
       padding: 0px;
     }
+
+
 
 
     [col-6] {
